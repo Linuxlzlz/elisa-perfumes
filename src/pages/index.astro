@@ -1,0 +1,211 @@
+---
+import Base from '../layouts/Base.astro';
+import TarjetaProducto from '../components/TarjetaProducto.astro';
+import FotoProducto from '../components/FotoProducto.astro';
+import { destacados, etiquetasCategoria, porCategoria, productos } from '../lib/catalogo';
+import { clp, ruta } from '../lib/formato';
+import { envios, pagos, tienda } from '../config';
+import type { Categoria } from '../lib/tipos';
+
+const masVendidos = destacados(8);
+const estrella = masVendidos[0] ?? productos[0];
+
+const categorias: Categoria[] = ['originales', 'decants', 'inspirados', 'nicho'];
+const resumenCategorias = categorias.map((c) => {
+  const items = porCategoria(c);
+  const precios = items.flatMap((p) => p.variantes.map((v) => v.precio));
+  return {
+    clave: c,
+    ...etiquetasCategoria[c],
+    cantidad: items.length,
+    desde: precios.length ? Math.min(...precios) : 0,
+    muestra: items[0],
+  };
+});
+
+const garantias = [
+  { titulo: 'Originales verificados', texto: 'Frascos sellados, con caja y celofán de fábrica. Si no es original, te devolvemos el dinero.' },
+  { titulo: 'Prueba antes de invertir', texto: 'Decants desde 5 ml para conocer la fragancia en tu piel sin pagar el frasco completo.' },
+  { titulo: 'Envíos a todo Chile', texto: `${envios.couriers.join(', ')}. ${envios.plazo}.` },
+  { titulo: 'Asesoría real por WhatsApp', texto: 'Te preguntamos qué buscas y te recomendamos. Sin bots ni respuestas automáticas.' },
+];
+
+const testimonios = [
+  { texto: 'Pedí un decant de Layton para probar y terminé comprando el frasco. La atención por WhatsApp fue rapidísima y me explicaron todo.', autora: 'Camila R.', detalle: 'Ñuñoa' },
+  { texto: 'Compré Khamrah y llegó en dos días a Concepción, sellado y con su caja. Es idéntico al que probé en una tienda, pero a mitad de precio.', autora: 'Diego M.', detalle: 'Concepción' },
+  { texto: 'Las alternativas son increíbles para el día a día. Uso el Nº 21 para la oficina y nadie nota que no es el original.', autora: 'Francisca T.', detalle: 'Providencia' },
+];
+---
+<Base>
+  <!-- ░░ Portada ░░ -->
+  <section class="relative overflow-hidden border-b border-borde">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_72%_32%,rgba(201,162,39,0.16),transparent_58%)]"></div>
+
+    <div class="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24 lg:px-8">
+      <div>
+        <p class="versalita text-champan">{tienda.ciudad} · Pedidos por WhatsApp</p>
+        <h1 class="titulo-serif mt-4 text-5xl leading-[1.05] text-crema sm:text-6xl lg:text-7xl">
+          El perfume que<br />
+          <span class="text-champan italic">te recuerdan</span>
+        </h1>
+        <p class="mt-6 max-w-md text-base leading-relaxed text-apagado">
+          Originales sellados, decants desde 5 ml, nicho árabe y alternativas de autor.
+          Te asesoramos por WhatsApp y despachamos a todo Chile.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={ruta('catalogo')} class="rounded-full bg-oro px-7 py-3.5 text-sm font-semibold text-noche transition hover:bg-champan">
+            Ver el catálogo
+          </a>
+          <a href={ruta('quiz')} class="rounded-full border border-oro/50 px-7 py-3.5 text-sm font-semibold text-champan transition hover:bg-oro hover:text-noche">
+            Encuentra tu perfume
+          </a>
+        </div>
+
+        <dl class="mt-10 grid max-w-md grid-cols-3 gap-4 border-t border-borde pt-6">
+          <div>
+            <dt class="text-2xl font-semibold text-crema">{productos.length}</dt>
+            <dd class="text-xs text-apagado">fragancias</dd>
+          </div>
+          <div>
+            <dt class="text-2xl font-semibold text-crema">5 ml</dt>
+            <dd class="text-xs text-apagado">desde, en decants</dd>
+          </div>
+          <div>
+            <dt class="text-2xl font-semibold text-crema">24 h</dt>
+            <dd class="text-xs text-apagado">despacho en Santiago</dd>
+          </div>
+        </dl>
+      </div>
+
+      {estrella && (
+        <div class="relative mx-auto w-full max-w-sm">
+          <div class="absolute inset-0 rounded-full bg-oro/10 blur-3xl"></div>
+          <a href={ruta(`perfume/${estrella.slug}`)} class="relative block">
+            <FotoProducto producto={estrella} grande />
+            <div class="mt-4 text-center">
+              <p class="versalita text-apagado">{estrella.casa}</p>
+              <p class="titulo-serif text-2xl text-crema">{estrella.nombre}</p>
+              <p class="mt-1 text-sm text-champan">desde {clp(Math.min(...estrella.variantes.map((v) => v.precio)))}</p>
+            </div>
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- ░░ Categorías ░░ -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="aparece">
+      <h2 class="titulo-serif text-3xl text-crema sm:text-4xl">Cuatro formas de comprar</h2>
+      <p class="mt-2 max-w-xl text-sm text-apagado">
+        Desde el frasco original sellado hasta la alternativa de uso diario. Elige según tu presupuesto y lo que busques.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {resumenCategorias.map((c) => (
+        <a
+          href={ruta(`catalogo?categoria=${c.clave}`)}
+          class="aparece group flex flex-col rounded-2xl border border-borde bg-carbon p-6 transition-all hover:border-oro/45 hover:bg-humo"
+        >
+          {c.muestra && (
+            <div class="mx-auto h-36 w-36 transition-transform duration-500 group-hover:scale-110">
+              <FotoProducto producto={c.muestra} />
+            </div>
+          )}
+          <h3 class="titulo-serif mt-4 text-2xl text-crema group-hover:text-champan">{c.titulo}</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-apagado">{c.bajada}</p>
+          <p class="mt-4 border-t border-borde pt-3 text-xs text-champan">
+            {c.cantidad} {c.cantidad === 1 ? 'fragancia' : 'fragancias'} · desde {clp(c.desde)}
+          </p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ░░ Más vendidos ░░ -->
+  <section class="border-y border-borde bg-carbon/40 py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="aparece flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h2 class="titulo-serif text-3xl text-crema sm:text-4xl">Los más pedidos</h2>
+          <p class="mt-2 text-sm text-apagado">Lo que más sale por WhatsApp este mes.</p>
+        </div>
+        <a href={ruta('catalogo')} class="text-sm text-champan underline-offset-4 hover:underline">Ver todo el catálogo →</a>
+      </div>
+
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {masVendidos.map((p) => (
+          <div class="aparece"><TarjetaProducto producto={p} /></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ Quiz ░░ -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="aparece relative overflow-hidden rounded-3xl border border-oro/25 bg-gradient-to-br from-humo via-carbon to-noche p-8 sm:p-12">
+      <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-oro/10 blur-3xl"></div>
+      <div class="relative max-w-2xl">
+        <p class="versalita text-champan">No sabes cuál elegir</p>
+        <h2 class="titulo-serif mt-3 text-3xl text-crema sm:text-4xl">
+          Responde cuatro preguntas y te decimos qué te va
+        </h2>
+        <p class="mt-4 text-sm leading-relaxed text-apagado">
+          Ocasión, intensidad, familia olfativa y presupuesto. En menos de un minuto te mostramos
+          tres fragancias de nuestro catálogo que calzan con lo que buscas.
+        </p>
+        <a href={ruta('quiz')} class="mt-7 inline-block rounded-full bg-oro px-7 py-3.5 text-sm font-semibold text-noche transition hover:bg-champan">
+          Empezar el test
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ Garantías ░░ -->
+  <section class="border-y border-borde bg-carbon/40 py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="aparece titulo-serif text-3xl text-crema sm:text-4xl">Por qué comprarnos</h2>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {garantias.map((g, i) => (
+          <div class="aparece border-t border-oro/35 pt-5">
+            <span class="versalita text-oro">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="mt-2 text-base font-semibold text-crema">{g.titulo}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-apagado">{g.texto}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="aparece mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-borde pt-6 text-xs text-apagado">
+        <span class="versalita text-champan">Formas de pago</span>
+        {pagos.map((p) => <span>{p}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ Testimonios ░░ -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <h2 class="aparece titulo-serif text-3xl text-crema sm:text-4xl">Lo que dicen nuestros clientes</h2>
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
+      {testimonios.map((t) => (
+        <figure class="aparece flex flex-col rounded-2xl border border-borde bg-carbon p-6">
+          <div class="flex gap-0.5 text-oro" aria-label="5 de 5 estrellas">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2l-5-4.9 6.9-1L12 2Z" />
+              </svg>
+            ))}
+          </div>
+          <blockquote class="mt-4 flex-1 text-sm leading-relaxed text-crema/90">“{t.texto}”</blockquote>
+          <figcaption class="mt-5 border-t border-borde pt-4 text-xs text-apagado">
+            <span class="text-crema">{t.autora}</span> · {t.detalle}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+    <p class="aparece mt-6 text-center text-[11px] text-apagado">
+      Testimonios de ejemplo — reemplázalos por reseñas reales de tus clientes.
+    </p>
+  </section>
+</Base>

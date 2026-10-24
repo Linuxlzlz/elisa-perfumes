@@ -1,0 +1,63 @@
+---
+import { ruta } from '../lib/formato';
+import { envios, pagos, tienda } from '../config';
+const anio = new Date().getFullYear();
+---
+<footer class="mt-24 border-t border-borde bg-carbon">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:px-8">
+    <div class="md:col-span-1">
+      <p class="titulo-serif text-2xl text-crema">Elisa <span class="text-champan">Perfumes</span></p>
+      <p class="mt-3 text-sm leading-relaxed text-apagado">{tienda.claim}</p>
+      <p class="mt-4 text-sm text-apagado">{tienda.ciudad}</p>
+      <p class="text-sm text-apagado">{tienda.horario}</p>
+    </div>
+
+    <div>
+      <h3 class="versalita text-champan">Catálogo</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a href={ruta('catalogo?categoria=originales')} class="text-apagado hover:text-crema">Originales</a></li>
+        <li><a href={ruta('catalogo?categoria=decants')} class="text-apagado hover:text-crema">Decants</a></li>
+        <li><a href={ruta('catalogo?categoria=inspirados')} class="text-apagado hover:text-crema">Alternativas</a></li>
+        <li><a href={ruta('catalogo?categoria=nicho')} class="text-apagado hover:text-crema">Nicho y árabes</a></li>
+        <li><a href={ruta('quiz')} class="text-apagado hover:text-crema">Encuentra tu perfume</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="versalita text-champan">Compra</h3>
+      <ul class="mt-4 space-y-2 text-sm text-apagado">
+        <li><a href={ruta('envios')} class="hover:text-crema">Envíos y plazos</a></li>
+        <li>{envios.plazo}</li>
+        <li>Envío gratis sobre $60.000</li>
+        <li class="pt-2 text-xs">{pagos.join(' · ')}</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="versalita text-champan">Contacto</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li>
+          <a href={`https://wa.me/${tienda.whatsapp}`} target="_blank" rel="noopener" class="text-apagado hover:text-crema">
+            WhatsApp +{tienda.whatsapp}
+          </a>
+        </li>
+        <li>
+          <a href={`https://instagram.com/${tienda.instagram}`} target="_blank" rel="noopener" class="text-apagado hover:text-crema">
+            @{tienda.instagram}
+          </a>
+        </li>
+        <li><a href={`mailto:${tienda.email}`} class="text-apagado hover:text-crema">{tienda.email}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-borde px-4 py-6 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 text-xs text-apagado md:flex-row md:items-center md:justify-between">
+      <p>© {anio} {tienda.nombre}. Todos los derechos reservados.</p>
+      <p>
+        Las marcas mencionadas pertenecen a sus respectivos titulares. Nuestra línea de
+        alternativas es de elaboración propia y no está asociada a esas casas.
+      </p>
+    </div>
+  </div>
+</footer>

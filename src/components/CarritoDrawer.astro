@@ -1,0 +1,448 @@
+---
+import { comunasSantiago, envios, pagos } from '../config';
+import { ruta } from '../lib/formato';
+---
+<!-- Fondo oscuro -->
+<div
+  data-carrito-fondo
+  class="fixed inset-0 z-50 hidden bg-noche/75 backdrop-blur-sm transition-opacity"
+  aria-hidden="true"
+></div>
+
+<!-- Panel lateral -->
+<aside
+  data-carrito-panel
+  class="fixed inset-y-0 right-0 z-50 flex w-full max-w-md translate-x-full flex-col border-l border-borde bg-carbon shadow-2xl transition-transform duration-300 ease-out"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="titulo-carrito"
+  aria-hidden="true"
+>
+  <div class="flex items-center justify-between border-b border-borde px-5 py-4">
+    <h2 id="titulo-carrito" class="titulo-serif text-2xl text-crema">Tu pedido</h2>
+    <button type="button" data-cerrar-carrito class="rounded-full p-2 text-apagado transition hover:bg-humo hover:text-crema" aria-label="Cerrar carrito">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="flex-1 overflow-y-auto">
+    <!-- Carrito vacío -->
+    <div data-carrito-vacio class="flex flex-col items-center justify-center gap-4 px-6 py-16 text-center">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" class="text-borde" aria-hidden="true">
+        <path d="M6 7h12l-1 12H7L6 7Z" /><path d="M9 7a3 3 0 0 1 6 0" />
+      </svg>
+      <p class="text-sm text-apagado">Todavía no agregaste nada.</p>
+      <a href={ruta('catalogo')} class="rounded-full bg-oro px-5 py-2.5 text-sm font-semibold text-noche transition hover:bg-champan">Ver el catálogo</a>
+    </div>
+
+    <!-- Lista de productos -->
+    <ul data-carrito-items class="hidden divide-y divide-borde"></ul>
+
+    <!-- Datos de entrega -->
+    <form data-carrito-form class="hidden space-y-4 border-t border-borde px-5 py-5">
+      <p class="versalita text-champan">Datos para el pedido</p>
+
+      <div>
+        <label for="c-nombre" class="mb-1.5 block text-xs text-apagado">Nombre y apellido *</label>
+        <input
+          id="c-nombre" name="nombre" type="text" required autocomplete="name"
+          placeholder="Ej: Camila Rojas"
+          class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
+        />
+      </div>
+
+      <fieldset>
+        <legend class="mb-1.5 text-xs text-apagado">¿Cómo lo recibes? *</legend>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm has-[:checked]:border-oro has-[:checked]:text-champan">
+            <input type="radio" name="entrega" value="despacho" checked class="accent-oro" />
+            Despacho
+          </label>
+          <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm has-[:checked]:border-oro has-[:checked]:text-champan">
+            <input type="radio" name="entrega" value="retiro" class="accent-oro" />
+            Retiro
+          </label>
+        </div>
+        <p data-texto-retiro class="mt-2 hidden text-xs text-apagado">{envios.retiroTexto}</p>
+      </fieldset>
+
+      <div data-campo-comuna>
+        <label for="c-comuna" class="mb-1.5 block text-xs text-apagado">Comuna *</label>
+        <select
+          id="c-comuna" name="comuna"
+          class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none"
+        >
+          <option value="">Selecciona tu comuna…</option>
+          <optgroup label="Región Metropolitana">
+            {comunasSantiago.map((c) => <option value={c}>{c}</option>)}
+          </optgroup>
+          <optgroup label="Otras regiones">
+            <option value="Otra región">Otra región (coordinamos por WhatsApp)</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div>
+        <label for="c-pago" class="mb-1.5 block text-xs text-apagado">Forma de pago</label>
+        <select
+          id="c-pago" name="pago"
+          class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none"
+        >
+          {pagos.map((p) => <option value={p}>{p}</option>)}
+        </select>
+      </div>
+
+      <div>
+        <label for="c-nota" class="mb-1.5 block text-xs text-apagado">Comentario (opcional)</label>
+        <textarea
+          id="c-nota" name="nota" rows="2"
+          placeholder="Ej: es un regalo, incluir bolsa"
+          class="w-full resize-none rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
+        ></textarea>
+      </div>
+    </form>
+  </div>
+
+  <!-- Resumen y acciones -->
+  <div data-carrito-pie class="hidden border-t border-borde bg-humo px-5 py-4">
+    <dl class="space-y-1.5 text-sm">
+      <div class="flex justify-between text-apagado">
+        <dt>Subtotal</dt><dd data-subtotal>$0</dd>
+      </div>
+      <div class="flex justify-between text-apagado">
+        <dt>Envío</dt><dd data-envio>—</dd>
+      </div>
+      <div class="flex justify-between border-t border-borde pt-2 text-base font-semibold text-crema">
+        <dt>Total</dt><dd data-total>$0</dd>
+      </div>
+    </dl>
+
+    <p data-aviso-envio class="mt-2 hidden text-xs text-exito"></p>
+    <p data-error-form class="mt-2 hidden text-xs text-alerta" role="alert"></p>
+
+    <a
+      data-wsp-boton
+      href="#"
+      target="_blank"
+      rel="noopener"
+      class="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 text-sm font-bold text-[#07261a] transition hover:brightness-110"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5 0-1.8-.2-3.6-1.3-2-1.2-3.3-3.3-3.4-3.5-.1-.2-.8-1.3-.8-2.4s.6-1.7.8-1.9c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.7 1.7c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.1.3.6 1.1 1.3 1.7.9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.7-.8c.2-.2.4-.1.6 0l1.6.8c.2.1.4.2.4.4 0 .2 0 .8-.2 1.2Z" />
+      </svg>
+      Enviar pedido por WhatsApp
+    </a>
+
+    <div class="mt-2 flex gap-2">
+      <button type="button" data-copiar-pedido class="flex-1 rounded-full border border-borde px-4 py-2.5 text-xs text-apagado transition hover:border-oro/50 hover:text-champan">
+        Copiar pedido
+      </button>
+      <button type="button" data-vaciar-carrito class="rounded-full border border-borde px-4 py-2.5 text-xs text-apagado transition hover:border-alerta hover:text-alerta">
+        Vaciar
+      </button>
+    </div>
+
+    <p class="mt-3 text-center text-[11px] leading-relaxed text-apagado">
+      Al enviar se abre WhatsApp con el pedido escrito. Confirmamos stock y total final por el chat.
+    </p>
+  </div>
+</aside>
+
+<!-- Aviso flotante al agregar -->
+<div
+  data-aviso
+  class="pointer-events-none fixed bottom-24 left-1/2 z-[60] -translate-x-1/2 translate-y-3 rounded-full bg-oro px-5 py-2.5 text-sm font-semibold text-noche opacity-0 shadow-xl transition-all duration-300 md:bottom-8"
+  role="status"
+  aria-live="polite"
+></div>
+
+<script>
+  import { agregar, alCambiar, fijarCantidad, leer, quitar, total, unidades, vaciar } from '../lib/carrito';
+  import { clp } from '../lib/formato';
+  import { codigoPedido, construirMensaje, costoEnvio, enlaceWhatsApp } from '../lib/whatsapp';
+  import { cargarStock, estadoDe, precioDe } from '../lib/stock';
+  import { comunasSantiago, envios } from '../config';
+  import type { MapaStock } from '../lib/tipos';
+
+  const q = <T extends Element>(sel: string) => document.querySelector<T>(sel);
+
+  const fondo = q<HTMLElement>('[data-carrito-fondo]')!;
+  const panel = q<HTMLElement>('[data-carrito-panel]')!;
+  const lista = q<HTMLUListElement>('[data-carrito-items]')!;
+  const vacio = q<HTMLElement>('[data-carrito-vacio]')!;
+  const form = q<HTMLFormElement>('[data-carrito-form]')!;
+  const pie = q<HTMLElement>('[data-carrito-pie]')!;
+  const elSubtotal = q<HTMLElement>('[data-subtotal]')!;
+  const elEnvio = q<HTMLElement>('[data-envio]')!;
+  const elTotal = q<HTMLElement>('[data-total]')!;
+  const elAvisoEnvio = q<HTMLElement>('[data-aviso-envio]')!;
+  const elError = q<HTMLElement>('[data-error-form]')!;
+  const wsp = q<HTMLAnchorElement>('[data-wsp-boton]')!;
+  const campoComuna = q<HTMLElement>('[data-campo-comuna]')!;
+  const textoRetiro = q<HTMLElement>('[data-texto-retiro]')!;
+  const aviso = q<HTMLElement>('[data-aviso]')!;
+
+  let codigo = codigoPedido();
+  let stock: MapaStock = {};
+
+  /* ── Apertura y cierre ─────────────────────────────────────── */
+  function abrir() {
+    fondo.classList.remove('hidden');
+    panel.classList.remove('translate-x-full');
+    panel.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function cerrar() {
+    fondo.classList.add('hidden');
+    panel.classList.add('translate-x-full');
+    panel.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', (e) => {
+    const t = e.target as HTMLElement;
+    if (t.closest('[data-abrir-carrito]')) { abrir(); }
+    if (t.closest('[data-cerrar-carrito]') || t === fondo) { cerrar(); }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !fondo.classList.contains('hidden')) cerrar();
+  });
+
+  /* ── Aviso flotante ────────────────────────────────────────── */
+  let temporizador: number | undefined;
+  function mostrarAviso(texto: string) {
+    aviso.textContent = texto;
+    aviso.classList.add('opacity-100', 'translate-y-0');
+    aviso.classList.remove('opacity-0', 'translate-y-3');
+    clearTimeout(temporizador);
+    temporizador = window.setTimeout(() => {
+      aviso.classList.remove('opacity-100', 'translate-y-0');
+      aviso.classList.add('opacity-0', 'translate-y-3');
+    }, 2200);
+  }
+
+  /* ── Lectura del formulario ────────────────────────────────── */
+  function leerForm() {
+    const d = new FormData(form);
+    return {
+      nombre: String(d.get('nombre') ?? ''),
+      entrega: (String(d.get('entrega') ?? 'despacho') as 'retiro' | 'despacho'),
+      comuna: String(d.get('comuna') ?? ''),
+      pago: String(d.get('pago') ?? ''),
+      nota: String(d.get('nota') ?? ''),
+    };
+  }
+
+  function mensajeActual() {
+    return construirMensaje(leer(), leerForm(), codigo, comunasSantiago);
+  }
+
+  /* ── Pintado de la lista ───────────────────────────────────── */
+  function fila(i: ReturnType<typeof leer>[number]) {
+    return `
+      <li class="flex gap-3 px-5 py-4">
+        <div class="min-w-0 flex-1">
+          <p class="text-[11px] uppercase tracking-wider text-apagado">${i.casa}</p>
+          <p class="truncate text-sm font-medium text-crema">${i.nombre}</p>
+          <p class="mt-0.5 text-xs text-apagado">${i.tamano} · ${clp(i.precio)}</p>
+          <div class="mt-2 flex items-center gap-2">
+            <div class="flex items-center rounded-full border border-borde">
+              <button type="button" data-delta="-1" data-sku="${i.sku}" class="px-2.5 py-1 text-apagado hover:text-crema" aria-label="Quitar uno">−</button>
+              <span class="min-w-7 text-center text-sm text-crema">${i.cantidad}</span>
+              <button type="button" data-delta="1" data-sku="${i.sku}" class="px-2.5 py-1 text-apagado hover:text-crema" aria-label="Agregar uno">+</button>
+            </div>
+            <button type="button" data-quitar="${i.sku}" class="text-xs text-apagado underline-offset-2 hover:text-alerta hover:underline">Quitar</button>
+          </div>
+        </div>
+        <p class="shrink-0 text-sm font-semibold text-crema">${clp(i.precio * i.cantidad)}</p>
+      </li>`;
+  }
+
+  function actualizarTotales() {
+    const items = leer();
+    const sub = total(items);
+    const datos = leerForm();
+    const envio = costoEnvio(sub, datos, comunasSantiago);
+
+    elSubtotal.textContent = clp(sub);
+    elEnvio.textContent =
+      datos.entrega === 'retiro' ? 'Retiro en persona'
+      : envio === null ? 'Por confirmar'
+      : envio === 0 ? 'Gratis'
+      : clp(envio);
+    elTotal.textContent = clp(sub + (envio ?? 0));
+
+    const falta = envios.umbralEnvioGratis - sub;
+    if (datos.entrega === 'despacho' && falta > 0 && sub > 0) {
+      elAvisoEnvio.textContent = `Te faltan ${clp(falta)} para envío gratis.`;
+      elAvisoEnvio.classList.remove('hidden');
+    } else {
+      elAvisoEnvio.classList.add('hidden');
+    }
+
+    wsp.href = enlaceWhatsApp(mensajeActual());
+  }
+
+  function render() {
+    const items = leer();
+    const n = unidades(items);
+
+    document.querySelectorAll<HTMLElement>('[data-contador-carrito]').forEach((c) => {
+      c.textContent = String(n);
+      c.classList.toggle('hidden', n === 0);
+    });
+
+    vacio.classList.toggle('hidden', n > 0);
+    lista.classList.toggle('hidden', n === 0);
+    form.classList.toggle('hidden', n === 0);
+    pie.classList.toggle('hidden', n === 0);
+
+    lista.innerHTML = items.map(fila).join('');
+    if (n > 0) actualizarTotales();
+  }
+
+  /* ── Interacciones ─────────────────────────────────────────── */
+  lista.addEventListener('click', (e) => {
+    const t = (e.target as HTMLElement).closest<HTMLElement>('[data-delta],[data-quitar]');
+    if (!t) return;
+    if (t.dataset.quitar) { quitar(t.dataset.quitar); return; }
+    const sku = t.dataset.sku!;
+    const actual = leer().find((i) => i.sku === sku)?.cantidad ?? 0;
+    fijarCantidad(sku, actual + Number(t.dataset.delta));
+  });
+
+  form.addEventListener('input', actualizarTotales);
+  form.addEventListener('change', () => {
+    const esRetiro = leerForm().entrega === 'retiro';
+    campoComuna.classList.toggle('hidden', esRetiro);
+    textoRetiro.classList.toggle('hidden', !esRetiro);
+    actualizarTotales();
+  });
+  form.addEventListener('submit', (e) => e.preventDefault());
+
+  function error(texto: string) {
+    elError.textContent = texto;
+    elError.classList.remove('hidden');
+    setTimeout(() => elError.classList.add('hidden'), 4000);
+  }
+
+  wsp.addEventListener('click', (e) => {
+    const datos = leerForm();
+    if (!datos.nombre.trim()) {
+      e.preventDefault();
+      error('Escribe tu nombre para que sepamos a quién enviar el pedido.');
+      form.querySelector<HTMLInputElement>('[name="nombre"]')?.focus();
+      return;
+    }
+    if (datos.entrega === 'despacho' && !datos.comuna) {
+      e.preventDefault();
+      error('Selecciona tu comuna para calcular el envío.');
+      form.querySelector<HTMLSelectElement>('[name="comuna"]')?.focus();
+      return;
+    }
+    // Se reconstruye el enlace justo antes de navegar, por si algo quedó sin sincronizar.
+    wsp.href = enlaceWhatsApp(mensajeActual());
+  });
+
+  q<HTMLButtonElement>('[data-copiar-pedido]')!.addEventListener('click', async () => {
+    const texto = mensajeActual();
+    try {
+      await navigator.clipboard.writeText(texto);
+      mostrarAviso('Pedido copiado');
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = texto;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); mostrarAviso('Pedido copiado'); }
+      catch { error('No se pudo copiar. Selecciona el texto manualmente.'); }
+      ta.remove();
+    }
+  });
+
+  q<HTMLButtonElement>('[data-vaciar-carrito]')!.addEventListener('click', () => {
+    if (!confirm('¿Vaciar el carrito?')) return;
+    vaciar();
+    codigo = codigoPedido();
+    mostrarAviso('Carrito vacío');
+  });
+
+  /* ── Botones "Agregar" de todo el sitio ────────────────────── */
+  document.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest<HTMLElement>('[data-agregar]');
+    if (!b || (b as HTMLButtonElement).disabled) return;
+
+    const sku = b.dataset.sku!;
+    if (estadoDe(stock, sku) === 'agotado') {
+      error('Ese tamaño está agotado por ahora.');
+      return;
+    }
+
+    agregar({
+      sku,
+      slug: b.dataset.slug!,
+      nombre: b.dataset.nombre!,
+      casa: b.dataset.casa!,
+      tamano: b.dataset.tamano!,
+      precio: precioDe(stock, sku, Number(b.dataset.precio)),
+    });
+    mostrarAviso(`${b.dataset.nombre} agregado`);
+  });
+
+  /* ── Stock en vivo desde public/stock.json ─────────────────── */
+  function aplicarStock(mapa: MapaStock) {
+    stock = mapa;
+
+    document.querySelectorAll<HTMLElement>('[data-agregar]').forEach((b) => {
+      const estado = estadoDe(mapa, b.dataset.sku!);
+      const boton = b as HTMLButtonElement;
+      if (estado === 'agotado') {
+        boton.disabled = true;
+        boton.textContent = 'Agotado';
+      } else if (estado === 'encargo') {
+        boton.textContent = 'Por encargo';
+      }
+      const precio = precioDe(mapa, b.dataset.sku!, Number(b.dataset.precio));
+      b.dataset.precio = String(precio);
+    });
+
+    // Cartel en tarjetas cuyas variantes están todas agotadas
+    document.querySelectorAll<HTMLElement>('[data-skus]').forEach((tarjeta) => {
+      const skus = (tarjeta.dataset.skus ?? '').split(',').filter(Boolean);
+      if (!skus.length) return;
+      const todoAgotado = skus.every((s) => estadoDe(mapa, s) === 'agotado');
+      const cartel = tarjeta.querySelector<HTMLElement>('[data-agotado-cartel]');
+      if (cartel) cartel.dataset.visible = String(todoAgotado);
+
+      const etiquetaPrecio = tarjeta.querySelector<HTMLElement>('[data-precio-desde]');
+      if (etiquetaPrecio) {
+        const precios = skus
+          .filter((s) => estadoDe(mapa, s) !== 'agotado')
+          .map((s) => mapa[s]?.precio)
+          .filter((x): x is number => typeof x === 'number' && x > 0);
+        if (precios.length) etiquetaPrecio.textContent = clp(Math.min(...precios));
+      }
+    });
+
+    // Sincroniza precios del carrito si cambiaron en el panel de administración
+    let cambio = false;
+    for (const i of leer()) {
+      const nuevo = precioDe(mapa, i.sku, i.precio);
+      if (nuevo !== i.precio) { cambio = true; break; }
+    }
+    if (cambio) render();
+  }
+
+  /* ── Arranque ──────────────────────────────────────────────── */
+  alCambiar(render);
+  render();
+  cargarStock().then(aplicarStock);
+
+  // Reaparición de la pestaña: refresca stock
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') cargarStock().then(aplicarStock);
+  });
+</script>

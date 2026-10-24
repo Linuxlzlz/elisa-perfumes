@@ -1,0 +1,288 @@
+---
+import Base from '../../layouts/Base.astro';
+import FotoProducto from '../../components/FotoProducto.astro';
+import PiramideOlfativa from '../../components/PiramideOlfativa.astro';
+import Medidor from '../../components/Medidor.astro';
+import TarjetaProducto from '../../components/TarjetaProducto.astro';
+import { etiquetasCategoria, etiquetasGenero, productos, relacionados } from '../../lib/catalogo';
+import { clp, ruta } from '../../lib/formato';
+import { envios, tienda } from '../../config';
+
+export function getStaticPaths() {
+  return productos.map((p) => ({ params: { slug: p.slug }, props: { producto: p } }));
+}
+
+const { producto: p } = Astro.props;
+const similares = relacionados(p, 4);
+const masBarata = p.variantes.reduce((a, b) => (a.precio <= b.precio ? a : b));
+
+const urlCanonica = new URL(ruta(`perfume/${p.slug}`), Astro.site ?? 'https://example.com').href;
+
+// JSON-LD: permite que la ficha aparezca en Google con precio y disponibilidad.
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: `${p.nombre} ${p.concentracion}`,
+  brand: { '@type': 'Brand', name: p.casa },
+  category: etiquetasCategoria[p.categoria].titulo,
+  description: p.descripcion,
+  url: urlCanonica,
+  offers: p.variantes.map((v) => ({
+    '@type': 'Offer',
+    name: `${p.nombre} ${v.tamano}`,
+    sku: v.sku,
+    price: v.precio,
+    priceCurrency: 'CLP',
+    availability: 'https://schema.org/InStock',
+    url: urlCanonica,
+    seller: { '@type': 'Organization', name: tienda.nombre },
+  })),
+});
+
+const consultaWsp = encodeURIComponent(
+  `Hola 👋 quiero consultar por ${p.nombre} de ${p.casa} (${masBarata.tamano}).`,
+);
+---
+<Base
+  titulo={`${p.nombre} — ${p.casa}`}
+  descripcion={`${p.nombre} de ${p.casa}, ${p.familia.toLowerCase()}. ${p.descripcion.slice(0, 120)}`}
+  datosEstructurados={jsonLd}
+>
+  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <nav aria-label="Ruta de navegación" class="text-xs text-apagado">
+      <a href={ruta('/')} class="hover:text-champan">Inicio</a>
+      <span class="mx-1.5">/</span>
+      <a href={ruta(`catalogo?categoria=${p.categoria}`)} class="hover:text-champan">
+        {etiquetasCategoria[p.categoria].titulo}
+      </a>
+      <span class="mx-1.5">/</span>
+      <span class="text-crema/80">{p.nombre}</span>
+    </nav>
+
+    <div class="mt-6 grid gap-10 lg:grid-cols-2">
+      <!-- ░░ Imagen ░░ -->
+      <div class="relative">
+        <div class="pointer-events-none absolute inset-0 rounded-3xl bg-oro/10 blur-3xl"></div>
+        <div class="relative aspect-square overflow-hidden rounded-3xl border border-borde bg-carbon">
+          <FotoProducto producto={p} grande />
+        </div>
+        {!p.img && (
+          <p class="mt-2 text-center text-[11px] text-apagado">
+            Ilustración de referencia — reemplazar por la foto real del producto.
+          </p>
+        )}
+      </div>
+
+      <!-- ░░ Información y compra ░░ -->
+      <div>
+        <p class="versalita text-champan">{p.casa}</p>
+        <h1 class="titulo-serif mt-2 text-4xl leading-tight text-crema sm:text-5xl">{p.nombre}</h1>
+
+        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
+          <span class="rounded-full border border-oro/35 px-2.5 py-1 text-champan">
+            {etiquetasCategoria[p.categoria].titulo}
+          </span>
+          <span class="rounded-full border border-borde px-2.5 py-1 text-apagado">{p.concentracion}</span>
+          <span class="rounded-full border border-borde px-2.5 py-1 text-apagado">{etiquetasGenero[p.genero]}</span>
+          <span class="rounded-full border border-borde px-2.5 py-1 text-apagado">{p.familia}</span>
+        </div>
+
+        {p.perfilSimilarA && (
+          <p class="mt-4 rounded-lg border border-borde bg-humo px-4 py-3 text-xs leading-relaxed text-apagado">
+            Perfil olfativo similar a <span class="text-crema">{p.perfilSimilarA}</span>.
+            Elaboración propia de {tienda.nombre}; no es ese producto ni está asociado a su casa.
+          </p>
+        )}
+
+        <p class="mt-5 text-base leading-relaxed text-crema/90">{p.descripcion}</p>
+
+        <!-- Selector de tamaño -->
+        <div class="mt-7">
+          <p class="versalita mb-2.5 text-apagado">Elige el tamaño</p>
+          <div class="flex flex-wrap gap-2" role="radiogroup" aria-label="Tamaño">
+            {p.variantes.map((v, i) => (
+              <button
+                type="button"
+                data-variante
+                data-sku={v.sku}
+                data-tamano={v.tamano}
+                data-precio={v.precio}
+                aria-checked={i === 0 ? 'true' : 'false'}
+                role="radio"
+                class:list={[
+                  'rounded-xl border px-4 py-3 text-left transition',
+                  i === 0 ? 'border-oro bg-oro/10' : 'border-borde bg-humo hover:border-oro/40',
+                ]}
+              >
+                <span class="block text-sm font-semibold text-crema">{v.tamano}</span>
+                <span class="block text-xs text-champan">{clp(v.precio)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Precio y acciones -->
+        <div class="mt-7 rounded-2xl border border-borde bg-carbon p-5">
+          <div class="flex items-end justify-between gap-4">
+            <div>
+              <span class="block text-xs text-apagado">Precio</span>
+              <span data-precio-activo class="text-3xl font-semibold text-crema">{clp(masBarata.precio)}</span>
+              <span data-tamano-activo class="ml-1 text-sm text-apagado">/ {masBarata.tamano}</span>
+            </div>
+            <span data-estado-stock class="rounded-full border border-exito/40 px-3 py-1 text-xs text-exito">
+              Disponible
+            </span>
+          </div>
+
+          <button
+            type="button"
+            data-agregar
+            data-sku={masBarata.sku}
+            data-slug={p.slug}
+            data-nombre={p.nombre}
+            data-casa={p.casa}
+            data-tamano={masBarata.tamano}
+            data-precio={masBarata.precio}
+            class="mt-5 w-full rounded-full bg-oro px-6 py-3.5 text-sm font-bold text-noche transition hover:bg-champan disabled:cursor-not-allowed disabled:bg-borde disabled:text-apagado"
+          >Agregar al carrito</button>
+
+          <div class="mt-2 flex gap-2">
+            <button type="button" data-abrir-carrito class="flex-1 rounded-full border border-borde px-4 py-2.5 text-xs text-apagado transition hover:border-oro/50 hover:text-champan">
+              Ver mi pedido
+            </button>
+            <a
+              href={`https://wa.me/${tienda.whatsapp}?text=${consultaWsp}`}
+              target="_blank" rel="noopener"
+              class="flex-1 rounded-full border border-borde px-4 py-2.5 text-center text-xs text-apagado transition hover:border-oro/50 hover:text-champan"
+            >Consultar por WhatsApp</a>
+          </div>
+
+          <p class="mt-4 border-t border-borde pt-3 text-[11px] leading-relaxed text-apagado">
+            {envios.plazo}. Envío gratis sobre {clp(envios.umbralEnvioGratis)}.
+            {' '}{envios.retiroTexto}.
+          </p>
+        </div>
+
+        <!-- Rendimiento -->
+        <div class="mt-7 space-y-2.5">
+          <Medidor etiqueta="Proyección" valor={p.proyeccion} />
+          <Medidor etiqueta="Duración" valor={p.duracion} />
+        </div>
+
+        <dl class="mt-7 grid grid-cols-2 gap-4 border-t border-borde pt-5 text-sm">
+          <div>
+            <dt class="text-xs text-apagado">Mejor en</dt>
+            <dd class="mt-1 text-crema/90">{p.ocasiones.join(', ')}</dd>
+          </div>
+          <div>
+            <dt class="text-xs text-apagado">Estaciones</dt>
+            <dd class="mt-1 text-crema/90">{p.estaciones.join(', ')}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- ░░ Pirámide olfativa ░░ -->
+    <section class="mt-16 rounded-3xl border border-borde bg-carbon p-6 sm:p-10">
+      <h2 class="titulo-serif text-3xl text-crema">Pirámide olfativa</h2>
+      <p class="mt-2 max-w-2xl text-sm text-apagado">
+        Cómo evoluciona la fragancia desde la primera pulsación hasta las últimas horas.
+      </p>
+      <div class="mt-8 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+        <PiramideOlfativa notas={p.notas} />
+        <div class="rounded-2xl border border-borde bg-humo p-5">
+          <h3 class="versalita text-champan">Acordes dominantes</h3>
+          <ul class="mt-3 space-y-2">
+            {p.acordes.map((a) => (
+              <li class="flex items-center gap-2.5 text-sm text-crema/90">
+                <span class="h-1.5 w-1.5 rounded-full bg-oro"></span>{a}
+              </li>
+            ))}
+          </ul>
+          <p class="mt-5 border-t border-borde pt-4 text-xs leading-relaxed text-apagado">
+            Consejo: aplica sobre la piel hidratada en muñecas y cuello. No frotes —
+            rompe las moléculas y acorta la duración.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ Relacionados ░░ -->
+    {similares.length > 0 && (
+      <section class="mt-16">
+        <h2 class="titulo-serif text-3xl text-crema">También te puede gustar</h2>
+        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {similares.map((s) => <TarjetaProducto producto={s} />)}
+        </div>
+      </section>
+    )}
+  </div>
+
+  <script>
+    import { clp } from '../../lib/formato';
+    import { cargarStock, estadoDe, etiquetasEstado, precioDe } from '../../lib/stock';
+
+    const botones = [...document.querySelectorAll<HTMLButtonElement>('[data-variante]')];
+    const agregar = document.querySelector<HTMLButtonElement>('[data-agregar]')!;
+    const elPrecio = document.querySelector<HTMLElement>('[data-precio-activo]')!;
+    const elTamano = document.querySelector<HTMLElement>('[data-tamano-activo]')!;
+    const elEstado = document.querySelector<HTMLElement>('[data-estado-stock]')!;
+
+    let stock: Awaited<ReturnType<typeof cargarStock>> = {};
+
+    function seleccionar(b: HTMLButtonElement) {
+      for (const otro of botones) {
+        const activo = otro === b;
+        otro.setAttribute('aria-checked', String(activo));
+        otro.classList.toggle('border-oro', activo);
+        otro.classList.toggle('bg-oro/10', activo);
+        otro.classList.toggle('border-borde', !activo);
+        otro.classList.toggle('bg-humo', !activo);
+      }
+
+      const sku = b.dataset.sku!;
+      const precio = precioDe(stock, sku, Number(b.dataset.precio));
+      const estado = estadoDe(stock, sku);
+
+      elPrecio.textContent = clp(precio);
+      elTamano.textContent = `/ ${b.dataset.tamano}`;
+
+      agregar.dataset.sku = sku;
+      agregar.dataset.tamano = b.dataset.tamano!;
+      agregar.dataset.precio = String(precio);
+
+      const agotado = estado === 'agotado';
+      agregar.disabled = agotado;
+      agregar.textContent = agotado ? 'Agotado' : estado === 'encargo' ? 'Pedir por encargo' : 'Agregar al carrito';
+
+      elEstado.textContent = etiquetasEstado[estado];
+      elEstado.className =
+        'rounded-full border px-3 py-1 text-xs ' +
+        (estado === 'disponible'
+          ? 'border-exito/40 text-exito'
+          : estado === 'encargo'
+            ? 'border-oro/40 text-champan'
+            : 'border-alerta/40 text-alerta');
+    }
+
+    for (const b of botones) b.addEventListener('click', () => seleccionar(b));
+
+    cargarStock().then((mapa) => {
+      stock = mapa;
+      // Muestra los precios por tamaño ya corregidos
+      for (const b of botones) {
+        const sku = b.dataset.sku!;
+        const precio = precioDe(mapa, sku, Number(b.dataset.precio));
+        b.dataset.precio = String(precio);
+        const etiqueta = b.querySelector('span:last-child');
+        if (etiqueta) {
+          etiqueta.textContent =
+            estadoDe(mapa, sku) === 'agotado' ? 'Agotado' : clp(precio);
+        }
+      }
+      // Preselecciona el primer tamaño disponible
+      const primero = botones.find((b) => estadoDe(mapa, b.dataset.sku!) !== 'agotado') ?? botones[0];
+      if (primero) seleccionar(primero);
+    });
+  </script>
+</Base>

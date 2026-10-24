@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --color-noche: #0b0a09;
+  --color-carbon: #141210;
+  --color-humo: #1e1a17;
+  --color-borde: #2e2823;
+  --color-oro: #c9a227;
+  --color-champan: #e3c77b;
+  --color-crema: #f5f1ea;
+  --color-apagado: #a89f92;
+  --color-exito: #4f9d69;
+  --color-alerta: #c2703d;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-noche);
+}
+
+body {
+  background-color: var(--color-noche);
+  color: var(--color-crema);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Deja espacio para la barra fija inferior en móvil */
+@media (max-width: 767px) {
+  body { padding-bottom: 4.5rem; }
+}
+
+::selection { background: var(--color-oro); color: var(--color-noche); }
+
+/* Scrollbar discreta */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-noche); }
+::-webkit-scrollbar-thumb { background: var(--color-borde); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #453c33; }
+
+/* Utilidades propias */
+.filete {
+  background-image: linear-gradient(90deg, transparent, var(--color-oro), transparent);
+  height: 1px;
+}
+
+.vidrio {
+  background-color: rgb(20 18 16 / 0.72);
+  backdrop-filter: blur(14px) saturate(140%);
+}
+
+.titulo-serif {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+}
+
+.versalita {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+
+/* Animación de entrada al hacer scroll */
+.aparece {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.aparece.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .aparece { opacity: 1; transform: none; transition: none; }
+}

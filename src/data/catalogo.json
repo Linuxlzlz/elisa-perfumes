@@ -1,0 +1,621 @@
+{
+  "_AVISO": "CATÁLOGO DE EJEMPLO. Reemplázalo con tu lista real: edita este archivo a mano, o corre 'npm run importar' con tu CSV. Ver README.md § Cargar tu catálogo.",
+  "productos": [
+    {
+      "slug": "sauvage-edp",
+      "nombre": "Sauvage",
+      "casa": "Dior",
+      "categoria": "originales",
+      "genero": "masculino",
+      "concentracion": "EDP",
+      "familia": "Aromático fougère",
+      "acordes": ["Fresco especiado", "Ambarado", "Amaderado"],
+      "notas": {
+        "salida": ["Bergamota de Calabria", "Pimienta de Sichuan"],
+        "corazon": ["Lavanda", "Geranio", "Elemí", "Pimienta rosa"],
+        "fondo": ["Ambroxan", "Cedro", "Vainilla", "Haba tonka"]
+      },
+      "ocasiones": ["Diario", "Oficina", "Noche", "Cita"],
+      "estaciones": ["Otoño", "Invierno", "Primavera"],
+      "proyeccion": 5,
+      "duracion": 4,
+      "descripcion": "El fresco especiado que no falla. Abre filoso y mineral con bergamota y pimienta, y aterriza en un fondo cálido de ambroxan y vainilla que deja rastro sin saturar. Si buscas un solo frasco que funcione de la oficina a la noche, es este.",
+      "variantes": [
+        { "sku": "sauvage-edp-60ml", "tamano": "60ml", "precio": 74990 },
+        { "sku": "sauvage-edp-100ml", "tamano": "100ml", "precio": 94990 }
+      ],
+      "forma": "rect",
+      "destacado": true
+    },
+    {
+      "slug": "bleu-de-chanel-edp",
+      "nombre": "Bleu de Chanel",
+      "casa": "Chanel",
+      "categoria": "originales",
+      "genero": "masculino",
+      "concentracion": "EDP",
+      "familia": "Amaderado aromático",
+      "acordes": ["Amaderado", "Cítrico", "Incienso"],
+      "notas": {
+        "salida": ["Limón", "Menta", "Pomelo rosado"],
+        "corazon": ["Jengibre", "Jazmín", "Nuez moscada"],
+        "fondo": ["Incienso", "Cedro", "Sándalo", "Pachulí"]
+      },
+      "ocasiones": ["Oficina", "Formal", "Diario"],
+      "estaciones": ["Todo el año"],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Elegancia sobria y versátil. Cítricos limpios al inicio que dan paso a un corazón de jengibre y un fondo de incienso y maderas secas. La opción segura cuando hay que vestirse bien: nunca se lee excesivo.",
+      "variantes": [
+        { "sku": "bleu-de-chanel-edp-50ml", "tamano": "50ml", "precio": 89990 },
+        { "sku": "bleu-de-chanel-edp-100ml", "tamano": "100ml", "precio": 114990 }
+      ],
+      "forma": "rect",
+      "destacado": true
+    },
+    {
+      "slug": "coco-mademoiselle-edp",
+      "nombre": "Coco Mademoiselle",
+      "casa": "Chanel",
+      "categoria": "originales",
+      "genero": "femenino",
+      "concentracion": "EDP",
+      "familia": "Oriental floral",
+      "acordes": ["Pachulí", "Floral", "Cítrico"],
+      "notas": {
+        "salida": ["Naranja", "Bergamota", "Mandarina"],
+        "corazon": ["Jazmín", "Rosa", "Litchi"],
+        "fondo": ["Pachulí", "Vetiver", "Vainilla", "Almizcle blanco"]
+      },
+      "ocasiones": ["Diario", "Oficina", "Noche", "Formal"],
+      "estaciones": ["Todo el año"],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Un clásico moderno con carácter. Chispa cítrica, corazón floral limpio y un fondo de pachulí y vetiver que le da la estructura por la que se reconoce a metros. Fijación muy alta en piel y ropa.",
+      "variantes": [
+        { "sku": "coco-mademoiselle-edp-50ml", "tamano": "50ml", "precio": 99990 },
+        { "sku": "coco-mademoiselle-edp-100ml", "tamano": "100ml", "precio": 129990 }
+      ],
+      "forma": "rect",
+      "destacado": true
+    },
+    {
+      "slug": "good-girl-edp",
+      "nombre": "Good Girl",
+      "casa": "Carolina Herrera",
+      "categoria": "originales",
+      "genero": "femenino",
+      "concentracion": "EDP",
+      "familia": "Oriental floral",
+      "acordes": ["Gourmand", "Nardo", "Cacao"],
+      "notas": {
+        "salida": ["Almendra", "Café", "Bergamota", "Limón"],
+        "corazon": ["Nardo", "Jazmín sambac", "Azahar", "Rosa búlgara"],
+        "fondo": ["Cacao", "Haba tonka", "Vainilla", "Pralinè", "Sándalo"]
+      },
+      "ocasiones": ["Noche", "Cita", "Fiesta"],
+      "estaciones": ["Otoño", "Invierno"],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Dulce con filo. El contraste entre el nardo floral y el cacao tostado lo hace adictivo y claramente nocturno. No es discreto: una o dos pulsaciones bastan.",
+      "variantes": [
+        { "sku": "good-girl-edp-50ml", "tamano": "50ml", "precio": 74990 },
+        { "sku": "good-girl-edp-80ml", "tamano": "80ml", "precio": 94990 }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "libre-edp",
+      "nombre": "Libre",
+      "casa": "Yves Saint Laurent",
+      "categoria": "originales",
+      "genero": "femenino",
+      "concentracion": "EDP",
+      "familia": "Floral aromático",
+      "acordes": ["Lavanda", "Azahar", "Vainilla"],
+      "notas": {
+        "salida": ["Lavanda", "Mandarina", "Grosella negra", "Petit grain"],
+        "corazon": ["Azahar", "Jazmín", "Lavanda de Francia"],
+        "fondo": ["Vainilla de Madagascar", "Almizcle", "Cedro", "Ambargris"]
+      },
+      "ocasiones": ["Diario", "Oficina", "Noche"],
+      "estaciones": ["Todo el año"],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Lavanda tratada en clave femenina, que es justo lo que lo vuelve distinto. Arranca herbal y limpio y termina en una vainilla salada muy cómoda de llevar todo el día.",
+      "variantes": [
+        { "sku": "libre-edp-50ml", "tamano": "50ml", "precio": 84990 },
+        { "sku": "libre-edp-90ml", "tamano": "90ml", "precio": 109990 }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "eros-edt",
+      "nombre": "Eros",
+      "casa": "Versace",
+      "categoria": "originales",
+      "genero": "masculino",
+      "concentracion": "EDT",
+      "familia": "Aromático fougère",
+      "acordes": ["Menta fresca", "Vainilla", "Manzana verde"],
+      "notas": {
+        "salida": ["Menta", "Manzana verde", "Limón"],
+        "corazon": ["Haba tonka", "Ambroxan", "Geranio"],
+        "fondo": ["Vainilla", "Cedro", "Vetiver", "Musgo de roble"]
+      },
+      "ocasiones": ["Noche", "Fiesta", "Cita"],
+      "estaciones": ["Primavera", "Verano", "Otoño"],
+      "proyeccion": 5,
+      "duracion": 4,
+      "descripcion": "Menta helada sobre vainilla dulce: un contraste llamativo, juvenil y muy social. Proyecta fuerte desde la primera pulsación, así que rinde más de lo que su precio sugiere.",
+      "variantes": [
+        { "sku": "eros-edt-50ml", "tamano": "50ml", "precio": 54990 },
+        { "sku": "eros-edt-100ml", "tamano": "100ml", "precio": 69990 }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "la-vie-est-belle-edp",
+      "nombre": "La Vie Est Belle",
+      "casa": "Lancôme",
+      "categoria": "originales",
+      "genero": "femenino",
+      "concentracion": "EDP",
+      "familia": "Floral frutal gourmand",
+      "acordes": ["Iris", "Praliné", "Pachulí"],
+      "notas": {
+        "salida": ["Grosella negra", "Pera"],
+        "corazon": ["Iris pálido", "Jazmín", "Azahar"],
+        "fondo": ["Pachulí", "Vainilla", "Praliné", "Haba tonka"]
+      },
+      "ocasiones": ["Diario", "Noche", "Regalo"],
+      "estaciones": ["Otoño", "Invierno", "Primavera"],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Dulce elegante, no empalagoso: el iris lo mantiene refinado y el praliné lo hace cálido. Es el regalo que casi nunca falla porque gusta transversalmente.",
+      "variantes": [
+        { "sku": "la-vie-est-belle-edp-50ml", "tamano": "50ml", "precio": 94990 },
+        { "sku": "la-vie-est-belle-edp-100ml", "tamano": "100ml", "precio": 124990 }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "acqua-di-gio-profondo",
+      "nombre": "Acqua di Giò Profondo",
+      "casa": "Giorgio Armani",
+      "categoria": "originales",
+      "genero": "masculino",
+      "concentracion": "EDP",
+      "familia": "Acuático amaderado",
+      "acordes": ["Marino", "Aromático", "Mineral"],
+      "notas": {
+        "salida": ["Bergamota", "Acordes marinos", "Lima", "Mandarina verde"],
+        "corazon": ["Romero", "Lavanda", "Salvia", "Ciprés"],
+        "fondo": ["Pachulí", "Mirra", "Ámbar", "Nota mineral"]
+      },
+      "ocasiones": ["Diario", "Oficina", "Deporte"],
+      "estaciones": ["Primavera", "Verano"],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Acuático oscuro y mineral, bastante más serio que el Acqua di Giò clásico. Fresco sin ser genérico, ideal para calor y para oficina.",
+      "variantes": [
+        { "sku": "acqua-di-gio-profondo-40ml", "tamano": "40ml", "precio": 64990 },
+        { "sku": "acqua-di-gio-profondo-75ml", "tamano": "75ml", "precio": 89990 }
+      ],
+      "forma": "redonda"
+    },
+
+    {
+      "slug": "asad",
+      "nombre": "Asad",
+      "casa": "Lattafa",
+      "categoria": "nicho",
+      "genero": "masculino",
+      "concentracion": "EDP",
+      "familia": "Amaderado especiado",
+      "acordes": ["Tabaco", "Café", "Piña"],
+      "notas": {
+        "salida": ["Pimienta negra", "Piña", "Bergamota"],
+        "corazon": ["Tabaco", "Lavanda", "Violeta"],
+        "fondo": ["Ámbar", "Vainilla", "Café", "Pachulí"]
+      },
+      "ocasiones": ["Noche", "Cita", "Fiesta"],
+      "estaciones": ["Otoño", "Invierno"],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "Potencia árabe a precio razonable. Piña y pimienta arriba, tabaco y café abajo: proyecta muchísimo y aguanta la jornada completa. El mejor punto de entrada al nicho árabe.",
+      "variantes": [
+        { "sku": "asad-100ml", "tamano": "100ml", "precio": 36990 }
+      ],
+      "forma": "ornada",
+      "destacado": true
+    },
+    {
+      "slug": "khamrah",
+      "nombre": "Khamrah",
+      "casa": "Lattafa",
+      "categoria": "nicho",
+      "genero": "unisex",
+      "concentracion": "EDP",
+      "familia": "Oriental gourmand",
+      "acordes": ["Canela", "Dátil", "Vainilla"],
+      "notas": {
+        "salida": ["Canela", "Dátiles", "Bergamota"],
+        "corazon": ["Praliné", "Haba tonka", "Nuez moscada", "Azahar"],
+        "fondo": ["Vainilla", "Benjuí", "Ámbar", "Mirra", "Madera de gaiac"]
+      },
+      "ocasiones": ["Noche", "Invierno", "Fiesta"],
+      "estaciones": ["Otoño", "Invierno"],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "Dátil con canela y vainilla: cálido, especiado y envolvente, como postre árabe. Monstruoso en rendimiento y uno de los más pedidos de la línea. Para frío, no para verano.",
+      "variantes": [
+        { "sku": "khamrah-100ml", "tamano": "100ml", "precio": 42990 }
+      ],
+      "forma": "ornada",
+      "destacado": true
+    },
+    {
+      "slug": "club-de-nuit-intense-man",
+      "nombre": "Club de Nuit Intense Man",
+      "casa": "Armaf",
+      "categoria": "nicho",
+      "genero": "masculino",
+      "concentracion": "EDT",
+      "familia": "Frutal amaderado",
+      "acordes": ["Piña", "Abedul ahumado", "Almizcle"],
+      "notas": {
+        "salida": ["Piña", "Limón", "Grosella negra", "Manzana"],
+        "corazon": ["Abedul", "Jazmín", "Rosa"],
+        "fondo": ["Ámbar", "Almizcle", "Vainilla", "Pachulí"]
+      },
+      "ocasiones": ["Diario", "Noche", "Oficina"],
+      "estaciones": ["Todo el año"],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "La alternativa más famosa a Aventus, y con razón: piña ahumada, proyección enorme y duración de día completo. Relación precio-rendimiento difícil de superar.",
+      "variantes": [
+        { "sku": "club-de-nuit-intense-man-105ml", "tamano": "105ml", "precio": 39990 }
+      ],
+      "forma": "rect",
+      "destacado": true
+    },
+    {
+      "slug": "yara",
+      "nombre": "Yara",
+      "casa": "Lattafa",
+      "categoria": "nicho",
+      "genero": "femenino",
+      "concentracion": "EDP",
+      "familia": "Floral gourmand",
+      "acordes": ["Tropical", "Vainilla", "Orquídea"],
+      "notas": {
+        "salida": ["Orquídea", "Heliotropo"],
+        "corazon": ["Tuberosa", "Frutas tropicales"],
+        "fondo": ["Vainilla", "Sándalo", "Almizcle"]
+      },
+      "ocasiones": ["Diario", "Noche", "Regalo"],
+      "estaciones": ["Todo el año"],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "Dulce tropical muy llamativo y de fijación altísima. Es el superventas femenino de la casa: quien lo prueba vuelve a pedirlo. Aplicar con moderación.",
+      "variantes": [
+        { "sku": "yara-100ml", "tamano": "100ml", "precio": 31990 }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "hawas-for-him",
+      "nombre": "Hawas for Him",
+      "casa": "Rasasi",
+      "categoria": "nicho",
+      "genero": "masculino",
+      "concentracion": "EDP",
+      "familia": "Acuático frutal",
+      "acordes": ["Marino", "Manzana", "Ambargris"],
+      "notas": {
+        "salida": ["Manzana", "Canela", "Bergamota", "Limón"],
+        "corazon": ["Acordes marinos", "Ciclamen", "Jengibre"],
+        "fondo": ["Ambargris", "Cedro", "Vetiver", "Musgo"]
+      },
+      "ocasiones": ["Diario", "Oficina", "Verano"],
+      "estaciones": ["Primavera", "Verano"],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Fresco frutal con sal marina, pensado para calor y uso diario. Más refinado que el promedio de su rango de precio y muy fácil de llevar.",
+      "variantes": [
+        { "sku": "hawas-for-him-100ml", "tamano": "100ml", "precio": 52990 }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "oud-for-glory",
+      "nombre": "Oud for Glory",
+      "casa": "Lattafa",
+      "categoria": "nicho",
+      "genero": "unisex",
+      "concentracion": "EDP",
+      "familia": "Amaderado ahumado",
+      "acordes": ["Oud", "Azafrán", "Pachulí"],
+      "notas": {
+        "salida": ["Lavanda", "Salvia"],
+        "corazon": ["Oud", "Pachulí", "Geranio"],
+        "fondo": ["Ámbar", "Azafrán", "Nuez moscada", "Madera de gaiac"]
+      },
+      "ocasiones": ["Noche", "Formal", "Invierno"],
+      "estaciones": ["Otoño", "Invierno"],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "Oud ahumado con azafrán, de aire sobrio y maduro. Marca presencia en espacios cerrados, por lo que conviene dosificarlo. Muy buen primer oud.",
+      "variantes": [
+        { "sku": "oud-for-glory-100ml", "tamano": "100ml", "precio": 37990 }
+      ],
+      "forma": "ornada"
+    },
+
+    {
+      "slug": "decant-aventus",
+      "nombre": "Aventus",
+      "casa": "Creed",
+      "categoria": "decants",
+      "genero": "unisex",
+      "concentracion": "EDP",
+      "familia": "Frutal chipre",
+      "acordes": ["Piña", "Abedul", "Musgo de roble"],
+      "notas": {
+        "salida": ["Piña", "Bergamota", "Grosella negra", "Manzana"],
+        "corazon": ["Abedul", "Pachulí", "Jazmín", "Rosa"],
+        "fondo": ["Musgo de roble", "Ambargris", "Vainilla"]
+      },
+      "ocasiones": ["Diario", "Formal", "Cita"],
+      "estaciones": ["Todo el año"],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "El referente moderno del género. Piña fresca sobre humo de abedul y un fondo musgoso seco. Pruébalo en decant antes de comprometerte con el frasco completo.",
+      "variantes": [
+        { "sku": "decant-aventus-5ml", "tamano": "5ml", "precio": 14990 },
+        { "sku": "decant-aventus-10ml", "tamano": "10ml", "precio": 26990 }
+      ],
+      "forma": "alta",
+      "destacado": true
+    },
+    {
+      "slug": "decant-layton",
+      "nombre": "Layton",
+      "casa": "Parfums de Marly",
+      "categoria": "decants",
+      "genero": "unisex",
+      "concentracion": "EDP",
+      "familia": "Floral amaderado especiado",
+      "acordes": ["Manzana", "Vainilla", "Pimienta"],
+      "notas": {
+        "salida": ["Manzana", "Lavanda", "Bergamota", "Mandarina"],
+        "corazon": ["Geranio", "Violeta", "Jazmín"],
+        "fondo": ["Vainilla", "Sándalo", "Pimienta", "Haba tonka", "Pachulí"]
+      },
+      "ocasiones": ["Noche", "Cita", "Formal"],
+      "estaciones": ["Otoño", "Invierno"],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "Manzana y lavanda sobre una base dulce y especiada. Proyección generosa y un aire caro inconfundible: de los decants que más se repiten.",
+      "variantes": [
+        { "sku": "decant-layton-5ml", "tamano": "5ml", "precio": 12990 },
+        { "sku": "decant-layton-10ml", "tamano": "10ml", "precio": 22990 }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "decant-tobacco-vanille",
+      "nombre": "Tobacco Vanille",
+      "casa": "Tom Ford",
+      "categoria": "decants",
+      "genero": "unisex",
+      "concentracion": "EDP",
+      "familia": "Oriental especiado",
+      "acordes": ["Tabaco", "Vainilla", "Especias dulces"],
+      "notas": {
+        "salida": ["Hoja de tabaco", "Especias"],
+        "corazon": ["Vainilla", "Cacao", "Haba tonka", "Flor de tabaco"],
+        "fondo": ["Frutos secos", "Maderas secas"]
+      },
+      "ocasiones": ["Noche", "Invierno", "Formal"],
+      "estaciones": ["Otoño", "Invierno"],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Tabaco de pipa endulzado con vainilla y especias. Cálido, denso y de invierno puro. En decant se aprovecha mejor porque basta muy poco producto.",
+      "variantes": [
+        { "sku": "decant-tobacco-vanille-5ml", "tamano": "5ml", "precio": 11990 },
+        { "sku": "decant-tobacco-vanille-10ml", "tamano": "10ml", "precio": 21990 }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "decant-baccarat-rouge-540",
+      "nombre": "Baccarat Rouge 540",
+      "casa": "Maison Francis Kurkdjian",
+      "categoria": "decants",
+      "genero": "unisex",
+      "concentracion": "EDP",
+      "familia": "Ambarado floral",
+      "acordes": ["Azafrán", "Ámbar", "Cedro"],
+      "notas": {
+        "salida": ["Azafrán", "Jazmín"],
+        "corazon": ["Ámbar gris", "Acorde amaderado"],
+        "fondo": ["Resina de abeto", "Cedro"]
+      },
+      "ocasiones": ["Noche", "Formal", "Cita"],
+      "estaciones": ["Todo el año"],
+      "proyeccion": 3,
+      "duracion": 5,
+      "descripcion": "Dulce mineral, etéreo y absolutamente reconocible. Proyecta bajo pero deja una estela que dura un día entero en la ropa. El decant es la forma sensata de tenerlo.",
+      "variantes": [
+        { "sku": "decant-baccarat-rouge-540-5ml", "tamano": "5ml", "precio": 15990 },
+        { "sku": "decant-baccarat-rouge-540-10ml", "tamano": "10ml", "precio": 28990 }
+      ],
+      "forma": "alta",
+      "destacado": true
+    },
+    {
+      "slug": "decant-naxos",
+      "nombre": "Naxos",
+      "casa": "Xerjoff",
+      "categoria": "decants",
+      "genero": "masculino",
+      "concentracion": "Parfum",
+      "familia": "Oriental gourmand",
+      "acordes": ["Miel", "Tabaco", "Vainilla"],
+      "notas": {
+        "salida": ["Bergamota", "Limón", "Lavanda"],
+        "corazon": ["Miel", "Tabaco", "Jazmín", "Azahar"],
+        "fondo": ["Haba tonka", "Vainilla", "Canela", "Cistus"]
+      },
+      "ocasiones": ["Noche", "Formal", "Cita"],
+      "estaciones": ["Otoño", "Invierno"],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Miel y tabaco con una apertura cítrica luminosa. Lujo italiano clásico, dulce pero con clase. Un decant de 10 ml rinde muchísimo.",
+      "variantes": [
+        { "sku": "decant-naxos-5ml", "tamano": "5ml", "precio": 14990 },
+        { "sku": "decant-naxos-10ml", "tamano": "10ml", "precio": 26990 }
+      ],
+      "forma": "alta"
+    },
+
+    {
+      "slug": "elisa-07",
+      "nombre": "Elisa Nº 07",
+      "casa": "Elisa Perfumes",
+      "categoria": "inspirados",
+      "genero": "unisex",
+      "concentracion": "Extracto",
+      "familia": "Ambarado floral",
+      "acordes": ["Azafrán", "Ámbar", "Dulce mineral"],
+      "notas": {
+        "salida": ["Azafrán", "Jazmín"],
+        "corazon": ["Ámbar gris", "Acorde amaderado"],
+        "fondo": ["Cedro", "Resina"]
+      },
+      "ocasiones": ["Noche", "Diario", "Cita"],
+      "estaciones": ["Todo el año"],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Nuestra versión del dulce mineral más popular de los últimos años, en concentración extracto. Alta fijación en ropa y un rendimiento que justifica el formato grande.",
+      "variantes": [
+        { "sku": "elisa-07-30ml", "tamano": "30ml", "precio": 12990 },
+        { "sku": "elisa-07-50ml", "tamano": "50ml", "precio": 18990 },
+        { "sku": "elisa-07-100ml", "tamano": "100ml", "precio": 28990 }
+      ],
+      "forma": "redonda",
+      "perfilSimilarA": "Baccarat Rouge 540",
+      "destacado": true
+    },
+    {
+      "slug": "elisa-12",
+      "nombre": "Elisa Nº 12",
+      "casa": "Elisa Perfumes",
+      "categoria": "inspirados",
+      "genero": "masculino",
+      "concentracion": "Extracto",
+      "familia": "Frutal amaderado",
+      "acordes": ["Piña", "Humo de abedul", "Musgo"],
+      "notas": {
+        "salida": ["Piña", "Bergamota", "Manzana"],
+        "corazon": ["Abedul", "Pachulí", "Jazmín"],
+        "fondo": ["Musgo de roble", "Ámbar", "Vainilla"]
+      },
+      "ocasiones": ["Diario", "Oficina", "Formal"],
+      "estaciones": ["Todo el año"],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Piña ahumada sobre fondo musgoso seco, el perfil más pedido del segmento masculino. Versátil de día y suficientemente serio para reuniones.",
+      "variantes": [
+        { "sku": "elisa-12-30ml", "tamano": "30ml", "precio": 12990 },
+        { "sku": "elisa-12-50ml", "tamano": "50ml", "precio": 18990 },
+        { "sku": "elisa-12-100ml", "tamano": "100ml", "precio": 28990 }
+      ],
+      "forma": "redonda",
+      "perfilSimilarA": "Aventus"
+    },
+    {
+      "slug": "elisa-03",
+      "nombre": "Elisa Nº 03",
+      "casa": "Elisa Perfumes",
+      "categoria": "inspirados",
+      "genero": "femenino",
+      "concentracion": "Extracto",
+      "familia": "Oriental floral",
+      "acordes": ["Cacao", "Nardo", "Café"],
+      "notas": {
+        "salida": ["Almendra", "Café", "Bergamota"],
+        "corazon": ["Nardo", "Jazmín", "Azahar"],
+        "fondo": ["Cacao", "Haba tonka", "Vainilla"]
+      },
+      "ocasiones": ["Noche", "Cita", "Fiesta"],
+      "estaciones": ["Otoño", "Invierno"],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Floral oscuro con cacao tostado, pensado para la noche. Dulce con contraste amargo, igual que el perfil que lo inspira.",
+      "variantes": [
+        { "sku": "elisa-03-30ml", "tamano": "30ml", "precio": 11990 },
+        { "sku": "elisa-03-50ml", "tamano": "50ml", "precio": 16990 },
+        { "sku": "elisa-03-100ml", "tamano": "100ml", "precio": 25990 }
+      ],
+      "forma": "alta",
+      "perfilSimilarA": "Good Girl"
+    },
+    {
+      "slug": "elisa-21",
+      "nombre": "Elisa Nº 21",
+      "casa": "Elisa Perfumes",
+      "categoria": "inspirados",
+      "genero": "masculino",
+      "concentracion": "Extracto",
+      "familia": "Aromático fresco",
+      "acordes": ["Pimienta", "Ambroxan", "Bergamota"],
+      "notas": {
+        "salida": ["Bergamota", "Pimienta de Sichuan"],
+        "corazon": ["Lavanda", "Geranio", "Pimienta rosa"],
+        "fondo": ["Ambroxan", "Cedro", "Vainilla"]
+      },
+      "ocasiones": ["Diario", "Oficina", "Deporte"],
+      "estaciones": ["Todo el año"],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "El fresco especiado de uso diario, en versión económica y de buena fijación. El que más se vende para quien recién empieza a usar perfume a diario.",
+      "variantes": [
+        { "sku": "elisa-21-30ml", "tamano": "30ml", "precio": 11990 },
+        { "sku": "elisa-21-50ml", "tamano": "50ml", "precio": 16990 },
+        { "sku": "elisa-21-100ml", "tamano": "100ml", "precio": 25990 }
+      ],
+      "forma": "rect",
+      "perfilSimilarA": "Sauvage"
+    },
+    {
+      "slug": "elisa-18",
+      "nombre": "Elisa Nº 18",
+      "casa": "Elisa Perfumes",
+      "categoria": "inspirados",
+      "genero": "unisex",
+      "concentracion": "Extracto",
+      "familia": "Oriental especiado",
+      "acordes": ["Tabaco", "Vainilla", "Cacao"],
+      "notas": {
+        "salida": ["Hoja de tabaco", "Especias dulces"],
+        "corazon": ["Vainilla", "Cacao", "Haba tonka"],
+        "fondo": ["Frutos secos", "Maderas secas"]
+      },
+      "ocasiones": ["Noche", "Invierno", "Formal"],
+      "estaciones": ["Otoño", "Invierno"],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Tabaco dulce y resinoso para los meses fríos. Denso y acogedor; con dos pulsaciones queda perfumado el abrigo entero.",
+      "variantes": [
+        { "sku": "elisa-18-30ml", "tamano": "30ml", "precio": 13990 },
+        { "sku": "elisa-18-50ml", "tamano": "50ml", "precio": 19990 },
+        { "sku": "elisa-18-100ml", "tamano": "100ml", "precio": 29990 }
+      ],
+      "forma": "ornada",
+      "perfilSimilarA": "Tobacco Vanille"
+    }
+  ]
+}

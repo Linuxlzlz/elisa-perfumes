@@ -1,0 +1,265 @@
+---
+import Base from '../layouts/Base.astro';
+import TarjetaProducto from '../components/TarjetaProducto.astro';
+import { precioDesde, productos } from '../lib/catalogo';
+import { ruta } from '../lib/formato';
+
+const preguntas = [
+  {
+    id: 'linea',
+    titulo: '¿Qué línea buscas?',
+    bajada: 'Las fragancias unisex funcionan para cualquiera.',
+    opciones: [
+      { valor: 'femenino', texto: 'Femenino' },
+      { valor: 'masculino', texto: 'Masculino' },
+      { valor: 'unisex', texto: 'Unisex' },
+      { valor: 'indiferente', texto: 'Me da igual' },
+    ],
+  },
+  {
+    id: 'ocasion',
+    titulo: '¿Cuándo lo vas a usar?',
+    bajada: 'Define cuánta presencia conviene que tenga.',
+    opciones: [
+      { valor: 'dia', texto: 'Día y oficina' },
+      { valor: 'noche', texto: 'Noche y salidas' },
+      { valor: 'especial', texto: 'Ocasiones especiales' },
+      { valor: 'todo', texto: 'Todo el tiempo' },
+    ],
+  },
+  {
+    id: 'aroma',
+    titulo: '¿Qué aroma te atrae más?',
+    bajada: 'Piensa en lo que te gusta oler, no en marcas.',
+    opciones: [
+      { valor: 'fresco', texto: 'Fresco, cítrico o acuático' },
+      { valor: 'dulce', texto: 'Dulce, vainilla o gourmand' },
+      { valor: 'amaderado', texto: 'Amaderado, especiado o ahumado' },
+      { valor: 'floral', texto: 'Floral y elegante' },
+    ],
+  },
+  {
+    id: 'presupuesto',
+    titulo: '¿Cuánto quieres gastar?',
+    bajada: 'Mostramos el precio del tamaño más accesible.',
+    opciones: [
+      { valor: '20000', texto: 'Hasta $20.000' },
+      { valor: '45000', texto: '$20.000 a $45.000' },
+      { valor: '90000', texto: '$45.000 a $90.000' },
+      { valor: '9999999', texto: 'Sin tope' },
+    ],
+  },
+] as const;
+
+// Datos mínimos para puntuar en el navegador
+const datosQuiz = productos.map((p) => ({
+  slug: p.slug,
+  genero: p.genero,
+  ocasiones: p.ocasiones.map((o) => o.toLowerCase()),
+  perfil: (p.familia + ' ' + p.acordes.join(' ')).toLowerCase(),
+  proyeccion: p.proyeccion,
+  precio: precioDesde(p),
+  destacado: p.destacado ? 1 : 0,
+}));
+---
+<Base
+  titulo="Encuentra tu perfume"
+  descripcion="Responde cuatro preguntas y te recomendamos tres fragancias de nuestro catálogo según ocasión, aroma y presupuesto."
+>
+  <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+    <header class="text-center">
+      <p class="versalita text-champan">Test rápido</p>
+      <h1 class="titulo-serif mt-3 text-4xl text-crema sm:text-5xl">Encuentra tu perfume</h1>
+      <p class="mt-4 text-sm leading-relaxed text-apagado">
+        Cuatro preguntas, menos de un minuto. Te mostramos tres fragancias de nuestro catálogo
+        que calzan con lo que buscas.
+      </p>
+    </header>
+
+    <!-- Progreso -->
+    <div data-progreso-caja class="mt-10">
+      <div class="flex justify-between text-xs text-apagado">
+        <span>Pregunta <span data-paso-actual>1</span> de {preguntas.length}</span>
+        <span data-porcentaje>0%</span>
+      </div>
+      <div class="mt-2 h-1 overflow-hidden rounded-full bg-borde">
+        <div data-barra class="h-full w-0 bg-oro transition-all duration-500"></div>
+      </div>
+    </div>
+
+    <!-- Preguntas -->
+    <div data-preguntas class="mt-8">
+      {preguntas.map((pr, i) => (
+        <fieldset data-pregunta={pr.id} class:list={['rounded-2xl border border-borde bg-carbon p-6 sm:p-8', i > 0 && 'hidden']}>
+          <legend class="titulo-serif text-2xl text-crema">{pr.titulo}</legend>
+          <p class="mt-1 text-sm text-apagado">{pr.bajada}</p>
+          <div class="mt-6 grid gap-3 sm:grid-cols-2">
+            {pr.opciones.map((o) => (
+              <button
+                type="button"
+                data-opcion
+                data-id={pr.id}
+                data-valor={o.valor}
+                class="rounded-xl border border-borde bg-humo px-4 py-4 text-left text-sm text-crema transition hover:border-oro hover:bg-oro/10 hover:text-champan"
+              >{o.texto}</button>
+            ))}
+          </div>
+          {i > 0 && (
+            <button type="button" data-atras class="mt-6 text-xs text-apagado underline-offset-4 hover:text-champan hover:underline">
+              ← Volver
+            </button>
+          )}
+        </fieldset>
+      ))}
+    </div>
+
+    <!-- Resultados -->
+    <section data-resultados class="hidden">
+      <div class="text-center">
+        <p class="versalita text-champan">Tu resultado</p>
+        <h2 class="titulo-serif mt-3 text-3xl text-crema sm:text-4xl">Esto es lo que te recomendamos</h2>
+        <p class="mt-3 text-sm text-apagado">
+          Ordenadas por afinidad con tus respuestas. Agrégalas al carrito o consúltanos por WhatsApp.
+        </p>
+      </div>
+
+      <div data-grilla-resultados class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-3">
+        <button type="button" data-reiniciar class="rounded-full border border-oro/50 px-6 py-3 text-sm font-semibold text-champan transition hover:bg-oro hover:text-noche">
+          Repetir el test
+        </button>
+        <a href={ruta('catalogo')} class="rounded-full border border-borde px-6 py-3 text-sm text-apagado transition hover:border-oro/50 hover:text-champan">
+          Ver todo el catálogo
+        </a>
+      </div>
+    </section>
+
+    <!-- Depósito oculto con todas las tarjetas ya renderizadas -->
+    <div data-deposito class="hidden">
+      {productos.map((p) => (
+        <div data-tarjeta={p.slug}><TarjetaProducto producto={p} /></div>
+      ))}
+    </div>
+  </div>
+
+  <script define:vars={{ datosQuiz }}>
+    const fieldsets = [...document.querySelectorAll('[data-pregunta]')];
+    const resultados = document.querySelector('[data-resultados]');
+    const grilla = document.querySelector('[data-grilla-resultados]');
+    const deposito = document.querySelector('[data-deposito]');
+    const cajaProgreso = document.querySelector('[data-progreso-caja]');
+    const barra = document.querySelector('[data-barra]');
+    const pasoActual = document.querySelector('[data-paso-actual]');
+    const porcentaje = document.querySelector('[data-porcentaje]');
+    const contenedorPreguntas = document.querySelector('[data-preguntas]');
+
+    const respuestas = {};
+    let paso = 0;
+
+    function pintarProgreso() {
+      const pct = Math.round((paso / fieldsets.length) * 100);
+      barra.style.width = pct + '%';
+      porcentaje.textContent = pct + '%';
+      pasoActual.textContent = String(Math.min(paso + 1, fieldsets.length));
+    }
+
+    function mostrarPaso(n) {
+      fieldsets.forEach((f, i) => f.classList.toggle('hidden', i !== n));
+      paso = n;
+      pintarProgreso();
+    }
+
+    const mapaOcasiones = {
+      dia: ['diario', 'oficina', 'deporte'],
+      noche: ['noche', 'cita', 'fiesta'],
+      especial: ['formal', 'cita', 'regalo'],
+      todo: ['diario', 'oficina', 'noche'],
+    };
+
+    const mapaAromas = {
+      fresco: /acu|marin|cítric|citric|fresc|aromátic|aromatic|mineral/,
+      dulce: /gourmand|vainilla|dulce|praliné|praline|miel|cacao|canela|dátil|datil|tropical/,
+      amaderado: /amaderad|oud|ahumad|especiad|tabaco|chipre|musgo|cedro|pachul/,
+      floral: /floral|rosa|iris|jazmín|jazmin|nardo|azahar|orquídea|orquidea/,
+    };
+
+    function puntuar(p) {
+      let n = 0;
+
+      // Presupuesto: es un filtro duro
+      const tope = Number(respuestas.presupuesto ?? 9999999);
+      if (p.precio > tope) return -1;
+      // Premia acercarse al tope sin excederlo
+      n += Math.round((1 - p.precio / tope) * 2);
+
+      // Línea
+      if (respuestas.linea === p.genero) n += 5;
+      else if (respuestas.linea === 'indiferente') n += 2;
+      else if (p.genero === 'unisex') n += 3;
+      else n -= 3;
+
+      // Ocasión
+      const buscadas = mapaOcasiones[respuestas.ocasion] ?? [];
+      n += p.ocasiones.filter((o) => buscadas.includes(o)).length * 3;
+      if (respuestas.ocasion === 'noche' && p.proyeccion >= 4) n += 2;
+      if (respuestas.ocasion === 'dia' && p.proyeccion <= 4) n += 1;
+
+      // Aroma
+      const re = mapaAromas[respuestas.aroma];
+      if (re && re.test(p.perfil)) n += 6;
+
+      n += p.destacado;
+      return n;
+    }
+
+    function mostrarResultados() {
+      const elegidos = datosQuiz
+        .map((p) => ({ p, n: puntuar(p) }))
+        .filter((x) => x.n >= 0)
+        .sort((a, b) => b.n - a.n)
+        .slice(0, 3);
+
+      grilla.replaceChildren();
+
+      if (!elegidos.length) {
+        const aviso = document.createElement('p');
+        aviso.className = 'col-span-full py-10 text-center text-sm text-apagado';
+        aviso.textContent = 'No encontramos nada en ese presupuesto. Prueba subiendo el tope o escríbenos por WhatsApp y te buscamos una opción.';
+        grilla.appendChild(aviso);
+      } else {
+        for (const { p } of elegidos) {
+          const nodo = deposito.querySelector(`[data-tarjeta="${p.slug}"]`);
+          if (nodo) grilla.appendChild(nodo);
+        }
+      }
+
+      contenedorPreguntas.classList.add('hidden');
+      cajaProgreso.classList.add('hidden');
+      resultados.classList.remove('hidden');
+      resultados.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    contenedorPreguntas.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-opcion]');
+      if (btn) {
+        respuestas[btn.dataset.id] = btn.dataset.valor;
+        if (paso + 1 < fieldsets.length) mostrarPaso(paso + 1);
+        else { paso = fieldsets.length; pintarProgreso(); mostrarResultados(); }
+        return;
+      }
+      if (e.target.closest('[data-atras]')) mostrarPaso(Math.max(0, paso - 1));
+    });
+
+    document.querySelector('[data-reiniciar]').addEventListener('click', () => {
+      for (const k of Object.keys(respuestas)) delete respuestas[k];
+      resultados.classList.add('hidden');
+      contenedorPreguntas.classList.remove('hidden');
+      cajaProgreso.classList.remove('hidden');
+      mostrarPaso(0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    pintarProgreso();
+  </script>
+</Base>

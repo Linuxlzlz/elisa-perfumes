@@ -1,0 +1,441 @@
+---
+import Base from '../layouts/Base.astro';
+import { etiquetasCategoria, productos } from '../lib/catalogo';
+import { clp } from '../lib/formato';
+import { repo } from '../config';
+
+// Lista mínima para el panel: SKU, nombre y precio de catálogo.
+const filas = productos.flatMap((p) =>
+  p.variantes.map((v) => ({
+    sku: v.sku,
+    slug: p.slug,
+    nombre: p.nombre,
+    casa: p.casa,
+    categoria: etiquetasCategoria[p.categoria].titulo,
+    tamano: v.tamano,
+    precioCatalogo: v.precio,
+  })),
+);
+
+const urlAcciones = `https://github.com/${repo.owner}/${repo.name}/actions`;
+const urlToken = `https://github.com/settings/personal-access-tokens/new`;
+---
+<Base titulo="Administración de stock" sinIndexar>
+  <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <header>
+      <p class="versalita text-champan">Panel privado</p>
+      <h1 class="titulo-serif mt-2 text-4xl text-crema">Administración de stock</h1>
+      <p class="mt-3 max-w-3xl text-sm leading-relaxed text-apagado">
+        Marca qué está disponible y ajusta precios sin tocar código. Los cambios se guardan como
+        un commit en <code class="text-crema/80">{repo.rutaStock}</code> y el sitio se reconstruye solo.
+      </p>
+    </header>
+
+    <!-- ░░ Cómo funciona ░░ -->
+    <details class="mt-8 rounded-2xl border border-oro/30 bg-oro/5 p-5">
+      <summary class="cursor-pointer text-sm font-semibold text-champan">
+        Léeme primero: cómo funciona y qué limitaciones tiene
+      </summary>
+      <div class="mt-4 space-y-3 text-sm leading-relaxed text-apagado">
+        <p>
+          Este sitio es estático y no tiene servidor ni base de datos, así que no existe un
+          “login” real. En su lugar, el panel usa un <strong class="text-crema">token de GitHub</strong>
+          que tú pegas una vez y queda guardado solo en este navegador.
+        </p>
+        <ul class="list-disc space-y-1.5 pl-5">
+          <li>Sin el token, esta página no puede modificar nada: es solo un formulario inerte.</li>
+          <li>El token se guarda en el <code>localStorage</code> de este dispositivo. No viaja a ningún servidor nuestro: solo a <code>api.github.com</code>.</li>
+          <li>
+            Crea un token <strong class="text-crema">fine-grained</strong> en
+            <a href={urlToken} target="_blank" rel="noopener" class="text-champan underline underline-offset-2">GitHub → Settings → Personal access tokens</a>,
+            con acceso <em>solo</em> al repositorio <code class="text-crema/80">{repo.owner}/{repo.name}</code>
+            y el permiso <code class="text-crema/80">Contents: Read and write</code>. Nada más.
+          </li>
+          <li>No uses un token clásico con todos los permisos: si se filtra, da acceso a toda tu cuenta.</li>
+          <li>
+            Tras guardar, GitHub Pages tarda <strong class="text-crema">1 a 2 minutos</strong> en publicar.
+            Puedes seguir el avance en <a href={urlAcciones} target="_blank" rel="noopener" class="text-champan underline underline-offset-2">Actions</a>.
+          </li>
+          <li>No uses este panel en un computador compartido, y revoca el token si lo pierdes.</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ░░ Conexión ░░ -->
+    <section class="mt-6 rounded-2xl border border-borde bg-carbon p-5" aria-label="Conexión con GitHub">
+      <div data-sin-conectar>
+        <label for="a-token" class="mb-1.5 block text-xs text-apagado">
+          Token de acceso (fine-grained, solo este repositorio)
+        </label>
+        <div class="flex flex-wrap gap-2">
+          <input
+            id="a-token" type="password" autocomplete="off" spellcheck="false"
+            placeholder="github_pat_…"
+            class="min-w-0 flex-1 rounded-lg border border-borde bg-humo px-3 py-2.5 font-mono text-sm text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
+          />
+          <button type="button" data-conectar class="rounded-lg bg-oro px-5 py-2.5 text-sm font-semibold text-noche transition hover:bg-champan">
+            Conectar
+          </button>
+        </div>
+        <label class="mt-3 flex items-center gap-2 text-xs text-apagado">
+          <input type="checkbox" data-recordar checked class="accent-oro" />
+          Recordar el token en este navegador
+        </label>
+      </div>
+
+      <div data-conectado class="hidden">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2 text-sm">
+            <span class="h-2 w-2 rounded-full bg-exito"></span>
+            <span class="text-crema">Conectado como <strong data-usuario class="text-champan">…</strong></span>
+            <span class="text-apagado">· {repo.owner}/{repo.name}</span>
+          </div>
+          <div class="flex gap-2">
+            <button type="button" data-recargar class="rounded-lg border border-borde px-4 py-2 text-xs text-apagado transition hover:border-oro/50 hover:text-champan">
+              Recargar
+            </button>
+            <button type="button" data-desconectar class="rounded-lg border border-borde px-4 py-2 text-xs text-apagado transition hover:border-alerta hover:text-alerta">
+              Desconectar
+            </button>
+          </div>
+        </div>
+        <p data-ultima class="mt-2 text-xs text-apagado"></p>
+      </div>
+
+      <p data-mensaje class="mt-3 hidden rounded-lg px-3 py-2 text-xs" role="status"></p>
+    </section>
+
+    <!-- ░░ Tabla ░░ -->
+    <section data-panel class="mt-6 hidden" aria-label="Inventario">
+      <div class="flex flex-wrap items-center gap-3 rounded-t-2xl border border-b-0 border-borde bg-humo px-4 py-3">
+        <input
+          type="search" data-filtro placeholder="Filtrar por nombre, casa o tamaño…"
+          class="min-w-0 flex-1 rounded-lg border border-borde bg-carbon px-3 py-2 text-sm text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
+        />
+        <button type="button" data-todo-disponible class="rounded-lg border border-borde px-3 py-2 text-xs text-apagado transition hover:border-exito hover:text-exito">
+          Marcar todo disponible
+        </button>
+        <span class="text-xs text-apagado"><span data-visibles>{filas.length}</span> / {filas.length} SKUs</span>
+      </div>
+
+      <div class="overflow-x-auto border-x border-borde">
+        <table class="w-full min-w-[720px] text-sm">
+          <thead class="bg-carbon text-left">
+            <tr class="border-b border-borde">
+              <th scope="col" class="px-4 py-3 font-medium text-champan">Producto</th>
+              <th scope="col" class="px-4 py-3 font-medium text-champan">Tamaño</th>
+              <th scope="col" class="px-4 py-3 font-medium text-champan">Estado</th>
+              <th scope="col" class="px-4 py-3 font-medium text-champan">Precio</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-borde bg-carbon/60">
+            {filas.map((f) => (
+              <tr
+                data-fila
+                data-sku={f.sku}
+                data-busqueda={`${f.nombre} ${f.casa} ${f.tamano} ${f.categoria}`.toLowerCase()}
+              >
+                <td class="px-4 py-3">
+                  <p class="text-crema">{f.nombre}</p>
+                  <p class="text-xs text-apagado">{f.casa} · {f.categoria}</p>
+                </td>
+                <td class="px-4 py-3 text-apagado">{f.tamano}</td>
+                <td class="px-4 py-3">
+                  <select
+                    data-estado data-sku={f.sku}
+                    class="rounded-lg border border-borde bg-humo px-2.5 py-1.5 text-xs text-crema focus:border-oro focus:outline-none"
+                  >
+                    <option value="disponible">Disponible</option>
+                    <option value="agotado">Agotado</option>
+                    <option value="encargo">Por encargo</option>
+                  </select>
+                </td>
+                <td class="px-4 py-3">
+                  <input
+                    type="number" min="0" step="10"
+                    data-precio data-sku={f.sku} data-catalogo={f.precioCatalogo}
+                    placeholder={String(f.precioCatalogo)}
+                    class="w-28 rounded-lg border border-borde bg-humo px-2.5 py-1.5 text-xs text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
+                  />
+                  <span class="ml-1.5 text-[11px] text-apagado">cat. {clp(f.precioCatalogo)}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Barra de guardado -->
+      <div class="sticky bottom-0 flex flex-wrap items-center justify-between gap-3 rounded-b-2xl border border-t-0 border-borde vidrio px-4 py-3">
+        <p class="text-xs text-apagado">
+          <span data-cambios class="font-semibold text-champan">0</span> cambios sin guardar
+        </p>
+        <div class="flex gap-2">
+          <button type="button" data-descartar class="rounded-lg border border-borde px-4 py-2.5 text-xs text-apagado transition hover:border-alerta hover:text-alerta">
+            Descartar
+          </button>
+          <button type="button" data-guardar disabled class="rounded-lg bg-oro px-6 py-2.5 text-sm font-semibold text-noche transition hover:bg-champan disabled:cursor-not-allowed disabled:bg-borde disabled:text-apagado">
+            Guardar y publicar
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script define:vars={{ repo }}>
+    const CLAVE_TOKEN = 'elisa_admin_token';
+    const API = 'https://api.github.com';
+    const URL_CONTENIDO = `${API}/repos/${repo.owner}/${repo.name}/contents/${repo.rutaStock}`;
+
+    const q = (s) => document.querySelector(s);
+    const sinConectar = q('[data-sin-conectar]');
+    const conectado = q('[data-conectado]');
+    const panel = q('[data-panel]');
+    const elMensaje = q('[data-mensaje]');
+    const elUsuario = q('[data-usuario]');
+    const elUltima = q('[data-ultima]');
+    const elCambios = q('[data-cambios]');
+    const btnGuardar = q('[data-guardar]');
+    const inputToken = q('#a-token');
+
+    let token = '';
+    let sha = null;
+    let cargado = {};   // estado tal como está publicado
+
+    /* ── Base64 con soporte UTF-8 ──────────────────────────── */
+    function aBase64(texto) {
+      const bytes = new TextEncoder().encode(texto);
+      let bin = '';
+      for (const b of bytes) bin += String.fromCharCode(b);
+      return btoa(bin);
+    }
+    function desdeBase64(b64) {
+      const bin = atob(b64.replace(/\s/g, ''));
+      const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+      return new TextDecoder().decode(bytes);
+    }
+
+    /* ── Mensajes ──────────────────────────────────────────── */
+    function mensaje(texto, tipo = 'info') {
+      const estilos = {
+        info: 'bg-humo text-apagado',
+        exito: 'bg-exito/15 text-exito',
+        error: 'bg-alerta/15 text-alerta',
+      };
+      elMensaje.className = `mt-3 rounded-lg px-3 py-2 text-xs ${estilos[tipo]}`;
+      elMensaje.textContent = texto;
+      elMensaje.classList.remove('hidden');
+    }
+
+    async function pedir(url, opciones = {}) {
+      const r = await fetch(url, {
+        ...opciones,
+        headers: {
+          Accept: 'application/vnd.github+json',
+          Authorization: `Bearer ${token}`,
+          'X-GitHub-Api-Version': '2022-11-28',
+          ...(opciones.body ? { 'Content-Type': 'application/json' } : {}),
+          ...opciones.headers,
+        },
+      });
+      if (!r.ok) {
+        let detalle = '';
+        try { detalle = (await r.json()).message ?? ''; } catch { /* sin cuerpo */ }
+        throw new Error(`${r.status} ${detalle}`);
+      }
+      return r.status === 204 ? null : r.json();
+    }
+
+    /* ── Estado del formulario ─────────────────────────────── */
+    function estadoActual() {
+      const skus = {};
+      for (const sel of document.querySelectorAll('[data-estado]')) {
+        const sku = sel.dataset.sku;
+        const estado = sel.value;
+        const campoPrecio = document.querySelector(`[data-precio][data-sku="${sku}"]`);
+        const precio = Number(campoPrecio?.value);
+        const catalogo = Number(campoPrecio?.dataset.catalogo);
+
+        // Solo se persiste lo que difiere del valor por omisión
+        const registro = {};
+        if (estado !== 'disponible') registro.estado = estado;
+        if (precio > 0 && precio !== catalogo) registro.precio = precio;
+        if (Object.keys(registro).length) {
+          skus[sku] = { estado, ...(registro.precio ? { precio: registro.precio } : {}) };
+        }
+      }
+      return skus;
+    }
+
+    function contarCambios() {
+      const ahora = JSON.stringify(estadoActual());
+      const antes = JSON.stringify(cargado);
+      const distintos = ahora !== antes;
+
+      // Conteo por SKU, para que el número sea informativo
+      const a = estadoActual();
+      const claves = new Set([...Object.keys(a), ...Object.keys(cargado)]);
+      let n = 0;
+      for (const k of claves) {
+        if (JSON.stringify(a[k] ?? null) !== JSON.stringify(cargado[k] ?? null)) n++;
+      }
+
+      elCambios.textContent = String(n);
+      btnGuardar.disabled = !distintos;
+    }
+
+    function pintar(skus) {
+      for (const sel of document.querySelectorAll('[data-estado]')) {
+        sel.value = skus[sel.dataset.sku]?.estado ?? 'disponible';
+      }
+      for (const inp of document.querySelectorAll('[data-precio]')) {
+        const p = skus[inp.dataset.sku]?.precio;
+        inp.value = typeof p === 'number' ? String(p) : '';
+      }
+      contarCambios();
+    }
+
+    /* ── Cargar y guardar ──────────────────────────────────── */
+    async function cargar() {
+      mensaje('Cargando inventario publicado…');
+      try {
+        const datos = await pedir(`${URL_CONTENIDO}?ref=${repo.branch}`);
+        sha = datos.sha;
+        const json = JSON.parse(desdeBase64(datos.content) || '{}');
+        cargado = json.skus ?? {};
+        pintar(cargado);
+        elUltima.textContent = json.actualizado
+          ? `Última actualización: ${new Date(json.actualizado).toLocaleString('es-CL')}`
+          : 'Sin cambios registrados todavía.';
+        mensaje('Inventario cargado.', 'exito');
+      } catch (e) {
+        if (String(e.message).startsWith('404')) {
+          // El archivo todavía no existe: se creará al guardar
+          sha = null;
+          cargado = {};
+          pintar(cargado);
+          mensaje('No existe stock.json aún. Se creará al guardar.', 'info');
+        } else {
+          mensaje(`No se pudo cargar: ${e.message}`, 'error');
+        }
+      }
+    }
+
+    async function guardar() {
+      const skus = estadoActual();
+      const contenido = JSON.stringify(
+        {
+          _comentario: 'Generado por /admin. No editar a mano salvo necesidad.',
+          actualizado: new Date().toISOString(),
+          skus,
+        },
+        null,
+        2,
+      ) + '\n';
+
+      btnGuardar.disabled = true;
+      mensaje('Guardando…');
+      try {
+        const cuerpo = {
+          message: `Actualizar stock (${Object.keys(skus).length} SKUs con ajuste)`,
+          content: aBase64(contenido),
+          branch: repo.branch,
+          ...(sha ? { sha } : {}),
+        };
+        const r = await pedir(URL_CONTENIDO, { method: 'PUT', body: JSON.stringify(cuerpo) });
+        sha = r.content.sha;
+        cargado = skus;
+        contarCambios();
+        elUltima.textContent = `Última actualización: ${new Date().toLocaleString('es-CL')}`;
+        mensaje('Guardado. El sitio se publica en 1 a 2 minutos.', 'exito');
+      } catch (e) {
+        if (String(e.message).startsWith('409')) {
+          mensaje('Alguien más guardó cambios. Presiona Recargar y vuelve a intentarlo.', 'error');
+        } else {
+          mensaje(`No se pudo guardar: ${e.message}`, 'error');
+        }
+        contarCambios();
+      }
+    }
+
+    /* ── Conexión ──────────────────────────────────────────── */
+    async function conectar(valor, recordar) {
+      token = valor.trim();
+      if (!token) { mensaje('Pega tu token primero.', 'error'); return; }
+
+      mensaje('Verificando token…');
+      try {
+        const usuario = await pedir(`${API}/user`);
+        elUsuario.textContent = usuario.login;
+        if (recordar) {
+          try { localStorage.setItem(CLAVE_TOKEN, token); } catch { /* sin almacenamiento */ }
+        }
+        sinConectar.classList.add('hidden');
+        conectado.classList.remove('hidden');
+        panel.classList.remove('hidden');
+        await cargar();
+      } catch (e) {
+        token = '';
+        mensaje(`Token inválido o sin permisos: ${e.message}`, 'error');
+      }
+    }
+
+    q('[data-conectar]').addEventListener('click', () =>
+      conectar(inputToken.value, q('[data-recordar]').checked),
+    );
+    inputToken.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') conectar(inputToken.value, q('[data-recordar]').checked);
+    });
+
+    q('[data-desconectar]').addEventListener('click', () => {
+      try { localStorage.removeItem(CLAVE_TOKEN); } catch { /* ignorar */ }
+      token = '';
+      inputToken.value = '';
+      conectado.classList.add('hidden');
+      panel.classList.add('hidden');
+      sinConectar.classList.remove('hidden');
+      mensaje('Token eliminado de este navegador.', 'info');
+    });
+
+    q('[data-recargar]').addEventListener('click', cargar);
+    q('[data-guardar]').addEventListener('click', guardar);
+    q('[data-descartar]').addEventListener('click', () => {
+      pintar(cargado);
+      mensaje('Cambios descartados.', 'info');
+    });
+
+    q('[data-todo-disponible]').addEventListener('click', () => {
+      for (const sel of document.querySelectorAll('[data-estado]')) sel.value = 'disponible';
+      contarCambios();
+    });
+
+    panel.addEventListener('change', contarCambios);
+    panel.addEventListener('input', (e) => {
+      if (e.target.matches('[data-precio]')) contarCambios();
+    });
+
+    /* ── Filtro de la tabla ────────────────────────────────── */
+    const filtro = q('[data-filtro]');
+    const visibles = q('[data-visibles]');
+    filtro.addEventListener('input', () => {
+      const t = filtro.value.trim().toLowerCase();
+      let n = 0;
+      for (const tr of document.querySelectorAll('[data-fila]')) {
+        const pasa = !t || (tr.dataset.busqueda ?? '').includes(t);
+        tr.hidden = !pasa;
+        if (pasa) n++;
+      }
+      visibles.textContent = String(n);
+    });
+
+    /* ── Sesión guardada ───────────────────────────────────── */
+    let guardadoPrevio = null;
+    try { guardadoPrevio = localStorage.getItem(CLAVE_TOKEN); } catch { /* ignorar */ }
+    if (guardadoPrevio) conectar(guardadoPrevio, true);
+
+    // Evita perder cambios por accidente
+    window.addEventListener('beforeunload', (e) => {
+      if (!btnGuardar.disabled) { e.preventDefault(); e.returnValue = ''; }
+    });
+  </script>
+</Base>

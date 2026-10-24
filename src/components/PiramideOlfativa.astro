@@ -1,0 +1,28 @@
+---
+import type { Producto } from '../lib/tipos';
+type Props = { notas: Producto['notas'] };
+const { notas } = Astro.props;
+
+const niveles = [
+  { clave: 'salida', titulo: 'Notas de salida', pista: 'Los primeros 15 minutos' },
+  { clave: 'corazon', titulo: 'Notas de corazón', pista: 'El cuerpo de la fragancia' },
+  { clave: 'fondo', titulo: 'Notas de fondo', pista: 'Lo que queda en la piel' },
+] as const;
+---
+<div class="space-y-5">
+  {niveles.map(({ clave, titulo, pista }) => (
+    <div>
+      <div class="mb-2 flex flex-wrap items-baseline gap-x-3">
+        <h4 class="versalita text-champan">{titulo}</h4>
+        <span class="text-xs text-apagado">{pista}</span>
+      </div>
+      <ul class="flex flex-wrap gap-2">
+        {notas[clave].map((nota) => (
+          <li class="rounded-full border border-borde bg-humo px-3 py-1 text-sm text-crema/90">
+            {nota}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>

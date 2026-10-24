@@ -1,0 +1,5 @@
+{
+  "_comentario": "Lo administra la página /admin. Cada clave es un SKU. estado: disponible | agotado | encargo. precio opcional, sobrescribe el del catálogo.",
+  "actualizado": null,
+  "skus": {}
+}

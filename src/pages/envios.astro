@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+import { clp, ruta } from '../lib/formato';
+import { envios, pagos, tienda } from '../config';
+
+const pasos = [
+  { n: '01', t: 'Armas tu carrito', d: 'Agregas las fragancias y los tamaños que quieras en el sitio.' },
+  { n: '02', t: 'Envías el pedido', d: 'Al presionar “Enviar por WhatsApp” se abre el chat con tu pedido ya escrito, con código de seguimiento.' },
+  { n: '03', t: 'Confirmamos', d: 'Validamos stock y total final, y te enviamos los datos de pago.' },
+  { n: '04', t: 'Despachamos', d: `Una vez confirmado el pago, despachamos. ${envios.plazo}.` },
+];
+
+const preguntas = [
+  { p: '¿Los perfumes son originales?', r: 'Las líneas Originales y Nicho llegan sellados de fábrica, con caja y celofán. La línea Alternativas es de elaboración propia: no son originales ni se venden como tales, y así está indicado en cada ficha.' },
+  { p: '¿Qué es un decant?', r: 'Una porción del perfume original trasvasijada a un atomizador de vidrio de 5 o 10 ml. Sirve para probar la fragancia en tu piel varios días antes de comprometerte con el frasco completo.' },
+  { p: '¿Puedo pagar contra entrega?', r: 'Solo en retiro presencial. Para despachos pedimos el pago por transferencia o link antes de enviar, porque el courier se paga al despachar.' },
+  { p: '¿Hacen cambios o devoluciones?', r: 'Sí. Si el producto llega dañado o no corresponde a lo pedido, lo reponemos o devolvemos el dinero. Por tratarse de productos de uso personal, no aceptamos devoluciones de frascos ya abiertos salvo falla.' },
+  { p: '¿Tienen algo que no esté en el catálogo?', r: 'Trabajamos pedidos por encargo. Escríbenos por WhatsApp con el nombre de la fragancia y te confirmamos disponibilidad y precio.' },
+  { p: '¿Emiten boleta?', r: 'Sí, emitimos boleta electrónica por cada venta. Si necesitas factura, indícalo al confirmar el pedido.' },
+];
+---
+<Base
+  titulo="Envíos, pagos y preguntas frecuentes"
+  descripcion="Cómo comprar en Elisa Perfumes: pedidos por WhatsApp, formas de pago, costos y plazos de envío a todo Chile, cambios y devoluciones."
+>
+  <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <header>
+      <h1 class="titulo-serif text-4xl text-crema sm:text-5xl">Envíos y pagos</h1>
+      <p class="mt-3 text-sm leading-relaxed text-apagado">
+        Todo lo que necesitas saber antes de hacer tu pedido.
+      </p>
+    </header>
+
+    <!-- Cómo comprar -->
+    <section class="mt-12">
+      <h2 class="titulo-serif text-2xl text-crema">Cómo comprar</h2>
+      <ol class="mt-6 grid gap-5 sm:grid-cols-2">
+        {pasos.map((p) => (
+          <li class="rounded-2xl border border-borde bg-carbon p-5">
+            <span class="versalita text-oro">{p.n}</span>
+            <h3 class="mt-2 text-base font-semibold text-crema">{p.t}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-apagado">{p.d}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <!-- Costos -->
+    <section class="mt-12">
+      <h2 class="titulo-serif text-2xl text-crema">Costos de envío</h2>
+      <div class="mt-6 overflow-hidden rounded-2xl border border-borde">
+        <table class="w-full text-sm">
+          <thead class="bg-humo text-left">
+            <tr>
+              <th scope="col" class="px-4 py-3 font-medium text-champan">Modalidad</th>
+              <th scope="col" class="px-4 py-3 font-medium text-champan">Costo</th>
+              <th scope="col" class="px-4 py-3 font-medium text-champan">Plazo</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-borde bg-carbon">
+            <tr>
+              <td class="px-4 py-3 text-crema">Retiro en persona</td>
+              <td class="px-4 py-3 text-exito">Gratis</td>
+              <td class="px-4 py-3 text-apagado">A coordinar</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-crema">Despacho Región Metropolitana</td>
+              <td class="px-4 py-3 text-crema">{clp(envios.despachoSantiago)}</td>
+              <td class="px-4 py-3 text-apagado">24 a 48 hrs hábiles</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 text-crema">Despacho regiones</td>
+              <td class="px-4 py-3 text-crema">{clp(envios.despachoRegiones)}</td>
+              <td class="px-4 py-3 text-apagado">2 a 4 días hábiles</td>
+            </tr>
+            <tr class="bg-oro/5">
+              <td class="px-4 py-3 text-crema">Compras sobre {clp(envios.umbralEnvioGratis)}</td>
+              <td class="px-4 py-3 font-semibold text-exito">Envío gratis</td>
+              <td class="px-4 py-3 text-apagado">Según destino</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs text-apagado">
+        Despachamos con {envios.couriers.join(', ')}. {envios.retiroTexto}.
+      </p>
+    </section>
+
+    <!-- Pagos -->
+    <section class="mt-12">
+      <h2 class="titulo-serif text-2xl text-crema">Formas de pago</h2>
+      <ul class="mt-6 grid gap-3 sm:grid-cols-3">
+        {pagos.map((p) => (
+          <li class="rounded-xl border border-borde bg-carbon px-4 py-3.5 text-sm text-crema">{p}</li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-12">
+      <h2 class="titulo-serif text-2xl text-crema">Preguntas frecuentes</h2>
+      <div class="mt-6 divide-y divide-borde overflow-hidden rounded-2xl border border-borde bg-carbon">
+        {preguntas.map((f) => (
+          <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 text-sm font-medium text-crema transition hover:bg-humo">
+              {f.p}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-apagado transition-transform group-open:rotate-45" aria-hidden="true">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </summary>
+            <p class="px-5 pb-5 text-sm leading-relaxed text-apagado">{f.r}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="mt-12 rounded-3xl border border-oro/25 bg-gradient-to-br from-humo to-carbon p-8 text-center">
+      <h2 class="titulo-serif text-2xl text-crema">¿Te quedó alguna duda?</h2>
+      <p class="mx-auto mt-2 max-w-md text-sm text-apagado">
+        Escríbenos por WhatsApp. Respondemos {tienda.horario.toLowerCase()}.
+      </p>
+      <a
+        href={`https://wa.me/${tienda.whatsapp}?text=${encodeURIComponent(tienda.whatsappSaludo)}`}
+        target="_blank" rel="noopener"
+        class="mt-6 inline-block rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-bold text-[#07261a] transition hover:brightness-110"
+      >Escribir por WhatsApp</a>
+      <p class="mt-4 text-xs text-apagado">
+        O mira el <a href={ruta('catalogo')} class="text-champan underline underline-offset-4">catálogo completo</a>.
+      </p>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { ruta } from '../lib/formato';
+---
+<Base titulo="Página no encontrada" sinIndexar>
+  <div class="mx-auto flex max-w-xl flex-col items-center px-4 py-28 text-center">
+    <p class="titulo-serif text-7xl text-oro">404</p>
+    <h1 class="titulo-serif mt-4 text-3xl text-crema">Esta página se evaporó</h1>
+    <p class="mt-3 text-sm leading-relaxed text-apagado">
+      El enlace que seguiste no existe o la fragancia ya no está en el catálogo.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href={ruta('catalogo')} class="rounded-full bg-oro px-6 py-3 text-sm font-semibold text-noche transition hover:bg-champan">
+        Ver el catálogo
+      </a>
+      <a href={ruta('/')} class="rounded-full border border-borde px-6 py-3 text-sm text-apagado transition hover:border-oro/50 hover:text-champan">
+        Volver al inicio
+      </a>
+    </div>
+  </div>
+</Base>
