@@ -1,54 +1,43 @@
 ---
 import Base from '../layouts/Base.astro';
 import TarjetaProducto from '../components/TarjetaProducto.astro';
-import { casas, etiquetasCategoria, familias, productos, todasLasOcasiones, precioDesde } from '../lib/catalogo';
-import { clp } from '../lib/formato';
+import {
+  casasReferencia, etiquetasLinea, familias, productos, todasLasOcasiones,
+} from '../lib/catalogo';
+import { presentacion } from '../config';
 
-const ordenados = [...productos].sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
-const precioMaximo = Math.max(...productos.flatMap((p) => p.variantes.map((v) => v.precio)));
-const topeRedondeado = Math.ceil(precioMaximo / 10000) * 10000;
-
-const categorias = Object.entries(etiquetasCategoria).map(([clave, v]) => ({ clave, ...v }));
+const ordenados = [...productos].sort((a, b) => a.numero - b.numero);
+const lineas = Object.entries(etiquetasLinea).map(([clave, v]) => ({ clave, ...v }));
 ---
 <Base
-  titulo="Catálogo"
-  descripcion="Catálogo completo de perfumes: originales sellados, decants, alternativas y nicho árabe. Filtra por familia olfativa, género, ocasión y precio."
+  titulo="Catálogo completo"
+  descripcion={`Las ${productos.length} fragancias de Elisa Perfumes en 30 y 100 ml. Filtra por línea, familia olfativa, ocasión, intensidad y casa de referencia.`}
 >
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <header>
       <h1 class="titulo-serif text-4xl text-crema sm:text-5xl">Catálogo</h1>
       <p class="mt-3 max-w-2xl text-sm leading-relaxed text-apagado">
-        {productos.length} fragancias disponibles. Filtra por lo que te importa y escríbenos
-        si no encuentras lo que buscas: conseguimos por encargo.
+        {productos.length} fragancias, todas disponibles en 30 y 100 ml al mismo precio.
+        Cada una se identifica por su número{presentacion.mostrarReferencia ? ' y te indicamos en qué se inspira' : ''}.
       </p>
     </header>
 
     <!-- ░░ Filtros ░░ -->
     <section class="mt-8 rounded-2xl border border-borde bg-carbon p-4 sm:p-5" aria-label="Filtros">
-      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <div class="sm:col-span-2 lg:col-span-1">
           <label for="f-buscar" class="mb-1.5 block text-xs text-apagado">Buscar</label>
           <input
-            id="f-buscar" type="search" placeholder="Nombre, casa, nota…"
+            id="f-buscar" type="search" placeholder="Número, marca, nota olfativa…"
             class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
           />
         </div>
 
         <div>
-          <label for="f-categoria" class="mb-1.5 block text-xs text-apagado">Línea</label>
-          <select id="f-categoria" class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none">
+          <label for="f-linea" class="mb-1.5 block text-xs text-apagado">Línea</label>
+          <select id="f-linea" class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none">
             <option value="">Todas</option>
-            {categorias.map((c) => <option value={c.clave}>{c.titulo}</option>)}
-          </select>
-        </div>
-
-        <div>
-          <label for="f-genero" class="mb-1.5 block text-xs text-apagado">Género</label>
-          <select id="f-genero" class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none">
-            <option value="">Todos</option>
-            <option value="femenino">Femenino</option>
-            <option value="masculino">Masculino</option>
-            <option value="unisex">Unisex</option>
+            {lineas.map((l) => <option value={l.clave}>{l.titulo}</option>)}
           </select>
         </div>
 
@@ -69,37 +58,39 @@ const categorias = Object.entries(etiquetasCategoria).map(([clave, v]) => ({ cla
         </div>
 
         <div>
-          <label for="f-casa" class="mb-1.5 block text-xs text-apagado">Casa</label>
-          <select id="f-casa" class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none">
-            <option value="">Todas</option>
-            {casas.map((c) => <option value={c}>{c}</option>)}
+          <label for="f-intensidad" class="mb-1.5 block text-xs text-apagado">Intensidad</label>
+          <select id="f-intensidad" class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none">
+            <option value="">Cualquiera</option>
+            <option value="3">Discreta — para oficina</option>
+            <option value="4">Equilibrada — se nota sin invadir</option>
+            <option value="5">Alta — deja estela</option>
           </select>
         </div>
 
-        <div>
-          <label for="f-precio" class="mb-1.5 block text-xs text-apagado">
-            Hasta <span data-precio-etiqueta class="text-champan">{clp(topeRedondeado)}</span>
-          </label>
-          <input
-            id="f-precio" type="range" min="10000" max={topeRedondeado} step="5000" value={topeRedondeado}
-            class="mt-3 w-full accent-oro"
-          />
-        </div>
+        {presentacion.mostrarReferencia && (
+          <div>
+            <label for="f-casa" class="mb-1.5 block text-xs text-apagado">Inspirado en una casa</label>
+            <select id="f-casa" class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none">
+              <option value="">Todas</option>
+              {casasReferencia.map((c) => <option value={c}>{c}</option>)}
+            </select>
+          </div>
+        )}
 
         <div>
           <label for="f-orden" class="mb-1.5 block text-xs text-apagado">Ordenar por</label>
           <select id="f-orden" class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none">
-            <option value="relevancia">Recomendados</option>
-            <option value="precio-asc">Precio: menor a mayor</option>
-            <option value="precio-desc">Precio: mayor a menor</option>
-            <option value="nombre">Nombre (A-Z)</option>
+            <option value="numero">Número de catálogo</option>
+            <option value="relevancia">Más pedidos primero</option>
+            <option value="referencia">Marca de referencia (A-Z)</option>
+            <option value="intensidad">Mayor intensidad</option>
           </select>
         </div>
       </div>
 
       <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-borde pt-4">
         <p class="text-sm text-apagado">
-          <span data-conteo class="font-semibold text-crema">{productos.length}</span> resultados
+          <span data-conteo class="font-semibold text-crema">{productos.length}</span> fragancias
         </p>
         <button type="button" data-limpiar class="text-xs text-apagado underline-offset-4 transition hover:text-champan hover:underline">
           Limpiar filtros
@@ -112,17 +103,20 @@ const categorias = Object.entries(etiquetasCategoria).map(([clave, v]) => ({ cla
       {ordenados.map((p) => (
         <div
           data-item
-          data-categoria={p.categoria}
-          data-genero={p.genero}
+          data-numero={p.numero}
+          data-linea={p.linea}
           data-familia={p.familia}
-          data-casa={p.casa}
+          data-casa={p.referencia.casa}
           data-ocasiones={p.ocasiones.join('|')}
-          data-precio={precioDesde(p)}
-          data-nombre={p.nombre}
+          data-intensidad={p.proyeccion}
+          data-referencia={p.referencia.nombre}
           data-destacado={p.destacado ? '1' : '0'}
           data-texto={[
-            p.nombre, p.casa, p.familia, p.concentracion, p.perfilSimilarA ?? '',
-            ...p.acordes, ...p.notas.salida, ...p.notas.corazon, ...p.notas.fondo,
+            `n ${p.numero}`, `nº ${p.numero}`, `numero ${p.numero}`,
+            presentacion.mostrarReferencia ? p.referencia.nombre : '',
+            presentacion.mostrarReferencia ? p.referencia.casa : '',
+            p.familia, ...p.acordes, ...p.ocasiones,
+            ...p.notas.salida, ...p.notas.corazon, ...p.notas.fondo,
           ].join(' ').toLowerCase()}
         >
           <TarjetaProducto producto={p} />
@@ -137,42 +131,36 @@ const categorias = Object.entries(etiquetasCategoria).map(([clave, v]) => ({ cla
   </div>
 
   <script>
-    import { clp } from '../lib/formato';
-
     const grilla = document.querySelector<HTMLElement>('[data-grilla]')!;
     const items = [...document.querySelectorAll<HTMLElement>('[data-item]')];
     const conteo = document.querySelector<HTMLElement>('[data-conteo]')!;
     const sinResultados = document.querySelector<HTMLElement>('[data-sin-resultados]')!;
-    const etiquetaPrecio = document.querySelector<HTMLElement>('[data-precio-etiqueta]')!;
 
-    const campo = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
-    const buscar = campo<HTMLInputElement>('f-buscar');
-    const categoria = campo<HTMLSelectElement>('f-categoria');
-    const genero = campo<HTMLSelectElement>('f-genero');
-    const familia = campo<HTMLSelectElement>('f-familia');
-    const ocasion = campo<HTMLSelectElement>('f-ocasion');
-    const casa = campo<HTMLSelectElement>('f-casa');
-    const precio = campo<HTMLInputElement>('f-precio');
-    const orden = campo<HTMLSelectElement>('f-orden');
+    const campo = <T extends HTMLElement>(id: string) => document.getElementById(id) as T | null;
+    const buscar = campo<HTMLInputElement>('f-buscar')!;
+    const linea = campo<HTMLSelectElement>('f-linea')!;
+    const familia = campo<HTMLSelectElement>('f-familia')!;
+    const ocasion = campo<HTMLSelectElement>('f-ocasion')!;
+    const intensidad = campo<HTMLSelectElement>('f-intensidad')!;
+    const casa = campo<HTMLSelectElement>('f-casa');   // ausente si se oculta la referencia
+    const orden = campo<HTMLSelectElement>('f-orden')!;
 
-    const controles = [buscar, categoria, genero, familia, ocasion, casa, precio, orden];
+    const selects = [linea, familia, ocasion, intensidad, orden, ...(casa ? [casa] : [])];
 
     function aplicar() {
       const texto = buscar.value.trim().toLowerCase();
-      const tope = Number(precio.value);
-      etiquetaPrecio.textContent = clp(tope);
+      const minIntensidad = Number(intensidad.value || 0);
 
       let visibles = 0;
       for (const it of items) {
         const d = it.dataset;
         const pasa =
           (!texto || (d.texto ?? '').includes(texto)) &&
-          (!categoria.value || d.categoria === categoria.value) &&
-          (!genero.value || d.genero === genero.value) &&
+          (!linea.value || d.linea === linea.value) &&
           (!familia.value || d.familia === familia.value) &&
-          (!casa.value || d.casa === casa.value) &&
+          (!casa?.value || d.casa === casa.value) &&
           (!ocasion.value || (d.ocasiones ?? '').split('|').includes(ocasion.value)) &&
-          Number(d.precio) <= tope;
+          (!minIntensidad || Number(d.intensidad) >= minIntensidad);
 
         it.hidden = !pasa;
         if (pasa) visibles++;
@@ -181,45 +169,40 @@ const categorias = Object.entries(etiquetasCategoria).map(([clave, v]) => ({ cla
       conteo.textContent = String(visibles);
       sinResultados.classList.toggle('hidden', visibles > 0);
 
-      // Reordenar solo los visibles
       const comparar: Record<string, (a: HTMLElement, b: HTMLElement) => number> = {
-        'precio-asc': (a, b) => Number(a.dataset.precio) - Number(b.dataset.precio),
-        'precio-desc': (a, b) => Number(b.dataset.precio) - Number(a.dataset.precio),
-        nombre: (a, b) => (a.dataset.nombre ?? '').localeCompare(b.dataset.nombre ?? '', 'es'),
+        numero: (a, b) => Number(a.dataset.numero) - Number(b.dataset.numero),
+        intensidad: (a, b) =>
+          Number(b.dataset.intensidad) - Number(a.dataset.intensidad) ||
+          Number(a.dataset.numero) - Number(b.dataset.numero),
+        referencia: (a, b) =>
+          (a.dataset.referencia ?? '').localeCompare(b.dataset.referencia ?? '', 'es'),
         relevancia: (a, b) =>
           Number(b.dataset.destacado) - Number(a.dataset.destacado) ||
-          (a.dataset.nombre ?? '').localeCompare(b.dataset.nombre ?? '', 'es'),
+          Number(a.dataset.numero) - Number(b.dataset.numero),
       };
-      const fn = comparar[orden.value] ?? comparar.relevancia;
+      const fn = comparar[orden.value] ?? comparar.numero;
       for (const it of [...items].sort(fn)) grilla.appendChild(it);
 
-      // Reflejar la línea elegida en la URL, sin recargar
       const url = new URL(location.href);
-      if (categoria.value) url.searchParams.set('categoria', categoria.value);
-      else url.searchParams.delete('categoria');
+      if (linea.value) url.searchParams.set('linea', linea.value);
+      else url.searchParams.delete('linea');
       history.replaceState(null, '', url);
     }
 
-    for (const c of controles) {
-      c.addEventListener('input', aplicar);
-      c.addEventListener('change', aplicar);
-    }
+    buscar.addEventListener('input', aplicar);
+    for (const s of selects) s.addEventListener('change', aplicar);
 
     for (const b of document.querySelectorAll<HTMLButtonElement>('[data-limpiar]')) {
       b.addEventListener('click', () => {
         buscar.value = '';
-        for (const s of [categoria, genero, familia, ocasion, casa]) s.value = '';
-        precio.value = precio.max;
-        orden.value = 'relevancia';
+        for (const s of [linea, familia, ocasion, intensidad, casa]) if (s) s.value = '';
+        orden.value = 'numero';
         aplicar();
       });
     }
 
-    // Preselección desde la URL: /catalogo?categoria=decants
-    const inicial = new URLSearchParams(location.search).get('categoria');
-    if (inicial && [...categoria.options].some((o) => o.value === inicial)) {
-      categoria.value = inicial;
-    }
+    const inicial = new URLSearchParams(location.search).get('linea');
+    if (inicial && [...linea.options].some((o) => o.value === inicial)) linea.value = inicial;
     aplicar();
   </script>
 </Base>

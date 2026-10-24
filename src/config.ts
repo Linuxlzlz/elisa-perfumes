@@ -5,9 +5,9 @@
 
 export const tienda = {
   nombre: 'Elisa Perfumes',
-  claim: 'Fragancias originales, decants y alternativas de autor',
+  claim: 'Perfumes inspirados en las mejores marcas, con 8+ horas de fijación',
   descripcion:
-    'Perfumería en Chile: originales sellados, decants desde 5 ml, nicho árabe y alternativas de alta fijación. Pedidos por WhatsApp con despacho a todo el país.',
+    'Perfumería en Chile: 86 fragancias inspiradas en las grandes casas internacionales, en 30 ml y 100 ml. Alta fijación, precio justo y despacho a todo el país. Pedidos por WhatsApp.',
 
   // ⚠️ CAMBIAR: número de WhatsApp en formato internacional, SIN "+", sin espacios.
   // Chile = 56 + 9 + 8 dígitos.  Ejemplo: 56912345678
@@ -22,6 +22,16 @@ export const tienda = {
 
   // Horario de atención mostrado en el sitio
   horario: 'Lun a Sáb · 10:00 a 20:00 hrs',
+} as const;
+
+export const presentacion = {
+  // Nombres de las dos líneas del catálogo.
+  etiquetas: { mujer: 'Mujer', hombre: 'Hombre' },
+
+  // Si lo pones en false, la marca de referencia ("Inspirado en Aventus de Creed")
+  // desaparece de TODO el sitio: fichas, tarjetas, títulos, buscador y datos
+  // estructurados. El producto queda identificado solo por su número.
+  mostrarReferencia: true,
 } as const;
 
 export const envios = {

@@ -1,34 +1,33 @@
 ---
 import type { Producto } from '../lib/tipos';
 import { clp, ruta } from '../lib/formato';
-import { precioDesde } from '../lib/catalogo';
-import { etiquetasCategoria, etiquetasGenero } from '../lib/catalogo';
+import { etiquetasLinea, inspiradoEn, nombre } from '../lib/catalogo';
 import FotoProducto from './FotoProducto.astro';
 
 type Props = { producto: Producto };
 const { producto: p } = Astro.props;
 
-const desde = precioDesde(p);
-const unaSolaVariante = p.variantes.length === 1;
-const v = p.variantes[0];
+const titulo = nombre(p);
+const referencia = inspiradoEn(p);
+const enlace = ruta(`perfume/${p.slug}`);
 ---
 <article
   class="group relative flex flex-col overflow-hidden rounded-2xl border border-borde bg-carbon transition-all duration-300 hover:border-oro/45 hover:shadow-[0_18px_50px_-20px_rgba(201,162,39,0.35)]"
   data-slug={p.slug}
   data-skus={p.variantes.map((x) => x.sku).join(',')}
 >
-  <a href={ruta(`perfume/${p.slug}`)} class="relative block aspect-square overflow-hidden bg-noche">
+  <a href={enlace} class="relative block aspect-square overflow-hidden bg-noche">
     <div class="h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.06]">
       <FotoProducto producto={p} />
     </div>
 
     <span class="absolute left-3 top-3 rounded-full border border-oro/35 bg-noche/80 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-champan backdrop-blur">
-      {etiquetasCategoria[p.categoria].titulo}
+      {etiquetasLinea[p.linea].titulo}
     </span>
 
     {p.destacado && (
       <span class="absolute right-3 top-3 rounded-full bg-oro px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-noche">
-        Más vendido
+        Más pedido
       </span>
     )}
 
@@ -38,22 +37,16 @@ const v = p.variantes[0];
     >Sin stock por ahora</span>
   </a>
 
-  <div class="flex flex-1 flex-col gap-3 p-4">
+  <div class="flex flex-1 flex-col gap-2.5 p-4">
     <div>
-      <p class="versalita text-apagado">{p.casa}</p>
-      <h3 class="titulo-serif mt-1 text-xl leading-tight text-crema">
-        <a href={ruta(`perfume/${p.slug}`)} class="hover:text-champan">{p.nombre}</a>
+      <h3 class="titulo-serif text-2xl leading-none text-crema">
+        <a href={enlace} class="hover:text-champan">{titulo}</a>
       </h3>
-      <p class="mt-1 text-xs text-apagado">
-        {p.familia} · {etiquetasGenero[p.genero]} · {p.concentracion}
-      </p>
+      {referencia && (
+        <p class="mt-1.5 text-xs leading-snug text-champan/90">{referencia}</p>
+      )}
+      <p class="mt-1 text-[11px] text-apagado">{p.familia}</p>
     </div>
-
-    {p.perfilSimilarA && (
-      <p class="text-xs text-apagado">
-        Perfil similar a <span class="text-crema/85">{p.perfilSimilarA}</span>
-      </p>
-    )}
 
     <ul class="flex flex-wrap gap-1.5">
       {p.acordes.slice(0, 3).map((a) => (
@@ -61,31 +54,23 @@ const v = p.variantes[0];
       ))}
     </ul>
 
-    <div class="mt-auto flex items-end justify-between gap-3 pt-2">
-      <div>
-        {!unaSolaVariante && <span class="block text-[11px] text-apagado">desde</span>}
-        <span class="text-lg font-semibold text-crema" data-precio-desde={p.slug}>{clp(desde)}</span>
-        {unaSolaVariante && <span class="ml-1 text-xs text-apagado">/ {v.tamano}</span>}
-      </div>
-
-      {unaSolaVariante ? (
+    <div class="mt-auto grid grid-cols-2 gap-2 pt-2">
+      {p.variantes.map((v) => (
         <button
           type="button"
-          class="rounded-full bg-oro px-4 py-2 text-xs font-semibold text-noche transition hover:bg-champan disabled:cursor-not-allowed disabled:bg-borde disabled:text-apagado"
+          class="rounded-lg border border-borde bg-humo px-2 py-2 text-center transition hover:border-oro hover:bg-oro/10 disabled:cursor-not-allowed disabled:opacity-45"
           data-agregar
           data-sku={v.sku}
           data-slug={p.slug}
-          data-nombre={p.nombre}
-          data-casa={p.casa}
+          data-nombre={titulo}
+          data-casa={referencia || p.familia}
           data-tamano={v.tamano}
           data-precio={v.precio}
-        >Agregar</button>
-      ) : (
-        <a
-          href={ruta(`perfume/${p.slug}`)}
-          class="rounded-full border border-oro/50 px-4 py-2 text-xs font-semibold text-champan transition hover:bg-oro hover:text-noche"
-        >Ver tamaños</a>
-      )}
+        >
+          <span class="block text-[11px] text-apagado">{v.tamano}</span>
+          <span class="block text-sm font-semibold text-crema">{clp(v.precio)}</span>
+        </button>
+      ))}
     </div>
   </div>
 </article>

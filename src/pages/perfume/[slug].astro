@@ -4,9 +4,11 @@ import FotoProducto from '../../components/FotoProducto.astro';
 import PiramideOlfativa from '../../components/PiramideOlfativa.astro';
 import Medidor from '../../components/Medidor.astro';
 import TarjetaProducto from '../../components/TarjetaProducto.astro';
-import { etiquetasCategoria, etiquetasGenero, productos, relacionados } from '../../lib/catalogo';
+import {
+  etiquetasLinea, inspiradoEn, nombre, productos, relacionados, tituloLargo,
+} from '../../lib/catalogo';
 import { clp, ruta } from '../../lib/formato';
-import { envios, tienda } from '../../config';
+import { envios, presentacion, tienda } from '../../config';
 
 export function getStaticPaths() {
   return productos.map((p) => ({ params: { slug: p.slug }, props: { producto: p } }));
@@ -14,22 +16,29 @@ export function getStaticPaths() {
 
 const { producto: p } = Astro.props;
 const similares = relacionados(p, 4);
-const masBarata = p.variantes.reduce((a, b) => (a.precio <= b.precio ? a : b));
+const chica = p.variantes.reduce((a, b) => (a.precio <= b.precio ? a : b));
+const titulo = nombre(p);
+const referencia = inspiradoEn(p);
 
 const urlCanonica = new URL(ruta(`perfume/${p.slug}`), Astro.site ?? 'https://example.com').href;
 
-// JSON-LD: permite que la ficha aparezca en Google con precio y disponibilidad.
+// La marca del producto es la tienda: la casa de referencia NO es el fabricante.
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: `${p.nombre} ${p.concentracion}`,
-  brand: { '@type': 'Brand', name: p.casa },
-  category: etiquetasCategoria[p.categoria].titulo,
-  description: p.descripcion,
+  name: tituloLargo(p),
+  brand: { '@type': 'Brand', name: tienda.nombre },
+  category: `Perfume ${etiquetasLinea[p.linea].titulo}`,
+  description: `${p.descripcion}${referencia ? ` ${referencia}.` : ''}`,
   url: urlCanonica,
+  additionalProperty: [
+    { '@type': 'PropertyValue', name: 'Familia olfativa', value: p.familia },
+    { '@type': 'PropertyValue', name: 'Proyección', value: `${p.proyeccion} de 5` },
+    { '@type': 'PropertyValue', name: 'Duración', value: `${p.duracion} de 5` },
+  ],
   offers: p.variantes.map((v) => ({
     '@type': 'Offer',
-    name: `${p.nombre} ${v.tamano}`,
+    name: `${titulo} ${v.tamano}`,
     sku: v.sku,
     price: v.precio,
     priceCurrency: 'CLP',
@@ -40,23 +49,23 @@ const jsonLd = JSON.stringify({
 });
 
 const consultaWsp = encodeURIComponent(
-  `Hola 👋 quiero consultar por ${p.nombre} de ${p.casa} (${masBarata.tamano}).`,
+  `Hola 👋 quiero consultar por el ${titulo}${referencia ? ` (${referencia})` : ''}.`,
 );
 ---
 <Base
-  titulo={`${p.nombre} — ${p.casa}`}
-  descripcion={`${p.nombre} de ${p.casa}, ${p.familia.toLowerCase()}. ${p.descripcion.slice(0, 120)}`}
+  titulo={tituloLargo(p)}
+  descripcion={`${titulo}: ${p.familia.toLowerCase()}. ${p.descripcion.slice(0, 115)}`}
   datosEstructurados={jsonLd}
 >
   <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
     <nav aria-label="Ruta de navegación" class="text-xs text-apagado">
       <a href={ruta('/')} class="hover:text-champan">Inicio</a>
       <span class="mx-1.5">/</span>
-      <a href={ruta(`catalogo?categoria=${p.categoria}`)} class="hover:text-champan">
-        {etiquetasCategoria[p.categoria].titulo}
+      <a href={ruta(`catalogo?linea=${p.linea}`)} class="hover:text-champan">
+        {etiquetasLinea[p.linea].titulo}
       </a>
       <span class="mx-1.5">/</span>
-      <span class="text-crema/80">{p.nombre}</span>
+      <span class="text-crema/80">{titulo}</span>
     </nav>
 
     <div class="mt-6 grid gap-10 lg:grid-cols-2">
@@ -75,31 +84,35 @@ const consultaWsp = encodeURIComponent(
 
       <!-- ░░ Información y compra ░░ -->
       <div>
-        <p class="versalita text-champan">{p.casa}</p>
-        <h1 class="titulo-serif mt-2 text-4xl leading-tight text-crema sm:text-5xl">{p.nombre}</h1>
+        <p class="versalita text-champan">{etiquetasLinea[p.linea].titulo}</p>
+        <h1 class="titulo-serif mt-2 text-5xl leading-none text-crema sm:text-6xl">{titulo}</h1>
 
-        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
-          <span class="rounded-full border border-oro/35 px-2.5 py-1 text-champan">
-            {etiquetasCategoria[p.categoria].titulo}
-          </span>
-          <span class="rounded-full border border-borde px-2.5 py-1 text-apagado">{p.concentracion}</span>
-          <span class="rounded-full border border-borde px-2.5 py-1 text-apagado">{etiquetasGenero[p.genero]}</span>
-          <span class="rounded-full border border-borde px-2.5 py-1 text-apagado">{p.familia}</span>
-        </div>
-
-        {p.perfilSimilarA && (
-          <p class="mt-4 rounded-lg border border-borde bg-humo px-4 py-3 text-xs leading-relaxed text-apagado">
-            Perfil olfativo similar a <span class="text-crema">{p.perfilSimilarA}</span>.
-            Elaboración propia de {tienda.nombre}; no es ese producto ni está asociado a su casa.
-          </p>
+        {referencia && (
+          <p class="mt-3 text-lg text-champan">{referencia}</p>
         )}
 
+        <div class="mt-4 flex flex-wrap items-center gap-2 text-xs">
+          <span class="rounded-full border border-borde px-2.5 py-1 text-apagado">{p.familia}</span>
+          {p.acordes.map((a) => (
+            <span class="rounded-full border border-borde px-2.5 py-1 text-apagado">{a}</span>
+          ))}
+        </div>
+
         <p class="mt-5 text-base leading-relaxed text-crema/90">{p.descripcion}</p>
+
+        {referencia && (
+          <p class="mt-4 rounded-lg border border-borde bg-humo px-4 py-3 text-xs leading-relaxed text-apagado">
+            Perfume de elaboración propia, inspirado en el perfil olfativo de
+            <span class="text-crema"> {p.referencia.nombre}</span> de {p.referencia.casa}.
+            No es ese producto ni guarda relación con esa casa; la marca se cita solo como
+            referencia de aroma.
+          </p>
+        )}
 
         <!-- Selector de tamaño -->
         <div class="mt-7">
           <p class="versalita mb-2.5 text-apagado">Elige el tamaño</p>
-          <div class="flex flex-wrap gap-2" role="radiogroup" aria-label="Tamaño">
+          <div class="grid grid-cols-2 gap-3" role="radiogroup" aria-label="Tamaño">
             {p.variantes.map((v, i) => (
               <button
                 type="button"
@@ -110,24 +123,24 @@ const consultaWsp = encodeURIComponent(
                 aria-checked={i === 0 ? 'true' : 'false'}
                 role="radio"
                 class:list={[
-                  'rounded-xl border px-4 py-3 text-left transition',
+                  'rounded-xl border px-4 py-3.5 text-left transition',
                   i === 0 ? 'border-oro bg-oro/10' : 'border-borde bg-humo hover:border-oro/40',
                 ]}
               >
-                <span class="block text-sm font-semibold text-crema">{v.tamano}</span>
-                <span class="block text-xs text-champan">{clp(v.precio)}</span>
+                <span class="block text-base font-semibold text-crema">{v.tamano}</span>
+                <span class="block text-sm text-champan">{clp(v.precio)}</span>
               </button>
             ))}
           </div>
         </div>
 
         <!-- Precio y acciones -->
-        <div class="mt-7 rounded-2xl border border-borde bg-carbon p-5">
+        <div class="mt-6 rounded-2xl border border-borde bg-carbon p-5">
           <div class="flex items-end justify-between gap-4">
             <div>
               <span class="block text-xs text-apagado">Precio</span>
-              <span data-precio-activo class="text-3xl font-semibold text-crema">{clp(masBarata.precio)}</span>
-              <span data-tamano-activo class="ml-1 text-sm text-apagado">/ {masBarata.tamano}</span>
+              <span data-precio-activo class="text-3xl font-semibold text-crema">{clp(chica.precio)}</span>
+              <span data-tamano-activo class="ml-1 text-sm text-apagado">/ {chica.tamano}</span>
             </div>
             <span data-estado-stock class="rounded-full border border-exito/40 px-3 py-1 text-xs text-exito">
               Disponible
@@ -137,12 +150,12 @@ const consultaWsp = encodeURIComponent(
           <button
             type="button"
             data-agregar
-            data-sku={masBarata.sku}
+            data-sku={chica.sku}
             data-slug={p.slug}
-            data-nombre={p.nombre}
-            data-casa={p.casa}
-            data-tamano={masBarata.tamano}
-            data-precio={masBarata.precio}
+            data-nombre={titulo}
+            data-casa={referencia || p.familia}
+            data-tamano={chica.tamano}
+            data-precio={chica.precio}
             class="mt-5 w-full rounded-full bg-oro px-6 py-3.5 text-sm font-bold text-noche transition hover:bg-champan disabled:cursor-not-allowed disabled:bg-borde disabled:text-apagado"
           >Agregar al carrito</button>
 
@@ -158,8 +171,7 @@ const consultaWsp = encodeURIComponent(
           </div>
 
           <p class="mt-4 border-t border-borde pt-3 text-[11px] leading-relaxed text-apagado">
-            {envios.plazo}. Envío gratis sobre {clp(envios.umbralEnvioGratis)}.
-            {' '}{envios.retiroTexto}.
+            {envios.plazo}. Envío gratis sobre {clp(envios.umbralEnvioGratis)}. {envios.retiroTexto}.
           </p>
         </div>
 
@@ -269,18 +281,15 @@ const consultaWsp = encodeURIComponent(
 
     cargarStock().then((mapa) => {
       stock = mapa;
-      // Muestra los precios por tamaño ya corregidos
       for (const b of botones) {
         const sku = b.dataset.sku!;
         const precio = precioDe(mapa, sku, Number(b.dataset.precio));
         b.dataset.precio = String(precio);
         const etiqueta = b.querySelector('span:last-child');
         if (etiqueta) {
-          etiqueta.textContent =
-            estadoDe(mapa, sku) === 'agotado' ? 'Agotado' : clp(precio);
+          etiqueta.textContent = estadoDe(mapa, sku) === 'agotado' ? 'Agotado' : clp(precio);
         }
       }
-      // Preselecciona el primer tamaño disponible
       const primero = botones.find((b) => estadoDe(mapa, b.dataset.sku!) !== 'agotado') ?? botones[0];
       if (primero) seleccionar(primero);
     });

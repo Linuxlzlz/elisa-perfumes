@@ -1,21 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
-import { etiquetasCategoria, productos } from '../lib/catalogo';
+import { etiquetasLinea, inspiradoEn, nombre, productos } from '../lib/catalogo';
 import { clp } from '../lib/formato';
 import { repo } from '../config';
 
 // Lista mínima para el panel: SKU, nombre y precio de catálogo.
-const filas = productos.flatMap((p) =>
-  p.variantes.map((v) => ({
-    sku: v.sku,
-    slug: p.slug,
-    nombre: p.nombre,
-    casa: p.casa,
-    categoria: etiquetasCategoria[p.categoria].titulo,
-    tamano: v.tamano,
-    precioCatalogo: v.precio,
-  })),
-);
+const filas = productos
+  .sort((a, b) => a.numero - b.numero)
+  .flatMap((p) =>
+    p.variantes.map((v) => ({
+      sku: v.sku,
+      slug: p.slug,
+      titulo: nombre(p),
+      referencia: inspiradoEn(p),
+      linea: etiquetasLinea[p.linea].titulo,
+      tamano: v.tamano,
+      precioCatalogo: v.precio,
+    })),
+  );
 
 const urlAcciones = `https://github.com/${repo.owner}/${repo.name}/actions`;
 const urlToken = `https://github.com/settings/personal-access-tokens/new`;
@@ -109,7 +111,7 @@ const urlToken = `https://github.com/settings/personal-access-tokens/new`;
     <section data-panel class="mt-6 hidden" aria-label="Inventario">
       <div class="flex flex-wrap items-center gap-3 rounded-t-2xl border border-b-0 border-borde bg-humo px-4 py-3">
         <input
-          type="search" data-filtro placeholder="Filtrar por nombre, casa o tamaño…"
+          type="search" data-filtro placeholder="Filtrar por número, marca o tamaño…"
           class="min-w-0 flex-1 rounded-lg border border-borde bg-carbon px-3 py-2 text-sm text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
         />
         <button type="button" data-todo-disponible class="rounded-lg border border-borde px-3 py-2 text-xs text-apagado transition hover:border-exito hover:text-exito">
@@ -133,11 +135,11 @@ const urlToken = `https://github.com/settings/personal-access-tokens/new`;
               <tr
                 data-fila
                 data-sku={f.sku}
-                data-busqueda={`${f.nombre} ${f.casa} ${f.tamano} ${f.categoria}`.toLowerCase()}
+                data-busqueda={`${f.titulo} ${f.referencia} ${f.tamano} ${f.linea}`.toLowerCase()}
               >
                 <td class="px-4 py-3">
-                  <p class="text-crema">{f.nombre}</p>
-                  <p class="text-xs text-apagado">{f.casa} · {f.categoria}</p>
+                  <p class="font-medium text-crema">{f.titulo}</p>
+                  <p class="text-xs text-apagado">{f.referencia || f.linea}</p>
                 </td>
                 <td class="px-4 py-3 text-apagado">{f.tamano}</td>
                 <td class="px-4 py-3">

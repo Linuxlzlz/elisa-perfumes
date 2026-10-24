@@ -1,13 +1,11 @@
 ---
 import { ruta } from '../lib/formato';
-import { tienda } from '../config';
+import { presentacion, tienda } from '../config';
 
 const enlaces = [
   { texto: 'Catálogo', href: ruta('catalogo') },
-  { texto: 'Originales', href: ruta('catalogo?categoria=originales') },
-  { texto: 'Decants', href: ruta('catalogo?categoria=decants') },
-  { texto: 'Alternativas', href: ruta('catalogo?categoria=inspirados') },
-  { texto: 'Nicho y árabes', href: ruta('catalogo?categoria=nicho') },
+  { texto: presentacion.etiquetas.mujer, href: ruta('catalogo?linea=mujer') },
+  { texto: presentacion.etiquetas.hombre, href: ruta('catalogo?linea=hombre') },
   { texto: 'Encuentra tu perfume', href: ruta('quiz') },
   { texto: 'Envíos', href: ruta('envios') },
 ];

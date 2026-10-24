@@ -1,7 +1,7 @@
 # Elisa Perfumes
 
-Catálogo de perfumería con carrito de compra y pedidos por WhatsApp, pensado para
-alojarse gratis en GitHub Pages.
+Catálogo de 86 perfumes inspirados, con carrito de compra y pedidos por WhatsApp,
+pensado para alojarse gratis en GitHub Pages.
 
 Construido con [Astro](https://astro.build) y Tailwind CSS. Sin servidor, sin base de
 datos y sin costos de hosting.
@@ -12,11 +12,11 @@ datos y sin costos de hosting.
 
 | | |
 |---|---|
-| **Catálogo** | Una página estática por perfume, con pirámide olfativa, medidores de proyección y duración, y datos estructurados para Google |
-| **Filtros** | Por línea, género, familia olfativa, ocasión, casa, precio y búsqueda por nota |
+| **Catálogo** | 86 fragancias en dos líneas (Mujer / Hombre), con página estática por perfume, pirámide olfativa, medidores de proyección y duración, y datos estructurados |
+| **Filtros** | Por línea, familia olfativa, ocasión, intensidad y casa de referencia; búsqueda por número, marca o nota |
 | **Carrito** | Persiste en el navegador, sobrevive recargas y se sincroniza entre pestañas |
 | **Pedidos** | Genera el mensaje completo y abre WhatsApp. Incluye botón de respaldo "copiar pedido" |
-| **Quiz** | Cuatro preguntas que recomiendan tres fragancias del catálogo |
+| **Quiz** | Cuatro preguntas (línea, ocasión, aroma, intensidad) que recomiendan tres números |
 | **Stock** | Panel en `/admin` para marcar agotados y ajustar precios sin tocar código |
 
 ---
@@ -64,51 +64,93 @@ umbral de envío gratis, comunas y formas de pago.
 
 ---
 
-## 3. Cargar tu catálogo
+## 3. El catálogo
 
-**El catálogo que viene incluido es de ejemplo.** Hay dos formas de reemplazarlo.
+86 fragancias en dos líneas, todas al mismo precio: **30 ml $15.000 · 100 ml $45.000**.
 
-### Opción A — importar desde CSV (recomendado si tienes muchos productos)
+| Línea | Números | Cantidad |
+|---|---|---|
+| Mujer | Nº 01 a 39 | 39 |
+| Hombre | Nº 51 a 97 | 47 |
+
+### Cómo se identifica cada producto
+
+El **nombre del producto es su número** (`Nº 54`). La fragancia en la que se inspira se
+declara aparte, como referencia olfativa: *"Inspirado en Aventus de Creed"*.
+
+Esto es deliberado. Usar una marca registrada como nombre de tu producto en un sitio
+público e indexado es exposición legal innecesaria; citarla como referencia es la
+práctica defendible y conserva el tráfico de búsqueda (el slug de la URL también la
+incluye: `/perfume/54-aventus-creed`).
+
+Si prefieres ocultar la referencia por completo, en `src/config.ts`:
+
+```ts
+export const presentacion = {
+  mostrarReferencia: false,   // la marca desaparece de todo el sitio
+};
+```
+
+Con eso, la referencia se va de fichas, tarjetas, títulos, buscador, filtros y datos
+estructurados. Los productos quedan identificados solo por su número.
+
+### Editar o ampliar el catálogo
+
+Los datos viven en dos archivos, **no** en el JSON:
+
+- `scripts/datos-mujer.mjs` — Nº 01 a 39
+- `scripts/datos-hombre.mjs` — Nº 51 a 97
+
+Cada fila tiene 13 columnas, en este orden:
+
+```js
+[54,'Aventus','Creed','Frutal chipre','Piña|Abedul ahumado|Musgo',
+ 'Piña|Bergamota|Manzana','Abedul|Pachulí|Jazmín','Musgo de roble|Ámbar gris|Vainilla',
+ 'Diario|Formal|Cita','Todo el año',4,4,
+ 'Descripción de una o dos frases.'],
+```
+
+`nº, referencia, casa, familia, acordes, salida, corazón, fondo, ocasiones,
+estaciones, proyección (1-5), duración (1-5), descripción`. Las listas van separadas
+por `|`.
+
+Después de editar:
 
 ```bash
-npm run importar mi-catalogo.csv
+npm run generar
 ```
 
-Mira `scripts/ejemplo-catalogo.csv` para el formato exacto. Columnas obligatorias:
-`nombre`, `casa`, `tamanos`, `precios`. Las listas van separadas por `|`:
+El generador valida todo (slugs y SKU únicos, notas no vacías, rangos correctos,
+descripciones de largo mínimo) y falla con un listado si algo está mal. Deja un
+respaldo en `catalogo.json.bak`.
 
-```csv
-nombre,casa,categoria,tamanos,precios,acordes
-Asad,Lattafa,nicho,100ml,36990,Tabaco|Café|Piña
-Sauvage,Dior,originales,60ml|100ml,74990|94990,Fresco especiado|Ambarado
+Los precios de lista y los productos destacados también se configuran ahí, al inicio
+de `scripts/generar-catalogo.mjs`:
+
+```js
+const PRECIOS = [
+  { tamano: '30ml', precio: 15000 },
+  { tamano: '100ml', precio: 45000 },
+];
+const DESTACADOS = new Set([54, 12, 6, 34, 29, 81, 58, 72, 96, 53, 31, 67]);
 ```
 
-El importador valida los datos, avisa de filas con problemas y deja un respaldo en
-`catalogo.json.bak`.
-
-### Opción B — editar a mano
-
-`src/data/catalogo.json`. Cada producto necesita al menos `slug`, `nombre`, `casa`,
-`categoria`, `variantes` y `descripcion`. Las categorías válidas son
-`originales`, `decants`, `inspirados` y `nicho`.
-
-> **Sobre las descripciones:** escribe las tuyas en lugar de copiar las del proveedor.
-> Google penaliza el contenido duplicado, y la descripción propia es justamente lo que
-> hace que tu ficha rankee en vez de la de otro revendedor.
+> Para cambiar el precio de **un** producto puntual, no edites el generador: usa el
+> panel `/admin`, que permite sobrescribir precios por SKU sin tocar código.
 
 ### Fotos de producto
 
-Mientras un producto no tenga el campo `img`, el sitio dibuja un frasco SVG generado
-según su familia olfativa. Sirve para lanzar, pero **las fotos reales convierten mucho
-más**. Para usarlas:
+Mientras un producto no tenga el campo `img`, el sitio dibuja un frasco SVG cuyo color
+sale de su familia olfativa. Se ve bien y es consistente, pero **las fotos reales
+convierten bastante más**. Para usarlas:
 
 1. Guarda las imágenes en `public/img/productos/`
-2. Agrega el campo al producto: `"img": "img/productos/asad.webp"`
+2. En el archivo de datos, el producto necesita el campo `img`. Como el generador no lo
+   contempla por omisión, añádelo al objeto que construye en `generar-catalogo.mjs`, o
+   edita el JSON una vez generado.
 
-Recomendación: mismo fondo, mismo ángulo, formato cuadrado, WebP de ~800 px.
-GitHub Pages no optimiza imágenes, así que llegan al cliente tal como las subas.
-
----
+Recomendación: mismo fondo, mismo ángulo, formato cuadrado, WebP de ~800 px. GitHub
+Pages no optimiza imágenes: llegan al cliente tal como las subas.
 
 ## 4. Panel de administración de stock
 
@@ -189,6 +231,8 @@ Son consecuencia de usar hosting estático. Conviene tenerlas presentes:
 - **Los precios son públicos.** La competencia los ve. Aun así conviene mostrarlos:
   esconderlos baja la conversión, y por Ley del Consumidor el precio publicado se
   debe respetar.
+- **El catálogo es de reventa.** Si tu proveedor cambia precios o descontinúa un
+  número, nada se entera solo: hay que editar los archivos de datos y regenerar.
 - **Retraso de 1 a 2 minutos** entre guardar en `/admin` y verlo publicado.
 - **Mensajes muy largos** (más de ~15 productos distintos) pueden truncarse en el enlace
   de WhatsApp en algunos navegadores.
@@ -204,7 +248,7 @@ manteniendo este mismo frontend.
 ```
 src/
 ├── config.ts              ← configuración de la tienda (WhatsApp, envíos, pagos)
-├── data/catalogo.json     ← los productos
+├── data/catalogo.json     ← generado, no editar a mano
 ├── lib/
 │   ├── carrito.ts         ← carrito en localStorage
 │   ├── whatsapp.ts        ← armado del mensaje de pedido
@@ -222,13 +266,26 @@ src/
 public/
 ├── stock.json             ← lo escribe /admin
 └── img/productos/         ← tus fotos acá
+
+scripts/
+├── datos-mujer.mjs        ← Nº 01-39   (edita acá)
+├── datos-hombre.mjs       ← Nº 51-97   (edita acá)
+└── generar-catalogo.mjs   ← npm run generar
 ```
 
 ---
 
 ## Nota legal
 
-La línea de alternativas se presenta como elaboración propia con un campo
-`perfilSimilarA` que indica el perfil de referencia en texto secundario. **No uses
-marcas registradas como nombre de producto** — eso es lo que genera problemas legales.
-El pie de página ya incluye la aclaración correspondiente.
+Todos los productos se presentan como elaboración propia, identificados por número, y
+la marca en la que se inspiran se cita únicamente como referencia olfativa. Esa
+distinción está implementada en tres niveles:
+
+1. El `name` y el `<h1>` de cada ficha son el número, nunca la marca.
+2. El `brand` de los datos estructurados (JSON-LD) es **Elisa Perfumes**, no la casa de
+   referencia: para Google el fabricante eres tú.
+3. Cada ficha y el pie de página incluyen el descargo explícito de que no existe vínculo
+   ni respaldo de esas casas.
+
+Si en algún momento recibes un reclamo de marca, `mostrarReferencia: false` en
+`src/config.ts` retira todas las menciones del sitio en un solo despliegue.

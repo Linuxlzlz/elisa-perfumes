@@ -2,38 +2,38 @@
 import Base from '../layouts/Base.astro';
 import TarjetaProducto from '../components/TarjetaProducto.astro';
 import FotoProducto from '../components/FotoProducto.astro';
-import { destacados, etiquetasCategoria, porCategoria, productos } from '../lib/catalogo';
+import { destacados, etiquetasLinea, inspiradoEn, nombre, porLinea, productos } from '../lib/catalogo';
 import { clp, ruta } from '../lib/formato';
 import { envios, pagos, tienda } from '../config';
-import type { Categoria } from '../lib/tipos';
+import type { Linea } from '../lib/tipos';
 
-const masVendidos = destacados(8);
-const estrella = masVendidos[0] ?? productos[0];
+const masPedidos = destacados(8);
+const estrella = masPedidos[0] ?? productos[0];
+const precioChico = Math.min(...productos.flatMap((p) => p.variantes.map((v) => v.precio)));
+const precioGrande = Math.max(...productos.flatMap((p) => p.variantes.map((v) => v.precio)));
 
-const categorias: Categoria[] = ['originales', 'decants', 'inspirados', 'nicho'];
-const resumenCategorias = categorias.map((c) => {
-  const items = porCategoria(c);
-  const precios = items.flatMap((p) => p.variantes.map((v) => v.precio));
+const lineas: Linea[] = ['mujer', 'hombre'];
+const resumenLineas = lineas.map((l) => {
+  const items = porLinea(l);
   return {
-    clave: c,
-    ...etiquetasCategoria[c],
+    clave: l,
+    ...etiquetasLinea[l],
     cantidad: items.length,
-    desde: precios.length ? Math.min(...precios) : 0,
-    muestra: items[0],
+    muestras: items.filter((p) => p.destacado).slice(0, 3),
   };
 });
 
 const garantias = [
-  { titulo: 'Originales verificados', texto: 'Frascos sellados, con caja y celofán de fábrica. Si no es original, te devolvemos el dinero.' },
-  { titulo: 'Prueba antes de invertir', texto: 'Decants desde 5 ml para conocer la fragancia en tu piel sin pagar el frasco completo.' },
+  { titulo: 'Fijación de 8 horas o más', texto: 'Concentración alta de esencia. No son aguas de colonia que se van a media mañana: duran la jornada completa.' },
+  { titulo: 'Dos tamaños, un precio claro', texto: `30 ml a ${clp(precioChico)} y 100 ml a ${clp(precioGrande)}. Mismo valor para las ${productos.length} fragancias, sin letra chica.` },
   { titulo: 'Envíos a todo Chile', texto: `${envios.couriers.join(', ')}. ${envios.plazo}.` },
   { titulo: 'Asesoría real por WhatsApp', texto: 'Te preguntamos qué buscas y te recomendamos. Sin bots ni respuestas automáticas.' },
 ];
 
 const testimonios = [
-  { texto: 'Pedí un decant de Layton para probar y terminé comprando el frasco. La atención por WhatsApp fue rapidísima y me explicaron todo.', autora: 'Camila R.', detalle: 'Ñuñoa' },
-  { texto: 'Compré Khamrah y llegó en dos días a Concepción, sellado y con su caja. Es idéntico al que probé en una tienda, pero a mitad de precio.', autora: 'Diego M.', detalle: 'Concepción' },
-  { texto: 'Las alternativas son increíbles para el día a día. Uso el Nº 21 para la oficina y nadie nota que no es el original.', autora: 'Francisca T.', detalle: 'Providencia' },
+  { texto: 'Pedí el Nº 54 y me duró todo el día en la ropa. Por ese precio no esperaba esa fijación, de verdad.', autora: 'Camila R.', detalle: 'Ñuñoa' },
+  { texto: 'Compré dos de 100 ml y llegaron en tres días a Concepción. La atención por WhatsApp fue rapidísima.', autora: 'Diego M.', detalle: 'Concepción' },
+  { texto: 'Empecé con el de 30 ml para probar y volví por el grande. Uso el Nº 81 para la oficina todos los días.', autora: 'Francisca T.', detalle: 'Providencia' },
 ];
 ---
 <Base>
@@ -49,13 +49,13 @@ const testimonios = [
           <span class="text-champan italic">te recuerdan</span>
         </h1>
         <p class="mt-6 max-w-md text-base leading-relaxed text-apagado">
-          Originales sellados, decants desde 5 ml, nicho árabe y alternativas de autor.
-          Te asesoramos por WhatsApp y despachamos a todo Chile.
+          {productos.length} fragancias inspiradas en las grandes casas internacionales,
+          con más de 8 horas de fijación. En 30 y 100 ml, con despacho a todo Chile.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3">
           <a href={ruta('catalogo')} class="rounded-full bg-oro px-7 py-3.5 text-sm font-semibold text-noche transition hover:bg-champan">
-            Ver el catálogo
+            Ver las {productos.length} fragancias
           </a>
           <a href={ruta('quiz')} class="rounded-full border border-oro/50 px-7 py-3.5 text-sm font-semibold text-champan transition hover:bg-oro hover:text-noche">
             Encuentra tu perfume
@@ -68,12 +68,12 @@ const testimonios = [
             <dd class="text-xs text-apagado">fragancias</dd>
           </div>
           <div>
-            <dt class="text-2xl font-semibold text-crema">5 ml</dt>
-            <dd class="text-xs text-apagado">desde, en decants</dd>
+            <dt class="text-2xl font-semibold text-crema">{clp(precioChico)}</dt>
+            <dd class="text-xs text-apagado">el frasco de 30 ml</dd>
           </div>
           <div>
-            <dt class="text-2xl font-semibold text-crema">24 h</dt>
-            <dd class="text-xs text-apagado">despacho en Santiago</dd>
+            <dt class="text-2xl font-semibold text-crema">8+ h</dt>
+            <dd class="text-xs text-apagado">de fijación</dd>
           </div>
         </dl>
       </div>
@@ -84,9 +84,9 @@ const testimonios = [
           <a href={ruta(`perfume/${estrella.slug}`)} class="relative block">
             <FotoProducto producto={estrella} grande />
             <div class="mt-4 text-center">
-              <p class="versalita text-apagado">{estrella.casa}</p>
-              <p class="titulo-serif text-2xl text-crema">{estrella.nombre}</p>
-              <p class="mt-1 text-sm text-champan">desde {clp(Math.min(...estrella.variantes.map((v) => v.precio)))}</p>
+              <p class="titulo-serif text-3xl text-crema">{nombre(estrella)}</p>
+              <p class="mt-1 text-sm text-champan">{inspiradoEn(estrella)}</p>
+              <p class="mt-2 text-sm text-apagado">desde {clp(Math.min(...estrella.variantes.map((v) => v.precio)))}</p>
             </div>
           </a>
         </div>
@@ -94,37 +94,48 @@ const testimonios = [
     </div>
   </section>
 
-  <!-- ░░ Categorías ░░ -->
+  <!-- ░░ Las dos líneas ░░ -->
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <div class="aparece">
-      <h2 class="titulo-serif text-3xl text-crema sm:text-4xl">Cuatro formas de comprar</h2>
+      <h2 class="titulo-serif text-3xl text-crema sm:text-4xl">Dos líneas, un mismo precio</h2>
       <p class="mt-2 max-w-xl text-sm text-apagado">
-        Desde el frasco original sellado hasta la alternativa de uso diario. Elige según tu presupuesto y lo que busques.
+        Cada fragancia se identifica por su número. Te decimos en qué se inspira para que
+        sepas exactamente qué vas a oler.
       </p>
     </div>
 
-    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {resumenCategorias.map((c) => (
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {resumenLineas.map((l) => (
         <a
-          href={ruta(`catalogo?categoria=${c.clave}`)}
-          class="aparece group flex flex-col rounded-2xl border border-borde bg-carbon p-6 transition-all hover:border-oro/45 hover:bg-humo"
+          href={ruta(`catalogo?linea=${l.clave}`)}
+          class="aparece group flex flex-col rounded-3xl border border-borde bg-carbon p-7 transition-all hover:border-oro/45 hover:bg-humo"
         >
-          {c.muestra && (
-            <div class="mx-auto h-36 w-36 transition-transform duration-500 group-hover:scale-110">
-              <FotoProducto producto={c.muestra} />
-            </div>
-          )}
-          <h3 class="titulo-serif mt-4 text-2xl text-crema group-hover:text-champan">{c.titulo}</h3>
-          <p class="mt-2 flex-1 text-sm leading-relaxed text-apagado">{c.bajada}</p>
-          <p class="mt-4 border-t border-borde pt-3 text-xs text-champan">
-            {c.cantidad} {c.cantidad === 1 ? 'fragancia' : 'fragancias'} · desde {clp(c.desde)}
+          <div class="flex items-baseline justify-between gap-3">
+            <h3 class="titulo-serif text-3xl text-crema group-hover:text-champan">{l.titulo}</h3>
+            <span class="text-sm text-champan">{l.cantidad} fragancias</span>
+          </div>
+          <p class="mt-2 text-sm leading-relaxed text-apagado">{l.bajada}</p>
+
+          <div class="mt-6 grid grid-cols-3 gap-3">
+            {l.muestras.map((m) => (
+              <div class="rounded-xl border border-borde bg-noche/50 p-2">
+                <div class="h-24 w-full transition-transform duration-500 group-hover:scale-105">
+                  <FotoProducto producto={m} />
+                </div>
+                <p class="mt-1 text-center text-[11px] text-apagado">{nombre(m)}</p>
+              </div>
+            ))}
+          </div>
+
+          <p class="mt-6 border-t border-borde pt-4 text-sm text-champan">
+            Explorar la línea →
           </p>
         </a>
       ))}
     </div>
   </section>
 
-  <!-- ░░ Más vendidos ░░ -->
+  <!-- ░░ Más pedidos ░░ -->
   <section class="border-y border-borde bg-carbon/40 py-16">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="aparece flex flex-wrap items-end justify-between gap-4">
@@ -132,11 +143,11 @@ const testimonios = [
           <h2 class="titulo-serif text-3xl text-crema sm:text-4xl">Los más pedidos</h2>
           <p class="mt-2 text-sm text-apagado">Lo que más sale por WhatsApp este mes.</p>
         </div>
-        <a href={ruta('catalogo')} class="text-sm text-champan underline-offset-4 hover:underline">Ver todo el catálogo →</a>
+        <a href={ruta('catalogo')} class="text-sm text-champan underline-offset-4 hover:underline">Ver el catálogo completo →</a>
       </div>
 
       <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {masVendidos.map((p) => (
+        {masPedidos.map((p) => (
           <div class="aparece"><TarjetaProducto producto={p} /></div>
         ))}
       </div>
@@ -148,13 +159,13 @@ const testimonios = [
     <div class="aparece relative overflow-hidden rounded-3xl border border-oro/25 bg-gradient-to-br from-humo via-carbon to-noche p-8 sm:p-12">
       <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-oro/10 blur-3xl"></div>
       <div class="relative max-w-2xl">
-        <p class="versalita text-champan">No sabes cuál elegir</p>
+        <p class="versalita text-champan">Son {productos.length}, y elegir cuesta</p>
         <h2 class="titulo-serif mt-3 text-3xl text-crema sm:text-4xl">
-          Responde cuatro preguntas y te decimos qué te va
+          Responde cuatro preguntas y te decimos cuál es el tuyo
         </h2>
         <p class="mt-4 text-sm leading-relaxed text-apagado">
-          Ocasión, intensidad, familia olfativa y presupuesto. En menos de un minuto te mostramos
-          tres fragancias de nuestro catálogo que calzan con lo que buscas.
+          Línea, ocasión, familia olfativa e intensidad. En menos de un minuto te mostramos
+          tres números del catálogo que calzan con lo que buscas.
         </p>
         <a href={ruta('quiz')} class="mt-7 inline-block rounded-full bg-oro px-7 py-3.5 text-sm font-semibold text-noche transition hover:bg-champan">
           Empezar el test

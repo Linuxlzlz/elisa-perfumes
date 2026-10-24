@@ -1,6 +1,6 @@
 ---
 import { ruta } from '../lib/formato';
-import { envios, pagos, tienda } from '../config';
+import { envios, pagos, presentacion, tienda } from '../config';
 const anio = new Date().getFullYear();
 ---
 <footer class="mt-24 border-t border-borde bg-carbon">
@@ -15,10 +15,9 @@ const anio = new Date().getFullYear();
     <div>
       <h3 class="versalita text-champan">Catálogo</h3>
       <ul class="mt-4 space-y-2 text-sm">
-        <li><a href={ruta('catalogo?categoria=originales')} class="text-apagado hover:text-crema">Originales</a></li>
-        <li><a href={ruta('catalogo?categoria=decants')} class="text-apagado hover:text-crema">Decants</a></li>
-        <li><a href={ruta('catalogo?categoria=inspirados')} class="text-apagado hover:text-crema">Alternativas</a></li>
-        <li><a href={ruta('catalogo?categoria=nicho')} class="text-apagado hover:text-crema">Nicho y árabes</a></li>
+        <li><a href={ruta('catalogo')} class="text-apagado hover:text-crema">Ver todo</a></li>
+        <li><a href={ruta('catalogo?linea=mujer')} class="text-apagado hover:text-crema">{presentacion.etiquetas.mujer}</a></li>
+        <li><a href={ruta('catalogo?linea=hombre')} class="text-apagado hover:text-crema">{presentacion.etiquetas.hombre}</a></li>
         <li><a href={ruta('quiz')} class="text-apagado hover:text-crema">Encuentra tu perfume</a></li>
       </ul>
     </div>
@@ -55,8 +54,9 @@ const anio = new Date().getFullYear();
     <div class="mx-auto flex max-w-7xl flex-col gap-2 text-xs text-apagado md:flex-row md:items-center md:justify-between">
       <p>© {anio} {tienda.nombre}. Todos los derechos reservados.</p>
       <p>
-        Las marcas mencionadas pertenecen a sus respectivos titulares. Nuestra línea de
-        alternativas es de elaboración propia y no está asociada a esas casas.
+        Todos nuestros perfumes son de elaboración propia e inspirados en fragancias de
+        terceros. Las marcas citadas pertenecen a sus respectivos titulares y se mencionan
+        únicamente como referencia olfativa; no existe vínculo ni respaldo de esas casas.
       </p>
     </div>
   </div>

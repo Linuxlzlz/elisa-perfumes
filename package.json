@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "importar": "node scripts/importar-catalogo.mjs"
+    "generar": "node scripts/generar-catalogo.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

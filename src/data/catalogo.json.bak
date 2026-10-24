@@ -1,0 +1,4923 @@
+{
+  "productos": [
+    {
+      "slug": "1-erba-pura-sospiro",
+      "numero": 1,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Erba Pura",
+        "casa": "Sospiro"
+      },
+      "familia": "Frutal cítrico",
+      "acordes": [
+        "Frutas confitadas",
+        "Cítrico",
+        "Almizcle dulce"
+      ],
+      "notas": {
+        "salida": [
+          "Naranja siciliana",
+          "Limón",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Frutas tropicales",
+          "Manzana",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Almizcle blanco",
+          "Ámbar",
+          "Vainilla",
+          "Maderas"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Verano"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Explosión de frutas confitadas sobre un fondo de almizcle limpio. Alegre y fácil de llevar, de esos que la gente pregunta en el ascensor.",
+      "variantes": [
+        {
+          "sku": "1-erba-pura-sospiro-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "1-erba-pura-sospiro-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "2-bright-crystal-versace",
+      "numero": 2,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Bright Crystal",
+        "casa": "Versace"
+      },
+      "familia": "Floral frutal",
+      "acordes": [
+        "Granada",
+        "Peonía",
+        "Almizcle"
+      ],
+      "notas": {
+        "salida": [
+          "Granada",
+          "Yuzu",
+          "Hoja de hiedra"
+        ],
+        "corazon": [
+          "Peonía",
+          "Magnolia",
+          "Loto"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Caoba",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 3,
+      "duracion": 3,
+      "descripcion": "Fresco, floral y transparente, con granada al frente. Es el perfume de uso diario por excelencia: nunca molesta a nadie.",
+      "variantes": [
+        {
+          "sku": "2-bright-crystal-versace-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "2-bright-crystal-versace-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "3-la-bomba-carolina-herrera",
+      "numero": 3,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "La Bomba",
+        "casa": "Carolina Herrera"
+      },
+      "familia": "Floral gourmand",
+      "acordes": [
+        "Tuberosa",
+        "Caramelo",
+        "Jazmín"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Pera"
+        ],
+        "corazon": [
+          "Tuberosa",
+          "Jazmín",
+          "Azahar"
+        ],
+        "fondo": [
+          "Caramelo",
+          "Vainilla",
+          "Haba tonka"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Fiesta",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Floral blanco envuelto en caramelo, intenso y descarado. Para salir de noche, no para la oficina.",
+      "variantes": [
+        {
+          "sku": "3-la-bomba-carolina-herrera-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "3-la-bomba-carolina-herrera-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "4-aventus-for-her-creed",
+      "numero": 4,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Aventus for Her",
+        "casa": "Creed"
+      },
+      "familia": "Frutal chipre",
+      "acordes": [
+        "Grosella negra",
+        "Rosa",
+        "Almizcle"
+      ],
+      "notas": {
+        "salida": [
+          "Grosella negra",
+          "Bergamota",
+          "Limón"
+        ],
+        "corazon": [
+          "Rosa",
+          "Lirio",
+          "Manzana"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Sándalo",
+          "Ámbar gris",
+          "Pachulí"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Formal",
+        "Cita"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "La contraparte femenina del clásico frutal ahumado: grosella y rosa sobre un fondo almizclado seco. Elegante sin esfuerzo.",
+      "variantes": [
+        {
+          "sku": "4-aventus-for-her-creed-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "4-aventus-for-her-creed-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "5-miss-dior-dior",
+      "numero": 5,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Miss Dior",
+        "casa": "Dior"
+      },
+      "familia": "Floral chipre",
+      "acordes": [
+        "Rosa",
+        "Pachulí",
+        "Lichi"
+      ],
+      "notas": {
+        "salida": [
+          "Mandarina",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Rosa de mayo",
+          "Peonía",
+          "Lichi"
+        ],
+        "fondo": [
+          "Pachulí",
+          "Almizcle",
+          "Haba tonka"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Cita",
+        "Formal"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Otoño"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Rosa moderna sobre pachulí, romántica pero con estructura. Funciona de día y aguanta perfectamente la noche.",
+      "variantes": [
+        {
+          "sku": "5-miss-dior-dior-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "5-miss-dior-dior-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "6-la-vie-est-belle-lancome",
+      "numero": 6,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "La Vie Est Belle",
+        "casa": "Lancôme"
+      },
+      "familia": "Floral gourmand",
+      "acordes": [
+        "Iris",
+        "Praliné",
+        "Pachulí"
+      ],
+      "notas": {
+        "salida": [
+          "Grosella negra",
+          "Pera"
+        ],
+        "corazon": [
+          "Iris",
+          "Jazmín",
+          "Azahar"
+        ],
+        "fondo": [
+          "Praliné",
+          "Vainilla",
+          "Pachulí",
+          "Haba tonka"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Noche",
+        "Regalo"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno",
+        "Primavera"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Dulce elegante: el iris lo mantiene refinado y el praliné lo vuelve cálido. Es el regalo que casi nunca falla.",
+      "variantes": [
+        {
+          "sku": "6-la-vie-est-belle-lancome-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "6-la-vie-est-belle-lancome-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada",
+      "destacado": true
+    },
+    {
+      "slug": "7-my-way-giorgio-armani",
+      "numero": 7,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "My Way",
+        "casa": "Giorgio Armani"
+      },
+      "familia": "Floral blanco",
+      "acordes": [
+        "Nardo",
+        "Azahar",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Azahar"
+        ],
+        "corazon": [
+          "Nardo",
+          "Jazmín indio"
+        ],
+        "fondo": [
+          "Vainilla de Madagascar",
+          "Almizcle blanco",
+          "Cedro"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Formal"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Floral blanco luminoso y limpio, con una vainilla discreta al cierre. Moderno y muy apropiado para el trabajo.",
+      "variantes": [
+        {
+          "sku": "7-my-way-giorgio-armani-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "7-my-way-giorgio-armani-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "8-fame-paco-rabanne",
+      "numero": 8,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Fame",
+        "casa": "Paco Rabanne"
+      },
+      "familia": "Floral frutal",
+      "acordes": [
+        "Mango",
+        "Jazmín",
+        "Incienso"
+      ],
+      "notas": {
+        "salida": [
+          "Mango",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Jazmín sambac"
+        ],
+        "fondo": [
+          "Incienso",
+          "Sándalo",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Fiesta",
+        "Diario"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Mango jugoso sobre jazmín y un toque de incienso que lo salva de ser solo dulce. Joven y llamativo.",
+      "variantes": [
+        {
+          "sku": "8-fame-paco-rabanne-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "8-fame-paco-rabanne-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "9-bombshell-victoria-s-secret",
+      "numero": 9,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Bombshell",
+        "casa": "Victoria’s Secret"
+      },
+      "familia": "Floral frutal",
+      "acordes": [
+        "Maracuyá",
+        "Peonía",
+        "Orquídea"
+      ],
+      "notas": {
+        "salida": [
+          "Maracuyá",
+          "Pomelo",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Peonía",
+          "Orquídea",
+          "Lirio de los valles"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Maderas",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Cita"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Frutal floral muy reconocible, fresco y coqueto. De los más pedidos para el día a día en primavera.",
+      "variantes": [
+        {
+          "sku": "9-bombshell-victoria-s-secret-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "9-bombshell-victoria-s-secret-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "10-acqua-di-gioia-giorgio-armani",
+      "numero": 10,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Acqua di Gioia",
+        "casa": "Giorgio Armani"
+      },
+      "familia": "Acuático floral",
+      "acordes": [
+        "Menta",
+        "Limón",
+        "Nota marina"
+      ],
+      "notas": {
+        "salida": [
+          "Menta",
+          "Limón de Sicilia"
+        ],
+        "corazon": [
+          "Jazmín",
+          "Peonía",
+          "Nota marina"
+        ],
+        "fondo": [
+          "Cedro",
+          "Almizcle",
+          "Azúcar morena"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Verano",
+        "Deporte"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 3,
+      "duracion": 3,
+      "descripcion": "Menta fría y cítrico sobre acordes marinos. El más refrescante de la línea: pensado para el calor.",
+      "variantes": [
+        {
+          "sku": "10-acqua-di-gioia-giorgio-armani-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "10-acqua-di-gioia-giorgio-armani-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "11-212-sexy-carolina-herrera",
+      "numero": 11,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "212 Sexy",
+        "casa": "Carolina Herrera"
+      },
+      "familia": "Oriental floral",
+      "acordes": [
+        "Algodón de azúcar",
+        "Vainilla",
+        "Bergamota"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Mandarina",
+          "Pimienta rosa"
+        ],
+        "corazon": [
+          "Algodón de azúcar",
+          "Gardenia",
+          "Rosa"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Sándalo",
+          "Almizcle",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Cita",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Dulce envolvente con algodón de azúcar y vainilla. Un clásico de salida nocturna que nunca pasó de moda.",
+      "variantes": [
+        {
+          "sku": "11-212-sexy-carolina-herrera-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "11-212-sexy-carolina-herrera-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "12-good-girl-carolina-herrera",
+      "numero": 12,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Good Girl",
+        "casa": "Carolina Herrera"
+      },
+      "familia": "Oriental floral",
+      "acordes": [
+        "Cacao",
+        "Nardo",
+        "Café"
+      ],
+      "notas": {
+        "salida": [
+          "Almendra",
+          "Café",
+          "Bergamota",
+          "Limón"
+        ],
+        "corazon": [
+          "Nardo",
+          "Jazmín sambac",
+          "Azahar",
+          "Rosa búlgara"
+        ],
+        "fondo": [
+          "Cacao",
+          "Haba tonka",
+          "Vainilla",
+          "Praliné",
+          "Sándalo"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Cita",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Dulce con filo: el contraste entre el nardo floral y el cacao tostado lo hace adictivo y claramente nocturno.",
+      "variantes": [
+        {
+          "sku": "12-good-girl-carolina-herrera-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "12-good-girl-carolina-herrera-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada",
+      "destacado": true
+    },
+    {
+      "slug": "13-light-blue-dolce-gabbana",
+      "numero": 13,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Light Blue",
+        "casa": "Dolce & Gabbana"
+      },
+      "familia": "Cítrico floral",
+      "acordes": [
+        "Manzana verde",
+        "Cedro",
+        "Campanilla"
+      ],
+      "notas": {
+        "salida": [
+          "Manzana de Sicilia",
+          "Limón",
+          "Campanilla",
+          "Cedro"
+        ],
+        "corazon": [
+          "Bambú",
+          "Jazmín",
+          "Rosa blanca"
+        ],
+        "fondo": [
+          "Cedro",
+          "Almizcle",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Verano",
+        "Oficina"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 3,
+      "duracion": 3,
+      "descripcion": "Manzana verde y cedro: limpio, seco y veraniego. El perfume de playa por antonomasia.",
+      "variantes": [
+        {
+          "sku": "13-light-blue-dolce-gabbana-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "13-light-blue-dolce-gabbana-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "14-la-nuit-tresor-lancome",
+      "numero": 14,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "La Nuit Trésor",
+        "casa": "Lancôme"
+      },
+      "familia": "Oriental gourmand",
+      "acordes": [
+        "Rosa",
+        "Vainilla",
+        "Licor"
+      ],
+      "notas": {
+        "salida": [
+          "Licor",
+          "Lichi",
+          "Pera"
+        ],
+        "corazon": [
+          "Rosa",
+          "Flor de vainilla",
+          "Incienso"
+        ],
+        "fondo": [
+          "Vainilla bourbon",
+          "Haba tonka",
+          "Pachulí"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Cita",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Rosa oscura con licor y vainilla negra. Denso y sensual, hecho para la noche fría.",
+      "variantes": [
+        {
+          "sku": "14-la-nuit-tresor-lancome-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "14-la-nuit-tresor-lancome-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "15-santal-33-le-labo",
+      "numero": 15,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Santal 33",
+        "casa": "Le Labo"
+      },
+      "familia": "Amaderado especiado",
+      "acordes": [
+        "Sándalo",
+        "Cuero",
+        "Cardamomo"
+      ],
+      "notas": {
+        "salida": [
+          "Cardamomo",
+          "Violeta",
+          "Iris"
+        ],
+        "corazon": [
+          "Sándalo australiano",
+          "Papiro"
+        ],
+        "fondo": [
+          "Cuero",
+          "Ámbar",
+          "Cedro"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Formal",
+        "Oficina"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 3,
+      "duracion": 5,
+      "descripcion": "Sándalo seco con cuero y un fondo casi ahumado. Unisex, sobrio y distinto a todo lo demás del catálogo.",
+      "variantes": [
+        {
+          "sku": "15-santal-33-le-labo-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "15-santal-33-le-labo-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "16-212-vip-carolina-herrera",
+      "numero": 16,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "212 VIP",
+        "casa": "Carolina Herrera"
+      },
+      "familia": "Oriental gourmand",
+      "acordes": [
+        "Ron",
+        "Maracuyá",
+        "Haba tonka"
+      ],
+      "notas": {
+        "salida": [
+          "Ron",
+          "Maracuyá",
+          "Lima"
+        ],
+        "corazon": [
+          "Gardenia",
+          "Nota de champán"
+        ],
+        "fondo": [
+          "Haba tonka",
+          "Almizcle",
+          "Vainilla"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Ron y maracuyá con fondo de haba tonka: festivo, dulce y pensado para la pista de baile.",
+      "variantes": [
+        {
+          "sku": "16-212-vip-carolina-herrera-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "16-212-vip-carolina-herrera-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "17-bloom-gucci",
+      "numero": 17,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Bloom",
+        "casa": "Gucci"
+      },
+      "familia": "Floral blanco",
+      "acordes": [
+        "Nardo",
+        "Jazmín",
+        "Enredadera"
+      ],
+      "notas": {
+        "salida": [
+          "Enredadera de Rangún"
+        ],
+        "corazon": [
+          "Nardo",
+          "Jazmín sambac"
+        ],
+        "fondo": [
+          "Raíz de lirio",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Formal",
+        "Cita"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Otoño"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Floral blanco puro, sin frutas ni dulzor. Quien busca un perfume de flores de verdad, busca este.",
+      "variantes": [
+        {
+          "sku": "17-bloom-gucci-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "17-bloom-gucci-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "18-la-vie-est-belle-l-elixir-lancome",
+      "numero": 18,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "La Vie Est Belle L’Élixir",
+        "casa": "Lancôme"
+      },
+      "familia": "Oriental gourmand",
+      "acordes": [
+        "Praliné",
+        "Rosa",
+        "Pachulí"
+      ],
+      "notas": {
+        "salida": [
+          "Grosella negra",
+          "Pera",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Rosa",
+          "Iris",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Praliné",
+          "Vainilla intensa",
+          "Pachulí",
+          "Benjuí"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Invierno",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "Versión concentrada del clásico dulce: más resina, más praliné y mucha más proyección. Para frío.",
+      "variantes": [
+        {
+          "sku": "18-la-vie-est-belle-l-elixir-lancome-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "18-la-vie-est-belle-l-elixir-lancome-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "19-cloud-ariana-grande",
+      "numero": 19,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Cloud",
+        "casa": "Ariana Grande"
+      },
+      "familia": "Gourmand lácteo",
+      "acordes": [
+        "Crema de coco",
+        "Praliné",
+        "Lavanda"
+      ],
+      "notas": {
+        "salida": [
+          "Lavanda",
+          "Pera",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Crema de coco",
+          "Praliné",
+          "Jazmín",
+          "Flor de vainilla"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Maderas",
+          "Haba tonka"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Noche",
+        "Regalo"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Cremoso, lechoso y confortable, con lavanda que corta el dulzor. Muy querido por público joven.",
+      "variantes": [
+        {
+          "sku": "19-cloud-ariana-grande-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "19-cloud-ariana-grande-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "20-lady-million-gold-paco-rabanne",
+      "numero": 20,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Lady Million Gold",
+        "casa": "Paco Rabanne"
+      },
+      "familia": "Oriental floral",
+      "acordes": [
+        "Miel",
+        "Neroli",
+        "Ámbar"
+      ],
+      "notas": {
+        "salida": [
+          "Neroli",
+          "Limón",
+          "Frambuesa"
+        ],
+        "corazon": [
+          "Miel",
+          "Jazmín",
+          "Azahar"
+        ],
+        "fondo": [
+          "Ámbar",
+          "Pachulí",
+          "Haba tonka",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Fiesta",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Miel floral con un fondo ambarado brillante. Opulento y luminoso, pensado para destacar.",
+      "variantes": [
+        {
+          "sku": "20-lady-million-gold-paco-rabanne-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "20-lady-million-gold-paco-rabanne-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "21-si-passione-intense-giorgio-armani",
+      "numero": 21,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Sì Passione Intense",
+        "casa": "Giorgio Armani"
+      },
+      "familia": "Floral frutal",
+      "acordes": [
+        "Grosella negra",
+        "Rosa",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Grosella negra",
+          "Pera",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Rosa",
+          "Jazmín",
+          "Flor de osmanto"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Pachulí",
+          "Cedro",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Formal",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Grosella negra y rosa sobre vainilla, con una elegancia muy italiana. Refinado y de larga duración.",
+      "variantes": [
+        {
+          "sku": "21-si-passione-intense-giorgio-armani-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "21-si-passione-intense-giorgio-armani-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "22-libre-intense-yves-saint-laurent",
+      "numero": 22,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Libre Intense",
+        "casa": "Yves Saint Laurent"
+      },
+      "familia": "Floral aromático",
+      "acordes": [
+        "Lavanda",
+        "Azahar",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Lavanda",
+          "Mandarina",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Azahar",
+          "Jazmín",
+          "Lavanda de Francia"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Haba tonka",
+          "Ámbar",
+          "Cedro"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Noche",
+        "Oficina"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Lavanda tratada en clave femenina sobre vainilla salada. Distinto al resto y cómodo todo el día.",
+      "variantes": [
+        {
+          "sku": "22-libre-intense-yves-saint-laurent-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "22-libre-intense-yves-saint-laurent-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "23-212-heroes-for-her-carolina-herrera",
+      "numero": 23,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "212 Heroes for Her",
+        "casa": "Carolina Herrera"
+      },
+      "familia": "Floral frutal",
+      "acordes": [
+        "Frambuesa",
+        "Jazmín",
+        "Almizcle"
+      ],
+      "notas": {
+        "salida": [
+          "Frambuesa",
+          "Pera",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Jazmín",
+          "Flor de naranjo"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Maderas blancas",
+          "Vainilla"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Frambuesa fresca sobre flores blancas, energético y juvenil. Pensado para el día y la salida informal.",
+      "variantes": [
+        {
+          "sku": "23-212-heroes-for-her-carolina-herrera-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "23-212-heroes-for-her-carolina-herrera-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "24-eros-pour-femme-versace",
+      "numero": 24,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Eros Pour Femme",
+        "casa": "Versace"
+      },
+      "familia": "Floral amaderado",
+      "acordes": [
+        "Granada",
+        "Peonía",
+        "Sándalo"
+      ],
+      "notas": {
+        "salida": [
+          "Granada",
+          "Limón siciliano",
+          "Pomelo"
+        ],
+        "corazon": [
+          "Peonía",
+          "Jazmín sambac",
+          "Flor de loto"
+        ],
+        "fondo": [
+          "Sándalo",
+          "Ámbar",
+          "Almizcle",
+          "Madera de sándalo"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Noche"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Otoño"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Granada y flores sobre maderas suaves. Fresco al inicio y cálido al final: muy versátil.",
+      "variantes": [
+        {
+          "sku": "24-eros-pour-femme-versace-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "24-eros-pour-femme-versace-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "25-idole-lancome",
+      "numero": 25,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Idôle",
+        "casa": "Lancôme"
+      },
+      "familia": "Floral chipre",
+      "acordes": [
+        "Rosa",
+        "Jazmín",
+        "Almizcle limpio"
+      ],
+      "notas": {
+        "salida": [
+          "Pera",
+          "Bergamota",
+          "Grosella negra"
+        ],
+        "corazon": [
+          "Rosa de mayo",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Almizcle blanco",
+          "Pachulí",
+          "Vainilla",
+          "Papiro"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Formal"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Rosa limpia con un fondo de almizcle casi a ropa recién lavada. Discreto, moderno y perfecto para trabajar.",
+      "variantes": [
+        {
+          "sku": "25-idole-lancome-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "25-idole-lancome-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "26-delina-parfums-de-marly",
+      "numero": 26,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Delina",
+        "casa": "Parfums de Marly"
+      },
+      "familia": "Floral frutal",
+      "acordes": [
+        "Lichi",
+        "Rosa turca",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Lichi",
+          "Ruibarbo",
+          "Bergamota",
+          "Nerolí"
+        ],
+        "corazon": [
+          "Rosa turca",
+          "Peonía",
+          "Vainilla"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Cachemira",
+          "Incienso",
+          "Vetiver",
+          "Haba tonka"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Formal",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno",
+        "Primavera"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Rosa y lichi de factura muy fina, con un fondo almizclado lujoso. De los más elegantes de toda la línea.",
+      "variantes": [
+        {
+          "sku": "26-delina-parfums-de-marly-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "26-delina-parfums-de-marly-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "27-born-in-roma-donna-valentino",
+      "numero": 27,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Born in Roma Donna",
+        "casa": "Valentino"
+      },
+      "familia": "Floral amaderado",
+      "acordes": [
+        "Jazmín",
+        "Vainilla",
+        "Guayaco"
+      ],
+      "notas": {
+        "salida": [
+          "Grosella negra",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Jazmín sambac",
+          "Flor de azahar"
+        ],
+        "fondo": [
+          "Vainilla bourbon",
+          "Madera de guayaco",
+          "Cachemira"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Noche"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Floral contemporáneo con vainilla y maderas. Urbano, equilibrado y fácil de usar en cualquier contexto.",
+      "variantes": [
+        {
+          "sku": "27-born-in-roma-donna-valentino-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "27-born-in-roma-donna-valentino-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "28-can-can-paris-hilton",
+      "numero": 28,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Can Can",
+        "casa": "Paris Hilton"
+      },
+      "familia": "Floral oriental",
+      "acordes": [
+        "Frambuesa",
+        "Orquídea",
+        "Ámbar"
+      ],
+      "notas": {
+        "salida": [
+          "Frambuesa",
+          "Mandarina",
+          "Flor de azafrán"
+        ],
+        "corazon": [
+          "Orquídea",
+          "Jazmín",
+          "Peonía"
+        ],
+        "fondo": [
+          "Ámbar",
+          "Almizcle",
+          "Sándalo",
+          "Vainilla"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Frutal floral con fondo ambarado, coqueto y de aire retro. Muy rendidor para su categoría.",
+      "variantes": [
+        {
+          "sku": "28-can-can-paris-hilton-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "28-can-can-paris-hilton-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "29-coco-mademoiselle-chanel",
+      "numero": 29,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Coco Mademoiselle",
+        "casa": "Chanel"
+      },
+      "familia": "Oriental floral",
+      "acordes": [
+        "Pachulí",
+        "Rosa",
+        "Naranja"
+      ],
+      "notas": {
+        "salida": [
+          "Naranja",
+          "Bergamota",
+          "Mandarina"
+        ],
+        "corazon": [
+          "Jazmín",
+          "Rosa",
+          "Lichi"
+        ],
+        "fondo": [
+          "Pachulí",
+          "Vetiver",
+          "Vainilla",
+          "Almizcle blanco"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Noche",
+        "Formal"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Un clásico moderno: chispa cítrica, corazón floral limpio y un fondo de pachulí que se reconoce a metros.",
+      "variantes": [
+        {
+          "sku": "29-coco-mademoiselle-chanel-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "29-coco-mademoiselle-chanel-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada",
+      "destacado": true
+    },
+    {
+      "slug": "30-coconut-passion-victoria-s-secret",
+      "numero": 30,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Coconut Passion",
+        "casa": "Victoria’s Secret"
+      },
+      "familia": "Gourmand tropical",
+      "acordes": [
+        "Coco",
+        "Vainilla",
+        "Orquídea"
+      ],
+      "notas": {
+        "salida": [
+          "Coco",
+          "Mandarina"
+        ],
+        "corazon": [
+          "Orquídea",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Almizcle",
+          "Sándalo"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Verano",
+        "Playa"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 3,
+      "duracion": 3,
+      "descripcion": "Coco cremoso con vainilla, tal cual huele el verano. Suave, cercano y muy fácil de querer.",
+      "variantes": [
+        {
+          "sku": "30-coconut-passion-victoria-s-secret-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "30-coconut-passion-victoria-s-secret-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "31-olympea-paco-rabanne",
+      "numero": 31,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Olympéa",
+        "casa": "Paco Rabanne"
+      },
+      "familia": "Oriental floral",
+      "acordes": [
+        "Vainilla salada",
+        "Jazmín",
+        "Ámbar"
+      ],
+      "notas": {
+        "salida": [
+          "Jazmín acuático",
+          "Mandarina verde"
+        ],
+        "corazon": [
+          "Vainilla salada",
+          "Flor de sal"
+        ],
+        "fondo": [
+          "Ámbar gris",
+          "Sándalo",
+          "Cachemira"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Noche",
+        "Cita"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "La vainilla salada que inauguró una categoría entera. Dulce con un giro mineral que lo hace adictivo.",
+      "variantes": [
+        {
+          "sku": "31-olympea-paco-rabanne-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "31-olympea-paco-rabanne-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada",
+      "destacado": true
+    },
+    {
+      "slug": "32-fantasy-britney-spears",
+      "numero": 32,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Fantasy",
+        "casa": "Britney Spears"
+      },
+      "familia": "Gourmand frutal",
+      "acordes": [
+        "Cupcake",
+        "Orquídea",
+        "Kiwi"
+      ],
+      "notas": {
+        "salida": [
+          "Kiwi",
+          "Lichi",
+          "Fruta del bosque roja"
+        ],
+        "corazon": [
+          "Orquídea",
+          "Cupcake",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Orris",
+          "Maderas"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Noche"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Dulce de pastelería con frutas rojas. Un superventas histórico que sigue funcionando igual de bien.",
+      "variantes": [
+        {
+          "sku": "32-fantasy-britney-spears-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "32-fantasy-britney-spears-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "33-good-girl-blush-carolina-herrera",
+      "numero": 33,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Good Girl Blush",
+        "casa": "Carolina Herrera"
+      },
+      "familia": "Floral gourmand",
+      "acordes": [
+        "Nardo",
+        "Almendra",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Lirio",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Nardo",
+          "Rosa",
+          "Almendra"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Haba tonka",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Cita",
+        "Noche"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Otoño"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "La versión luminosa y suave del original: menos cacao, más flores y almendra. Más apto para el día.",
+      "variantes": [
+        {
+          "sku": "33-good-girl-blush-carolina-herrera-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "33-good-girl-blush-carolina-herrera-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "34-black-opium-yves-saint-laurent",
+      "numero": 34,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Black Opium",
+        "casa": "Yves Saint Laurent"
+      },
+      "familia": "Oriental gourmand",
+      "acordes": [
+        "Café",
+        "Vainilla",
+        "Flor de naranjo"
+      ],
+      "notas": {
+        "salida": [
+          "Pera",
+          "Pimienta rosa",
+          "Mandarina"
+        ],
+        "corazon": [
+          "Café",
+          "Jazmín",
+          "Flor de naranjo"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Pachulí",
+          "Cedro",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Fiesta",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Café y vainilla, oscuro y eléctrico. Uno de los nocturnos más pedidos de la última década.",
+      "variantes": [
+        {
+          "sku": "34-black-opium-yves-saint-laurent-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "34-black-opium-yves-saint-laurent-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada",
+      "destacado": true
+    },
+    {
+      "slug": "35-poison-girl-dior",
+      "numero": 35,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Poison Girl",
+        "casa": "Dior"
+      },
+      "familia": "Oriental gourmand",
+      "acordes": [
+        "Almendra amarga",
+        "Rosa",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Naranja dulce",
+          "Naranja amarga"
+        ],
+        "corazon": [
+          "Rosa de Grasse",
+          "Rosa de Damasco",
+          "Almendra amarga"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Haba tonka",
+          "Sándalo"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Almendra amarga y rosa sobre vainilla: dulce con un fondo levemente inquietante. Muy característico.",
+      "variantes": [
+        {
+          "sku": "35-poison-girl-dior-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "35-poison-girl-dior-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "36-ralph-ralph-lauren",
+      "numero": 36,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Ralph",
+        "casa": "Ralph Lauren"
+      },
+      "familia": "Floral frutal",
+      "acordes": [
+        "Manzana",
+        "Magnolia",
+        "Almizcle"
+      ],
+      "notas": {
+        "salida": [
+          "Manzana",
+          "Mandarina",
+          "Osmanto",
+          "Hoja de violeta"
+        ],
+        "corazon": [
+          "Magnolia",
+          "Peonía",
+          "Rosa",
+          "Iris"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Madera de sándalo",
+          "Pachulí"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 3,
+      "duracion": 3,
+      "descripcion": "Manzana fresca y flores claras. Ligero, juvenil y sin pretensiones: ideal para uso diario.",
+      "variantes": [
+        {
+          "sku": "36-ralph-ralph-lauren-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "36-ralph-ralph-lauren-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "37-the-scent-hugo-boss",
+      "numero": 37,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "The Scent",
+        "casa": "Hugo Boss"
+      },
+      "familia": "Floral oriental",
+      "acordes": [
+        "Osmanto",
+        "Melocotón",
+        "Cuero"
+      ],
+      "notas": {
+        "salida": [
+          "Melocotón",
+          "Mandarina"
+        ],
+        "corazon": [
+          "Osmanto",
+          "Flor de azahar"
+        ],
+        "fondo": [
+          "Cuero",
+          "Cacao",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Formal",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Melocotón y osmanto sobre un fondo de cuero suave. Elegante, cálido y algo misterioso.",
+      "variantes": [
+        {
+          "sku": "37-the-scent-hugo-boss-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "37-the-scent-hugo-boss-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "38-private-show-britney-spears",
+      "numero": 38,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Private Show",
+        "casa": "Britney Spears"
+      },
+      "familia": "Gourmand frutal",
+      "acordes": [
+        "Caramelo",
+        "Frambuesa",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Frambuesa",
+          "Mandarina",
+          "Flor de azahar"
+        ],
+        "corazon": [
+          "Caramelo",
+          "Jazmín",
+          "Nardo"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Almizcle",
+          "Maderas"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Caramelo y frambuesa, francamente goloso. Para quien busca dulzor sin complicaciones.",
+      "variantes": [
+        {
+          "sku": "38-private-show-britney-spears-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "38-private-show-britney-spears-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "39-yes-i-am-cacharel",
+      "numero": 39,
+      "linea": "mujer",
+      "referencia": {
+        "nombre": "Yes I Am",
+        "casa": "Cacharel"
+      },
+      "familia": "Floral gourmand",
+      "acordes": [
+        "Frambuesa",
+        "Jazmín",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Frambuesa",
+          "Bergamota",
+          "Pimienta rosa"
+        ],
+        "corazon": [
+          "Jazmín",
+          "Flor de azahar"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Pachulí",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Noche",
+        "Cita"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Frambuesa y jazmín con un cierre vainillado. Vivaz y versátil, funciona de día y de noche.",
+      "variantes": [
+        {
+          "sku": "39-yes-i-am-cacharel-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "39-yes-i-am-cacharel-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "51-naxos-xerjoff",
+      "numero": 51,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Naxos",
+        "casa": "Xerjoff"
+      },
+      "familia": "Oriental gourmand",
+      "acordes": [
+        "Miel",
+        "Tabaco",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Limón",
+          "Lavanda"
+        ],
+        "corazon": [
+          "Miel",
+          "Tabaco",
+          "Jazmín",
+          "Azahar"
+        ],
+        "fondo": [
+          "Haba tonka",
+          "Vainilla",
+          "Canela",
+          "Cistus"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Formal",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Miel y tabaco con apertura cítrica luminosa. Lujo italiano clásico: dulce, pero con clase.",
+      "variantes": [
+        {
+          "sku": "51-naxos-xerjoff-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "51-naxos-xerjoff-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "52-erba-pura-xerjoff",
+      "numero": 52,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Erba Pura",
+        "casa": "Xerjoff"
+      },
+      "familia": "Frutal cítrico",
+      "acordes": [
+        "Frutas confitadas",
+        "Almizcle",
+        "Cítrico"
+      ],
+      "notas": {
+        "salida": [
+          "Naranja siciliana",
+          "Limón",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Frutas tropicales",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Almizcle blanco",
+          "Ámbar",
+          "Vainilla",
+          "Maderas"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Verano",
+        "Oficina"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Frutas confitadas sobre almizcle limpio. Unisex, luminoso y de los que más cumplidos generan.",
+      "variantes": [
+        {
+          "sku": "52-erba-pura-xerjoff-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "52-erba-pura-xerjoff-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "53-layton-parfums-de-marly",
+      "numero": 53,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Layton",
+        "casa": "Parfums de Marly"
+      },
+      "familia": "Floral amaderado especiado",
+      "acordes": [
+        "Manzana",
+        "Vainilla",
+        "Pimienta"
+      ],
+      "notas": {
+        "salida": [
+          "Manzana",
+          "Lavanda",
+          "Bergamota",
+          "Mandarina"
+        ],
+        "corazon": [
+          "Geranio",
+          "Violeta",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Sándalo",
+          "Pimienta",
+          "Haba tonka",
+          "Pachulí"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Cita",
+        "Formal"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "Manzana y lavanda sobre una base dulce y especiada. Proyección generosa y un aire caro inconfundible.",
+      "variantes": [
+        {
+          "sku": "53-layton-parfums-de-marly-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "53-layton-parfums-de-marly-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda",
+      "destacado": true
+    },
+    {
+      "slug": "54-aventus-creed",
+      "numero": 54,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Aventus",
+        "casa": "Creed"
+      },
+      "familia": "Frutal chipre",
+      "acordes": [
+        "Piña",
+        "Abedul ahumado",
+        "Musgo"
+      ],
+      "notas": {
+        "salida": [
+          "Piña",
+          "Bergamota",
+          "Grosella negra",
+          "Manzana"
+        ],
+        "corazon": [
+          "Abedul",
+          "Pachulí",
+          "Jazmín",
+          "Rosa"
+        ],
+        "fondo": [
+          "Musgo de roble",
+          "Ámbar gris",
+          "Vainilla"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Formal",
+        "Cita"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "El referente moderno del género: piña fresca sobre humo de abedul y un fondo musgoso seco. El más solicitado de la línea.",
+      "variantes": [
+        {
+          "sku": "54-aventus-creed-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "54-aventus-creed-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect",
+      "destacado": true
+    },
+    {
+      "slug": "55-costa-azzurra-tom-ford",
+      "numero": 55,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Costa Azzurra",
+        "casa": "Tom Ford"
+      },
+      "familia": "Amaderado aromático",
+      "acordes": [
+        "Mediterráneo",
+        "Enebro",
+        "Musgo"
+      ],
+      "notas": {
+        "salida": [
+          "Enebro",
+          "Lavanda",
+          "Hoja de olivo"
+        ],
+        "corazon": [
+          "Mirto",
+          "Jazmín",
+          "Algas marinas"
+        ],
+        "fondo": [
+          "Musgo de roble",
+          "Vetiver",
+          "Cedro",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Verano",
+        "Oficina"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Costa mediterránea embotellada: hierbas secas, sal y maderas. Fresco pero nada genérico.",
+      "variantes": [
+        {
+          "sku": "55-costa-azzurra-tom-ford-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "55-costa-azzurra-tom-ford-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "56-the-collection-magnetic-hugo-boss",
+      "numero": 56,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "The Collection Magnetic",
+        "casa": "Hugo Boss"
+      },
+      "familia": "Amaderado especiado",
+      "acordes": [
+        "Cuero",
+        "Especias",
+        "Cedro"
+      ],
+      "notas": {
+        "salida": [
+          "Pimienta",
+          "Bergamota",
+          "Cardamomo"
+        ],
+        "corazon": [
+          "Cuero",
+          "Iris",
+          "Nuez moscada"
+        ],
+        "fondo": [
+          "Cedro",
+          "Vetiver",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Oficina",
+        "Formal",
+        "Noche"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Cuero especiado y sobrio, con aire de traje bien cortado. Pensado para contextos formales.",
+      "variantes": [
+        {
+          "sku": "56-the-collection-magnetic-hugo-boss-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "56-the-collection-magnetic-hugo-boss-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "57-noble-hugo-boss",
+      "numero": 57,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Noble",
+        "casa": "Hugo Boss"
+      },
+      "familia": "Amaderado aromático",
+      "acordes": [
+        "Salvia",
+        "Cedro",
+        "Ámbar"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Salvia",
+          "Pomelo"
+        ],
+        "corazon": [
+          "Lavanda",
+          "Geranio",
+          "Cardamomo"
+        ],
+        "fondo": [
+          "Cedro",
+          "Ámbar",
+          "Vetiver",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Oficina",
+        "Diario",
+        "Formal"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Aromático limpio y correcto, sin estridencias. La definición de perfume de oficina.",
+      "variantes": [
+        {
+          "sku": "57-noble-hugo-boss-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "57-noble-hugo-boss-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "58-sauvage-elixir-dior",
+      "numero": 58,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Sauvage Elixir",
+        "casa": "Dior"
+      },
+      "familia": "Especiado amaderado",
+      "acordes": [
+        "Canela",
+        "Lavanda",
+        "Regaliz"
+      ],
+      "notas": {
+        "salida": [
+          "Canela",
+          "Nuez moscada",
+          "Cardamomo",
+          "Pomelo"
+        ],
+        "corazon": [
+          "Lavanda",
+          "Regaliz",
+          "Salvia"
+        ],
+        "fondo": [
+          "Sándalo",
+          "Pachulí",
+          "Haba tonka",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Invierno",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "Mucho más denso y especiado que el Sauvage clásico: canela, lavanda y regaliz. Bestia de proyección, úsalo con moderación.",
+      "variantes": [
+        {
+          "sku": "58-sauvage-elixir-dior-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "58-sauvage-elixir-dior-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect",
+      "destacado": true
+    },
+    {
+      "slug": "59-polo-blue-ralph-lauren",
+      "numero": 59,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Polo Blue",
+        "casa": "Ralph Lauren"
+      },
+      "familia": "Acuático aromático",
+      "acordes": [
+        "Melón",
+        "Pepino",
+        "Albahaca"
+      ],
+      "notas": {
+        "salida": [
+          "Melón",
+          "Mandarina",
+          "Pepino"
+        ],
+        "corazon": [
+          "Albahaca",
+          "Salvia",
+          "Geranio"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Ámbar",
+          "Madera de teca",
+          "Pachulí"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Verano",
+        "Deporte"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 3,
+      "duracion": 3,
+      "descripcion": "Melón y pepino sobre hierbas frescas. Limpio, juvenil y clarísimamente de clima cálido.",
+      "variantes": [
+        {
+          "sku": "59-polo-blue-ralph-lauren-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "59-polo-blue-ralph-lauren-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "60-acqua-di-gio-giorgio-armani",
+      "numero": 60,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Acqua di Giò",
+        "casa": "Giorgio Armani"
+      },
+      "familia": "Acuático aromático",
+      "acordes": [
+        "Marino",
+        "Cítrico",
+        "Romero"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Naranja",
+          "Mandarina",
+          "Nota marina"
+        ],
+        "corazon": [
+          "Romero",
+          "Jazmín",
+          "Neroli",
+          "Pérsico"
+        ],
+        "fondo": [
+          "Almizcle blanco",
+          "Cedro",
+          "Pachulí",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Verano"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 3,
+      "duracion": 3,
+      "descripcion": "El acuático más conocido del mundo. Fresco, inofensivo y correcto en absolutamente cualquier contexto.",
+      "variantes": [
+        {
+          "sku": "60-acqua-di-gio-giorgio-armani-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "60-acqua-di-gio-giorgio-armani-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "61-phantom-paco-rabanne",
+      "numero": 61,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Phantom",
+        "casa": "Paco Rabanne"
+      },
+      "familia": "Aromático amaderado",
+      "acordes": [
+        "Lavanda",
+        "Limón",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Limón",
+          "Lavanda"
+        ],
+        "corazon": [
+          "Lavanda",
+          "Salvia",
+          "Patchouli"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Vetiver",
+          "Madera de gaiac",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Noche"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Lavanda limpia sobre vainilla y vetiver. Moderno, versátil y muy fácil de llevar todo el día.",
+      "variantes": [
+        {
+          "sku": "61-phantom-paco-rabanne-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "61-phantom-paco-rabanne-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "62-invictus-paco-rabanne",
+      "numero": 62,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Invictus",
+        "casa": "Paco Rabanne"
+      },
+      "familia": "Acuático amaderado",
+      "acordes": [
+        "Marino",
+        "Pomelo",
+        "Laurel"
+      ],
+      "notas": {
+        "salida": [
+          "Pomelo",
+          "Nota marina",
+          "Mandarina"
+        ],
+        "corazon": [
+          "Hoja de laurel",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Ámbar gris",
+          "Pachulí",
+          "Madera de gaiac",
+          "Musgo"
+        ]
+      },
+      "ocasiones": [
+        "Deporte",
+        "Diario",
+        "Verano"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Fresco marino con un fondo ambarado potente. Deportivo y de proyección alta para lo que parece.",
+      "variantes": [
+        {
+          "sku": "62-invictus-paco-rabanne-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "62-invictus-paco-rabanne-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "63-bad-boy-carolina-herrera",
+      "numero": 63,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Bad Boy",
+        "casa": "Carolina Herrera"
+      },
+      "familia": "Amaderado especiado",
+      "acordes": [
+        "Cacao",
+        "Pimienta",
+        "Cedro"
+      ],
+      "notas": {
+        "salida": [
+          "Pimienta negra",
+          "Pimienta blanca",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Salvia",
+          "Cedro"
+        ],
+        "fondo": [
+          "Cacao",
+          "Haba tonka",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Cita",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Pimienta y cacao sobre maderas. La contraparte masculina del Good Girl, igual de nocturna.",
+      "variantes": [
+        {
+          "sku": "63-bad-boy-carolina-herrera-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "63-bad-boy-carolina-herrera-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "64-light-blue-dolce-gabbana",
+      "numero": 64,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Light Blue",
+        "casa": "Dolce & Gabbana"
+      },
+      "familia": "Cítrico aromático",
+      "acordes": [
+        "Pomelo",
+        "Romero",
+        "Cedro"
+      ],
+      "notas": {
+        "salida": [
+          "Pomelo siciliano",
+          "Bergamota",
+          "Mandarina"
+        ],
+        "corazon": [
+          "Pimienta",
+          "Romero",
+          "Palisandro"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Incienso",
+          "Madera de olivo"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Verano",
+        "Oficina"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 3,
+      "duracion": 3,
+      "descripcion": "Pomelo y maderas secas, el clásico de verano. Limpio y sin riesgo.",
+      "variantes": [
+        {
+          "sku": "64-light-blue-dolce-gabbana-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "64-light-blue-dolce-gabbana-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "65-l-homme-yves-saint-laurent",
+      "numero": 65,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "L’Homme",
+        "casa": "Yves Saint Laurent"
+      },
+      "familia": "Amaderado especiado",
+      "acordes": [
+        "Jengibre",
+        "Cedro",
+        "Vetiver"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Jengibre",
+          "Limón"
+        ],
+        "corazon": [
+          "Violeta",
+          "Albahaca",
+          "Pimienta"
+        ],
+        "fondo": [
+          "Cedro",
+          "Vetiver",
+          "Haba tonka",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Oficina",
+        "Diario",
+        "Formal"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Jengibre y maderas, elegante y contenido. De los más apropiados para entornos profesionales.",
+      "variantes": [
+        {
+          "sku": "65-l-homme-yves-saint-laurent-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "65-l-homme-yves-saint-laurent-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "66-boss-bottled-hugo-boss",
+      "numero": 66,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Boss Bottled",
+        "casa": "Hugo Boss"
+      },
+      "familia": "Amaderado especiado",
+      "acordes": [
+        "Manzana",
+        "Canela",
+        "Sándalo"
+      ],
+      "notas": {
+        "salida": [
+          "Manzana",
+          "Ciruela",
+          "Bergamota",
+          "Limón"
+        ],
+        "corazon": [
+          "Canela",
+          "Clavel",
+          "Mimosa",
+          "Geranio"
+        ],
+        "fondo": [
+          "Sándalo",
+          "Cedro",
+          "Vetiver",
+          "Olivo",
+          "Vainilla"
+        ]
+      },
+      "ocasiones": [
+        "Oficina",
+        "Diario",
+        "Formal"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Manzana y canela sobre maderas cálidas. Un estándar de oficina desde hace décadas, y sigue funcionando.",
+      "variantes": [
+        {
+          "sku": "66-boss-bottled-hugo-boss-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "66-boss-bottled-hugo-boss-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "67-1-million-paco-rabanne",
+      "numero": 67,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "1 Million",
+        "casa": "Paco Rabanne"
+      },
+      "familia": "Especiado cuero",
+      "acordes": [
+        "Canela",
+        "Cuero",
+        "Pomelo"
+      ],
+      "notas": {
+        "salida": [
+          "Pomelo",
+          "Menta",
+          "Mandarina sanguina"
+        ],
+        "corazon": [
+          "Canela",
+          "Rosa",
+          "Especias"
+        ],
+        "fondo": [
+          "Cuero",
+          "Madera de ámbar",
+          "Pachulí",
+          "Índigo"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Fiesta",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 5,
+      "duracion": 4,
+      "descripcion": "Canela y cuero con una apertura cítrica brillante. Descarado, llamativo y de proyección enorme.",
+      "variantes": [
+        {
+          "sku": "67-1-million-paco-rabanne-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "67-1-million-paco-rabanne-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect",
+      "destacado": true
+    },
+    {
+      "slug": "68-fahrenheit-dior",
+      "numero": 68,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Fahrenheit",
+        "casa": "Dior"
+      },
+      "familia": "Amaderado cuero",
+      "acordes": [
+        "Violeta",
+        "Nafta",
+        "Cuero"
+      ],
+      "notas": {
+        "salida": [
+          "Lavanda",
+          "Mandarina",
+          "Espino",
+          "Nuez moscada"
+        ],
+        "corazon": [
+          "Hoja de violeta",
+          "Nuez moscada",
+          "Clavel",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Cuero",
+          "Vetiver",
+          "Almizcle",
+          "Haba tonka",
+          "Cedro"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Formal",
+        "Invierno"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Violeta y cuero con una nota casi de gasolina que lo hace legendario. Nada convencional, para quien busca carácter.",
+      "variantes": [
+        {
+          "sku": "68-fahrenheit-dior-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "68-fahrenheit-dior-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "69-tobacco-vanille-tom-ford",
+      "numero": 69,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Tobacco Vanille",
+        "casa": "Tom Ford"
+      },
+      "familia": "Oriental especiado",
+      "acordes": [
+        "Tabaco",
+        "Vainilla",
+        "Especias dulces"
+      ],
+      "notas": {
+        "salida": [
+          "Hoja de tabaco",
+          "Especias"
+        ],
+        "corazon": [
+          "Vainilla",
+          "Cacao",
+          "Haba tonka",
+          "Flor de tabaco"
+        ],
+        "fondo": [
+          "Frutos secos",
+          "Maderas secas"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Invierno",
+        "Formal"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Tabaco de pipa endulzado con vainilla y especias. Denso, cálido y de invierno puro.",
+      "variantes": [
+        {
+          "sku": "69-tobacco-vanille-tom-ford-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "69-tobacco-vanille-tom-ford-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "70-acqua-di-gio-blue-edition-giorgio-armani",
+      "numero": 70,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Acqua di Giò Blue Edition",
+        "casa": "Giorgio Armani"
+      },
+      "familia": "Acuático amaderado",
+      "acordes": [
+        "Marino",
+        "Mineral",
+        "Pachulí"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Nota marina",
+          "Lima"
+        ],
+        "corazon": [
+          "Romero",
+          "Lavanda",
+          "Salvia"
+        ],
+        "fondo": [
+          "Pachulí",
+          "Mirra",
+          "Ámbar",
+          "Nota mineral"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Verano"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Acuático oscuro y mineral, más serio que el clásico. Fresco sin resultar genérico.",
+      "variantes": [
+        {
+          "sku": "70-acqua-di-gio-blue-edition-giorgio-armani-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "70-acqua-di-gio-blue-edition-giorgio-armani-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "71-dior-homme-dior",
+      "numero": 71,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Dior Homme",
+        "casa": "Dior"
+      },
+      "familia": "Amaderado floral",
+      "acordes": [
+        "Iris",
+        "Cacao",
+        "Cuero"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Cardamomo"
+        ],
+        "corazon": [
+          "Iris",
+          "Cuero",
+          "Lavanda"
+        ],
+        "fondo": [
+          "Cacao",
+          "Vetiver",
+          "Pachulí",
+          "Vainilla"
+        ]
+      },
+      "ocasiones": [
+        "Formal",
+        "Oficina",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Iris empolvado con cacao y cuero. Refinado y algo andrógino: de los más sofisticados del catálogo.",
+      "variantes": [
+        {
+          "sku": "71-dior-homme-dior-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "71-dior-homme-dior-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "72-eros-versace",
+      "numero": 72,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Eros",
+        "casa": "Versace"
+      },
+      "familia": "Aromático fougère",
+      "acordes": [
+        "Menta",
+        "Vainilla",
+        "Manzana verde"
+      ],
+      "notas": {
+        "salida": [
+          "Menta",
+          "Manzana verde",
+          "Limón"
+        ],
+        "corazon": [
+          "Haba tonka",
+          "Ambroxan",
+          "Geranio"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Cedro",
+          "Vetiver",
+          "Musgo de roble"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Fiesta",
+        "Cita"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano",
+        "Otoño"
+      ],
+      "proyeccion": 5,
+      "duracion": 4,
+      "descripcion": "Menta helada sobre vainilla dulce. Contraste llamativo y muy social; proyecta fuerte desde el primer momento.",
+      "variantes": [
+        {
+          "sku": "72-eros-versace-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "72-eros-versace-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect",
+      "destacado": true
+    },
+    {
+      "slug": "73-1-million-elixir-paco-rabanne",
+      "numero": 73,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "1 Million Elixir",
+        "casa": "Paco Rabanne"
+      },
+      "familia": "Oriental especiado",
+      "acordes": [
+        "Canela",
+        "Miel",
+        "Cuero"
+      ],
+      "notas": {
+        "salida": [
+          "Pomelo",
+          "Mandarina",
+          "Canela"
+        ],
+        "corazon": [
+          "Miel",
+          "Rosa",
+          "Especias"
+        ],
+        "fondo": [
+          "Cuero",
+          "Ámbar",
+          "Pachulí",
+          "Vainilla"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Invierno",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "Versión concentrada del clásico: más miel, más canela y más duración. Para noches frías.",
+      "variantes": [
+        {
+          "sku": "73-1-million-elixir-paco-rabanne-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "73-1-million-elixir-paco-rabanne-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "74-dylan-blue-versace",
+      "numero": 74,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Dylan Blue",
+        "casa": "Versace"
+      },
+      "familia": "Acuático amaderado",
+      "acordes": [
+        "Bergamota",
+        "Pimienta",
+        "Almizcle"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota de Calabria",
+          "Pomelo",
+          "Nota acuática",
+          "Hoja de higuera"
+        ],
+        "corazon": [
+          "Pimienta negra",
+          "Papiro",
+          "Violeta",
+          "Pachulí"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Incienso",
+          "Haba tonka",
+          "Sándalo"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Noche"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Fresco con cuerpo: acuático al inicio y amaderado al final. De los más versátiles de la línea.",
+      "variantes": [
+        {
+          "sku": "74-dylan-blue-versace-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "74-dylan-blue-versace-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "75-guess-yves-saint-laurent",
+      "numero": 75,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Guess",
+        "casa": "Yves Saint Laurent"
+      },
+      "familia": "Aromático amaderado",
+      "acordes": [
+        "Bergamota",
+        "Salvia",
+        "Cedro"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Limón",
+          "Pimienta rosa"
+        ],
+        "corazon": [
+          "Salvia",
+          "Lavanda",
+          "Geranio"
+        ],
+        "fondo": [
+          "Cedro",
+          "Vetiver",
+          "Ámbar",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Aromático fresco y correcto, de uso diario. Sin riesgos y con buena relación duración-precio.",
+      "variantes": [
+        {
+          "sku": "75-guess-yves-saint-laurent-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "75-guess-yves-saint-laurent-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "76-renaissance-xerjoff",
+      "numero": 76,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Renaissance",
+        "casa": "Xerjoff"
+      },
+      "familia": "Floral amaderado",
+      "acordes": [
+        "Rosa",
+        "Azafrán",
+        "Oud"
+      ],
+      "notas": {
+        "salida": [
+          "Azafrán",
+          "Bergamota",
+          "Pimienta rosa"
+        ],
+        "corazon": [
+          "Rosa",
+          "Jazmín",
+          "Iris"
+        ],
+        "fondo": [
+          "Oud",
+          "Sándalo",
+          "Ámbar",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Formal",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Rosa y azafrán sobre oud suave. Opulento, unisex y de los más caros de reproducir: aquí sale a precio de línea.",
+      "variantes": [
+        {
+          "sku": "76-renaissance-xerjoff-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "76-renaissance-xerjoff-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "77-stronger-with-you-giorgio-armani",
+      "numero": 77,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Stronger With You",
+        "casa": "Giorgio Armani"
+      },
+      "familia": "Oriental gourmand",
+      "acordes": [
+        "Castaña",
+        "Vainilla",
+        "Cardamomo"
+      ],
+      "notas": {
+        "salida": [
+          "Cardamomo",
+          "Rosa pimienta",
+          "Violeta"
+        ],
+        "corazon": [
+          "Salvia",
+          "Lavanda",
+          "Melón",
+          "Jengibre"
+        ],
+        "fondo": [
+          "Castaña glaseada",
+          "Vainilla",
+          "Ámbar",
+          "Cedro"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Cita",
+        "Invierno"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Castaña glaseada y vainilla sobre especias. Dulce acogedor, muy efectivo en citas.",
+      "variantes": [
+        {
+          "sku": "77-stronger-with-you-giorgio-armani-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "77-stronger-with-you-giorgio-armani-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "78-irish-leather-memo-paris",
+      "numero": 78,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Irish Leather",
+        "casa": "Memo Paris"
+      },
+      "familia": "Cuero aromático",
+      "acordes": [
+        "Cuero",
+        "Té verde",
+        "Menta"
+      ],
+      "notas": {
+        "salida": [
+          "Menta",
+          "Bergamota",
+          "Cardamomo",
+          "Pomelo"
+        ],
+        "corazon": [
+          "Té verde",
+          "Flor de azahar",
+          "Junípero"
+        ],
+        "fondo": [
+          "Cuero",
+          "Almizcle",
+          "Sándalo",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Formal",
+        "Diario",
+        "Cita"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Cuero fresco con menta y té verde: una combinación poco habitual, elegante y muy distinguible.",
+      "variantes": [
+        {
+          "sku": "78-irish-leather-memo-paris-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "78-irish-leather-memo-paris-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "79-invictus-victory-elixir-paco-rabanne",
+      "numero": 79,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Invictus Victory Elixir",
+        "casa": "Paco Rabanne"
+      },
+      "familia": "Especiado amaderado",
+      "acordes": [
+        "Canela",
+        "Cuero",
+        "Incienso"
+      ],
+      "notas": {
+        "salida": [
+          "Canela",
+          "Pimienta",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Incienso",
+          "Lavanda",
+          "Salvia"
+        ],
+        "fondo": [
+          "Cuero",
+          "Ámbar",
+          "Pachulí",
+          "Vainilla"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Invierno",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 5,
+      "duracion": 5,
+      "descripcion": "El Invictus llevado al extremo: canela, incienso y cuero. Potencia máxima, nada de sutileza.",
+      "variantes": [
+        {
+          "sku": "79-invictus-victory-elixir-paco-rabanne-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "79-invictus-victory-elixir-paco-rabanne-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "80-million-gold-paco-rabanne",
+      "numero": 80,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Million Gold",
+        "casa": "Paco Rabanne"
+      },
+      "familia": "Oriental amaderado",
+      "acordes": [
+        "Cuero",
+        "Ámbar",
+        "Especias"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Pimienta rosa",
+          "Cardamomo"
+        ],
+        "corazon": [
+          "Rosa",
+          "Canela",
+          "Incienso"
+        ],
+        "fondo": [
+          "Cuero",
+          "Ámbar",
+          "Madera de gaiac",
+          "Vainilla"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Fiesta",
+        "Formal"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Variante dorada del clásico: más ámbar y maderas, algo más serio que el original.",
+      "variantes": [
+        {
+          "sku": "80-million-gold-paco-rabanne-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "80-million-gold-paco-rabanne-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "81-bleu-de-chanel-chanel",
+      "numero": 81,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Bleu de Chanel",
+        "casa": "Chanel"
+      },
+      "familia": "Amaderado aromático",
+      "acordes": [
+        "Incienso",
+        "Cítrico",
+        "Cedro"
+      ],
+      "notas": {
+        "salida": [
+          "Limón",
+          "Menta",
+          "Pomelo rosado"
+        ],
+        "corazon": [
+          "Jengibre",
+          "Jazmín",
+          "Nuez moscada"
+        ],
+        "fondo": [
+          "Incienso",
+          "Cedro",
+          "Sándalo",
+          "Pachulí"
+        ]
+      },
+      "ocasiones": [
+        "Oficina",
+        "Formal",
+        "Diario"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Elegancia sobria y versátil: cítricos limpios que dan paso a incienso y maderas secas. La opción segura cuando hay que vestirse bien.",
+      "variantes": [
+        {
+          "sku": "81-bleu-de-chanel-chanel-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "81-bleu-de-chanel-chanel-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta",
+      "destacado": true
+    },
+    {
+      "slug": "82-alexandria-xerjoff",
+      "numero": 82,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Alexandria",
+        "casa": "Xerjoff"
+      },
+      "familia": "Oriental amaderado",
+      "acordes": [
+        "Oud",
+        "Azafrán",
+        "Ámbar"
+      ],
+      "notas": {
+        "salida": [
+          "Azafrán",
+          "Bergamota",
+          "Pimienta"
+        ],
+        "corazon": [
+          "Oud",
+          "Rosa",
+          "Pachulí"
+        ],
+        "fondo": [
+          "Ámbar",
+          "Sándalo",
+          "Vainilla",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Formal",
+        "Invierno"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Oriental ambarado de gran profundidad, con oud y azafrán. Serio, maduro y de estela larga.",
+      "variantes": [
+        {
+          "sku": "82-alexandria-xerjoff-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "82-alexandria-xerjoff-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "83-xao-xerjoff",
+      "numero": 83,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Xao",
+        "casa": "Xerjoff"
+      },
+      "familia": "Amaderado especiado",
+      "acordes": [
+        "Sándalo",
+        "Especias",
+        "Ámbar"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Cardamomo",
+          "Pimienta"
+        ],
+        "corazon": [
+          "Sándalo",
+          "Iris",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Ámbar",
+          "Vainilla",
+          "Cedro",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Formal"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Sándalo especiado y cremoso, de factura muy fina. Discreto en proyección pero largísimo en piel.",
+      "variantes": [
+        {
+          "sku": "83-xao-xerjoff-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "83-xao-xerjoff-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "84-ombre-leather-tom-ford",
+      "numero": 84,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Ombré Leather",
+        "casa": "Tom Ford"
+      },
+      "familia": "Cuero floral",
+      "acordes": [
+        "Cuero",
+        "Cardamomo",
+        "Jazmín"
+      ],
+      "notas": {
+        "salida": [
+          "Cardamomo"
+        ],
+        "corazon": [
+          "Cuero",
+          "Jazmín sambac"
+        ],
+        "fondo": [
+          "Ámbar",
+          "Musgo de roble",
+          "Pachulí",
+          "Haba tonka"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Formal",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Cuero seco con un corazón floral inesperado. Unisex, potente y con mucha personalidad.",
+      "variantes": [
+        {
+          "sku": "84-ombre-leather-tom-ford-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "84-ombre-leather-tom-ford-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "85-althair-parfums-de-marly",
+      "numero": 85,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Althaïr",
+        "casa": "Parfums de Marly"
+      },
+      "familia": "Oriental gourmand",
+      "acordes": [
+        "Vainilla",
+        "Almendra",
+        "Haba tonka"
+      ],
+      "notas": {
+        "salida": [
+          "Almendra",
+          "Bergamota",
+          "Cardamomo"
+        ],
+        "corazon": [
+          "Vainilla",
+          "Haba tonka",
+          "Canela"
+        ],
+        "fondo": [
+          "Sándalo",
+          "Ámbar",
+          "Almizcle",
+          "Benjuí"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Invierno",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Vainilla y almendra en clave cálida y cremosa. Confortable, dulce y muy duradero.",
+      "variantes": [
+        {
+          "sku": "85-althair-parfums-de-marly-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "85-althair-parfums-de-marly-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "86-new-york-bond-no-9",
+      "numero": 86,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "New York",
+        "casa": "Bond No. 9"
+      },
+      "familia": "Amaderado ambarado",
+      "acordes": [
+        "Ámbar",
+        "Maderas",
+        "Especias"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Pimienta rosa",
+          "Cardamomo"
+        ],
+        "corazon": [
+          "Rosa",
+          "Iris",
+          "Canela"
+        ],
+        "fondo": [
+          "Ámbar",
+          "Sándalo",
+          "Vainilla",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Formal",
+        "Diario"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Ambarado urbano y equilibrado, con especias suaves. Elegante sin llamar demasiado la atención.",
+      "variantes": [
+        {
+          "sku": "86-new-york-bond-no-9-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "86-new-york-bond-no-9-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "87-l-immensite-louis-vuitton",
+      "numero": 87,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "L’Immensité",
+        "casa": "Louis Vuitton"
+      },
+      "familia": "Aromático amaderado",
+      "acordes": [
+        "Jengibre",
+        "Ambroxan",
+        "Pomelo"
+      ],
+      "notas": {
+        "salida": [
+          "Pomelo",
+          "Bergamota",
+          "Jengibre"
+        ],
+        "corazon": [
+          "Jengibre",
+          "Salvia",
+          "Nota marina"
+        ],
+        "fondo": [
+          "Ambroxan",
+          "Ámbar",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Verano"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Jengibre fresco sobre ambroxan salado. Luminoso, limpio y con una proyección sorprendente.",
+      "variantes": [
+        {
+          "sku": "87-l-immensite-louis-vuitton-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "87-l-immensite-louis-vuitton-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "88-imagination-louis-vuitton",
+      "numero": 88,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Imagination",
+        "casa": "Louis Vuitton"
+      },
+      "familia": "Cítrico amaderado",
+      "acordes": [
+        "Bergamota",
+        "Té negro",
+        "Ámbar"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota de Calabria",
+          "Mandarina",
+          "Limón"
+        ],
+        "corazon": [
+          "Té negro",
+          "Cardamomo",
+          "Canela"
+        ],
+        "fondo": [
+          "Ámbar",
+          "Madera de gaiac",
+          "Almizcle"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Formal"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Cítrico brillante con té negro y ámbar. Sofisticado y muy fácil de llevar en cualquier momento del día.",
+      "variantes": [
+        {
+          "sku": "88-imagination-louis-vuitton-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "88-imagination-louis-vuitton-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "alta"
+    },
+    {
+      "slug": "89-born-in-roma-uomo-valentino",
+      "numero": 89,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Born in Roma Uomo",
+        "casa": "Valentino"
+      },
+      "familia": "Amaderado aromático",
+      "acordes": [
+        "Salvia",
+        "Vetiver",
+        "Vainilla"
+      ],
+      "notas": {
+        "salida": [
+          "Salvia",
+          "Jengibre",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Violeta",
+          "Lavanda"
+        ],
+        "fondo": [
+          "Vetiver",
+          "Vainilla",
+          "Madera de cachemira"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Noche"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Salvia y vetiver con un cierre de vainilla seca. Moderno, urbano y de uso muy flexible.",
+      "variantes": [
+        {
+          "sku": "89-born-in-roma-uomo-valentino-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "89-born-in-roma-uomo-valentino-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "90-torino-22-xerjoff",
+      "numero": 90,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Torino 22",
+        "casa": "Xerjoff"
+      },
+      "familia": "Amaderado ambarado",
+      "acordes": [
+        "Vainilla",
+        "Maderas",
+        "Bergamota"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Pimienta rosa"
+        ],
+        "corazon": [
+          "Iris",
+          "Jazmín",
+          "Vainilla"
+        ],
+        "fondo": [
+          "Maderas de ámbar",
+          "Almizcle",
+          "Sándalo"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Formal",
+        "Noche"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Vainilla y maderas ambaradas, suave y refinado. Discreto en el buen sentido: huele a caro sin gritarlo.",
+      "variantes": [
+        {
+          "sku": "90-torino-22-xerjoff-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "90-torino-22-xerjoff-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "91-myslf-yves-saint-laurent",
+      "numero": 91,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "MYSLF",
+        "casa": "Yves Saint Laurent"
+      },
+      "familia": "Floral amaderado",
+      "acordes": [
+        "Azahar",
+        "Ambroxan",
+        "Pachulí"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Azahar"
+        ],
+        "corazon": [
+          "Flor de naranjo",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Ambroxan",
+          "Pachulí",
+          "Almizcle",
+          "Madera de cachemira"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Cita"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Azahar limpio sobre ambroxan. Contemporáneo, fresco y muy agradable en distancia corta.",
+      "variantes": [
+        {
+          "sku": "91-myslf-yves-saint-laurent-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "91-myslf-yves-saint-laurent-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "redonda"
+    },
+    {
+      "slug": "92-212-men-carolina-herrera",
+      "numero": 92,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "212 Men",
+        "casa": "Carolina Herrera"
+      },
+      "familia": "Amaderado especiado",
+      "acordes": [
+        "Especias",
+        "Almizcle",
+        "Bergamota"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Pimienta verde",
+          "Lavanda"
+        ],
+        "corazon": [
+          "Flor de azahar",
+          "Especias",
+          "Jengibre"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Sándalo",
+          "Incienso",
+          "Madera de gaiac"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Noche"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Especiado limpio y urbano, un clásico de los 2000 que envejeció bien. Correcto en cualquier contexto.",
+      "variantes": [
+        {
+          "sku": "92-212-men-carolina-herrera-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "92-212-men-carolina-herrera-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "93-212-heroes-forever-young-carolina-herrera",
+      "numero": 93,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "212 Heroes Forever Young",
+        "casa": "Carolina Herrera"
+      },
+      "familia": "Aromático frutal",
+      "acordes": [
+        "Manzana",
+        "Menta",
+        "Almizcle"
+      ],
+      "notas": {
+        "salida": [
+          "Manzana",
+          "Bergamota",
+          "Menta"
+        ],
+        "corazon": [
+          "Lavanda",
+          "Jazmín",
+          "Flor de azahar"
+        ],
+        "fondo": [
+          "Almizcle",
+          "Ámbar",
+          "Maderas blancas"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Fiesta",
+        "Deporte"
+      ],
+      "estaciones": [
+        "Primavera",
+        "Verano"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Manzana y menta, energético y juvenil. Pensado para el día y la salida informal.",
+      "variantes": [
+        {
+          "sku": "93-212-heroes-forever-young-carolina-herrera-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "93-212-heroes-forever-young-carolina-herrera-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    },
+    {
+      "slug": "94-armani-code-giorgio-armani",
+      "numero": 94,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Armani Code",
+        "casa": "Giorgio Armani"
+      },
+      "familia": "Oriental amaderado",
+      "acordes": [
+        "Haba tonka",
+        "Anís",
+        "Limón"
+      ],
+      "notas": {
+        "salida": [
+          "Limón",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Flor de azahar",
+          "Anís estrellado",
+          "Olivo"
+        ],
+        "fondo": [
+          "Haba tonka",
+          "Cuero",
+          "Madera de guayaco",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Cita",
+        "Formal"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 3,
+      "duracion": 4,
+      "descripcion": "Anís y haba tonka sobre cuero suave. Seductor y clásico, de los más efectivos en cita.",
+      "variantes": [
+        {
+          "sku": "94-armani-code-giorgio-armani-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "94-armani-code-giorgio-armani-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "95-code-parfum-giorgio-armani",
+      "numero": 95,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Code Parfum",
+        "casa": "Giorgio Armani"
+      },
+      "familia": "Oriental gourmand",
+      "acordes": [
+        "Vainilla",
+        "Cardamomo",
+        "Haba tonka"
+      ],
+      "notas": {
+        "salida": [
+          "Cardamomo",
+          "Limón",
+          "Bergamota"
+        ],
+        "corazon": [
+          "Flor de azahar",
+          "Jazmín"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Haba tonka",
+          "Ámbar",
+          "Maderas"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Invierno",
+        "Cita"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Versión más dulce y densa del Code clásico: vainilla y cardamomo muy golosos. Para frío.",
+      "variantes": [
+        {
+          "sku": "95-code-parfum-giorgio-armani-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "95-code-parfum-giorgio-armani-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada"
+    },
+    {
+      "slug": "96-le-male-jean-paul-gaultier",
+      "numero": 96,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Le Mâle",
+        "casa": "Jean Paul Gaultier"
+      },
+      "familia": "Fougère oriental",
+      "acordes": [
+        "Lavanda",
+        "Vainilla",
+        "Menta"
+      ],
+      "notas": {
+        "salida": [
+          "Menta",
+          "Lavanda",
+          "Bergamota",
+          "Cardamomo"
+        ],
+        "corazon": [
+          "Canela",
+          "Comino",
+          "Flor de azahar"
+        ],
+        "fondo": [
+          "Vainilla",
+          "Haba tonka",
+          "Sándalo",
+          "Ámbar"
+        ]
+      },
+      "ocasiones": [
+        "Noche",
+        "Diario",
+        "Fiesta"
+      ],
+      "estaciones": [
+        "Otoño",
+        "Invierno"
+      ],
+      "proyeccion": 4,
+      "duracion": 5,
+      "descripcion": "Lavanda y vainilla con un toque de menta: uno de los masculinos más vendidos de la historia. Inconfundible.",
+      "variantes": [
+        {
+          "sku": "96-le-male-jean-paul-gaultier-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "96-le-male-jean-paul-gaultier-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "ornada",
+      "destacado": true
+    },
+    {
+      "slug": "97-y-yves-saint-laurent",
+      "numero": 97,
+      "linea": "hombre",
+      "referencia": {
+        "nombre": "Y",
+        "casa": "Yves Saint Laurent"
+      },
+      "familia": "Aromático fougère",
+      "acordes": [
+        "Salvia",
+        "Manzana",
+        "Ambroxan"
+      ],
+      "notas": {
+        "salida": [
+          "Bergamota",
+          "Hoja de manzana",
+          "Jengibre"
+        ],
+        "corazon": [
+          "Salvia",
+          "Geranio",
+          "Junípero"
+        ],
+        "fondo": [
+          "Ambroxan",
+          "Cedro",
+          "Haba tonka",
+          "Vetiver",
+          "Olibanum"
+        ]
+      },
+      "ocasiones": [
+        "Diario",
+        "Oficina",
+        "Formal"
+      ],
+      "estaciones": [
+        "Todo el año"
+      ],
+      "proyeccion": 4,
+      "duracion": 4,
+      "descripcion": "Fresco y seco, con salvia y manzana verde sobre ambroxan. Moderno y absolutamente apto para trabajar.",
+      "variantes": [
+        {
+          "sku": "97-y-yves-saint-laurent-30ml",
+          "tamano": "30ml",
+          "precio": 15000
+        },
+        {
+          "sku": "97-y-yves-saint-laurent-100ml",
+          "tamano": "100ml",
+          "precio": 45000
+        }
+      ],
+      "forma": "rect"
+    }
+  ]
+}

@@ -1,24 +1,28 @@
-export type Categoria = 'originales' | 'decants' | 'inspirados' | 'nicho';
-export type Genero = 'femenino' | 'masculino' | 'unisex';
-export type Concentracion = 'EDC' | 'EDT' | 'EDP' | 'Parfum' | 'Extracto';
+export type Linea = 'mujer' | 'hombre';
 export type Forma = 'rect' | 'redonda' | 'alta' | 'ornada';
 
 export type Variante = {
-  /** Identificador único de la variante. Formato: `${slug}-${tamano}` */
+  /** Identificador único. Formato: `${slug}-${tamano}` */
   sku: string;
-  tamano: string;   // '100ml', '10ml', ...
+  tamano: string;
   precio: number;   // CLP, sin puntos
 };
 
-export type Producto = {
-  slug: string;
+/** La fragancia de marca en la que se inspira el producto. */
+export type Referencia = {
   nombre: string;
-  casa: string;                 // marca / casa de perfume
-  categoria: Categoria;
-  genero: Genero;
-  concentracion: Concentracion;
-  familia: string;              // familia olfativa principal
-  acordes: string[];            // acordes dominantes, para los chips
+  casa: string;
+};
+
+export type Producto = {
+  /** Ej: "54-aventus-creed" — incluye la referencia para posicionamiento. */
+  slug: string;
+  /** El número de catálogo. Es el nombre real del producto: "Nº 54". */
+  numero: number;
+  linea: Linea;
+  referencia: Referencia;
+  familia: string;
+  acordes: string[];
   notas: {
     salida: string[];
     corazon: string[];
@@ -31,11 +35,9 @@ export type Producto = {
   descripcion: string;
   variantes: Variante[];
   forma: Forma;
-  /** Ruta a la foto real. Si está vacío se dibuja un frasco SVG. */
+  /** Ruta a la foto real. Si falta, se dibuja un frasco SVG. */
   img?: string;
   destacado?: boolean;
-  /** Solo para la línea "inspirados": perfil de referencia. */
-  perfilSimilarA?: string;
 };
 
 /** Estado editable desde el panel de administración. */

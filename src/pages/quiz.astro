@@ -1,19 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
 import TarjetaProducto from '../components/TarjetaProducto.astro';
-import { precioDesde, productos } from '../lib/catalogo';
+import { productos } from '../lib/catalogo';
 import { ruta } from '../lib/formato';
+import { presentacion } from '../config';
 
 const preguntas = [
   {
     id: 'linea',
     titulo: '¿Qué línea buscas?',
-    bajada: 'Las fragancias unisex funcionan para cualquiera.',
+    bajada: 'Puedes mirar las dos: muchas funcionan para cualquiera.',
     opciones: [
-      { valor: 'femenino', texto: 'Femenino' },
-      { valor: 'masculino', texto: 'Masculino' },
-      { valor: 'unisex', texto: 'Unisex' },
-      { valor: 'indiferente', texto: 'Me da igual' },
+      { valor: 'mujer', texto: presentacion.etiquetas.mujer },
+      { valor: 'hombre', texto: presentacion.etiquetas.hombre },
+      { valor: 'indiferente', texto: 'Muéstrame ambas' },
     ],
   },
   {
@@ -39,14 +39,14 @@ const preguntas = [
     ],
   },
   {
-    id: 'presupuesto',
-    titulo: '¿Cuánto quieres gastar?',
-    bajada: 'Mostramos el precio del tamaño más accesible.',
+    id: 'intensidad',
+    titulo: '¿Cuánto quieres que se note?',
+    bajada: 'Todas duran 8 horas o más; esto define cuánta estela dejan.',
     opciones: [
-      { valor: '20000', texto: 'Hasta $20.000' },
-      { valor: '45000', texto: '$20.000 a $45.000' },
-      { valor: '90000', texto: '$45.000 a $90.000' },
-      { valor: '9999999', texto: 'Sin tope' },
+      { valor: 'discreta', texto: 'Discreta, para la oficina' },
+      { valor: 'equilibrada', texto: 'Que se note sin invadir' },
+      { valor: 'alta', texto: 'Que deje estela' },
+      { valor: 'indiferente', texto: 'No me importa' },
     ],
   },
 ] as const;
@@ -54,17 +54,16 @@ const preguntas = [
 // Datos mínimos para puntuar en el navegador
 const datosQuiz = productos.map((p) => ({
   slug: p.slug,
-  genero: p.genero,
+  linea: p.linea,
   ocasiones: p.ocasiones.map((o) => o.toLowerCase()),
   perfil: (p.familia + ' ' + p.acordes.join(' ')).toLowerCase(),
   proyeccion: p.proyeccion,
-  precio: precioDesde(p),
   destacado: p.destacado ? 1 : 0,
 }));
 ---
 <Base
   titulo="Encuentra tu perfume"
-  descripcion="Responde cuatro preguntas y te recomendamos tres fragancias de nuestro catálogo según ocasión, aroma y presupuesto."
+  descripcion="Responde cuatro preguntas y te recomendamos tres fragancias de nuestro catálogo según línea, ocasión, familia olfativa e intensidad."
 >
   <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
     <header class="text-center">
@@ -187,27 +186,22 @@ const datosQuiz = productos.map((p) => ({
     function puntuar(p) {
       let n = 0;
 
-      // Presupuesto: es un filtro duro
-      const tope = Number(respuestas.presupuesto ?? 9999999);
-      if (p.precio > tope) return -1;
-      // Premia acercarse al tope sin excederlo
-      n += Math.round((1 - p.precio / tope) * 2);
-
       // Línea
-      if (respuestas.linea === p.genero) n += 5;
+      if (respuestas.linea === p.linea) n += 6;
       else if (respuestas.linea === 'indiferente') n += 2;
-      else if (p.genero === 'unisex') n += 3;
-      else n -= 3;
+      else n -= 4;
 
       // Ocasión
       const buscadas = mapaOcasiones[respuestas.ocasion] ?? [];
       n += p.ocasiones.filter((o) => buscadas.includes(o)).length * 3;
-      if (respuestas.ocasion === 'noche' && p.proyeccion >= 4) n += 2;
-      if (respuestas.ocasion === 'dia' && p.proyeccion <= 4) n += 1;
 
       // Aroma
       const re = mapaAromas[respuestas.aroma];
-      if (re && re.test(p.perfil)) n += 6;
+      if (re && re.test(p.perfil)) n += 7;
+
+      // Intensidad
+      const objetivo = { discreta: 3, equilibrada: 4, alta: 5 }[respuestas.intensidad];
+      if (objetivo) n += Math.max(0, 4 - Math.abs(p.proyeccion - objetivo) * 2);
 
       n += p.destacado;
       return n;
@@ -216,7 +210,6 @@ const datosQuiz = productos.map((p) => ({
     function mostrarResultados() {
       const elegidos = datosQuiz
         .map((p) => ({ p, n: puntuar(p) }))
-        .filter((x) => x.n >= 0)
         .sort((a, b) => b.n - a.n)
         .slice(0, 3);
 
@@ -225,7 +218,7 @@ const datosQuiz = productos.map((p) => ({
       if (!elegidos.length) {
         const aviso = document.createElement('p');
         aviso.className = 'col-span-full py-10 text-center text-sm text-apagado';
-        aviso.textContent = 'No encontramos nada en ese presupuesto. Prueba subiendo el tope o escríbenos por WhatsApp y te buscamos una opción.';
+        aviso.textContent = 'No encontramos una coincidencia. Escríbenos por WhatsApp y te recomendamos según lo que busques.';
         grilla.appendChild(aviso);
       } else {
         for (const { p } of elegidos) {

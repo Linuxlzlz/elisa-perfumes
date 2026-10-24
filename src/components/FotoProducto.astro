@@ -1,6 +1,7 @@
 ---
 import type { Producto } from '../lib/tipos';
 import { ruta } from '../lib/formato';
+import { nombre } from '../lib/catalogo';
 
 type Props = { producto: Producto; class?: string; grande?: boolean };
 const { producto, class: clase = '', grande = false } = Astro.props;
@@ -14,20 +15,19 @@ const porFamilia: [RegExp, string, string][] = [
   [/ambar|ambarad|oriental/i, '#9a6a1e', '#e3c77b'],
   [/fougère|fougere|aromátic|aromatic/i, '#5f7a4e', '#b3cc9e'],
 ];
-const porCategoria: Record<string, [string, string]> = {
-  originales: ['#9a6a1e', '#e3c77b'],
-  decants: ['#8a6a3a', '#d4b483'],
-  inspirados: ['#8f5668', '#dca9b8'],
-  nicho: ['#6b4423', '#c08a4e'],
+const porLinea: Record<string, [string, string]> = {
+  mujer: ['#8f5668', '#dca9b8'],
+  hombre: ['#6b4423', '#c08a4e'],
 };
 
 const encontrado = porFamilia.find(([re]) => re.test(producto.familia + ' ' + producto.acordes.join(' ')));
 const [oscuro, claro] = encontrado
   ? [encontrado[1], encontrado[2]]
-  : porCategoria[producto.categoria] ?? ['#9a6a1e', '#e3c77b'];
+  : porLinea[producto.linea] ?? ['#9a6a1e', '#e3c77b'];
 
 const id = producto.slug.replace(/[^a-z0-9]/gi, '');
-const alt = `${producto.nombre} de ${producto.casa} — ${producto.familia}`;
+const etiqueta = nombre(producto);
+const alt = `${etiqueta} — ${producto.familia}`;
 
 // Geometría del cuerpo según la forma del frasco
 const cuerpos: Record<string, string> = {
@@ -111,7 +111,7 @@ const nivel = 212;
       font-family="Cormorant Garamond, Georgia, serif"
       font-size="19" letter-spacing="3.4"
       fill="#f5f1ea" fill-opacity="0.82"
-    >{producto.casa.toUpperCase().slice(0, 16)}</text>
+    >{etiqueta.toUpperCase()}</text>
     <rect x="112" y="312" width="76" height="1" fill="#f5f1ea" fill-opacity="0.34" />
 
     {/* Sombra de apoyo */}
