@@ -5,3 +5,6 @@ dist/
 *.log
 .env
 .env.*
+
+# Paquete de distribución
+*.zip
