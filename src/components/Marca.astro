@@ -1,0 +1,84 @@
+---
+/**
+ * Marca de Elisa Perfumes.
+ *
+ * Concepto: una "E" de serif didona — el mismo alto contraste de la Cormorant
+ * Garamond que usa el sitio — con una gota de esencia cayendo del brazo central,
+ * el corazón de la fragancia. El anillo la convierte en sello de perfumería.
+ *
+ * variante:
+ *   'sello'    — E dentro del anillo. Principal: avatar, favicon, redes, etiquetas.
+ *   'monograma'— solo la E. Para el lockup horizontal, donde el anillo competiría
+ *                con el texto, y para usos muy pequeños.
+ *
+ * tono:
+ *   'oro'    — degradado champán→oro, para fondo oscuro (por omisión)
+ *   'solido' — oro plano; para estampados a un color y tamaños mínimos
+ *   'tinta'  — hereda currentColor; para fondo claro, grabados o una sola tinta
+ */
+type Props = {
+  tamano?: number;
+  variante?: 'sello' | 'monograma';
+  tono?: 'oro' | 'solido' | 'tinta';
+  class?: string;
+  /** Debe ser único por página: los degradados de SVG se referencian por id. */
+  id?: string;
+  titulo?: string;
+};
+
+const {
+  tamano = 40,
+  variante = 'sello',
+  tono = 'oro',
+  class: clase = '',
+  id = 'marca',
+  titulo = 'Elisa Perfumes',
+} = Astro.props;
+
+const pintura =
+  tono === 'oro' ? `url(#oro-${id})` : tono === 'solido' ? '#c9a227' : 'currentColor';
+
+// Dentro del anillo la letra se reduce para dejar aire al borde.
+const escala = variante === 'sello' ? 0.72 : 1;
+---
+<svg
+  viewBox="0 0 64 64"
+  width={tamano}
+  height={tamano}
+  class={clase}
+  role="img"
+  aria-label={titulo}
+  fill="none"
+>
+  {tono === 'oro' && (
+    <defs>
+      <linearGradient id={`oro-${id}`} x1="0.1" y1="0" x2="0.9" y2="1">
+        <stop offset="0%" stop-color="#f2e0b0" />
+        <stop offset="48%" stop-color="#e3c77b" />
+        <stop offset="100%" stop-color="#b8911f" />
+      </linearGradient>
+    </defs>
+  )}
+
+  {variante === 'sello' && (
+    <circle cx="32" cy="32" r="28.6" fill="none" stroke={pintura} stroke-width="1.9" />
+  )}
+
+  <g
+    fill={pintura}
+    transform={escala === 1 ? undefined : `translate(32 32) scale(${escala}) translate(-32 -32)`}
+  >
+    {/* Asta: el trazo grueso de la didona */}
+    <rect x="23" y="18" width="5.4" height="28" />
+    {/* Brazo superior, con su remate vertical */}
+    <rect x="23" y="18" width="18" height="2.4" />
+    <rect x="39.4" y="18" width="1.8" height="5.6" />
+    {/* Brazo central, más corto */}
+    <rect x="23" y="30.9" width="13.4" height="2.1" />
+    {/* Brazo inferior y su remate */}
+    <rect x="23" y="43.6" width="18.6" height="2.4" />
+    <rect x="39.9" y="40.4" width="1.8" height="5.6" />
+    {/* La gota que cae del corazón */}
+    <path d="M38.6 33.2 C40 35.4 41.2 36.3 41.2 37.6 A2.6 2.6 0 1 1 36 37.6 C36 36.3 37.2 35.4 38.6 33.2 Z" />
+  </g>
+</svg>

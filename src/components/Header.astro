@@ -1,6 +1,7 @@
 ---
 import { ruta } from '../lib/formato';
 import { presentacion, tienda } from '../config';
+import Marca from './Marca.astro';
 
 const enlaces = [
   { texto: 'Catálogo', href: ruta('catalogo') },
@@ -12,9 +13,12 @@ const enlaces = [
 ---
 <header class="sticky top-0 z-40 border-b border-borde/70 vidrio">
   <div class="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6 lg:px-8">
-    <a href={ruta('/')} class="flex shrink-0 items-baseline gap-2">
-      <span class="titulo-serif text-2xl text-crema">Elisa</span>
-      <span class="versalita text-champan">Perfumes</span>
+    <a href={ruta('/')} class="flex shrink-0 items-center gap-2.5" aria-label="Elisa Perfumes, ir al inicio">
+      <Marca tamano={34} variante="monograma" id="cab" />
+      <span class="leading-none">
+        <span class="titulo-serif block text-2xl text-crema">Elisa</span>
+        <span class="versalita block text-champan">Perfumes</span>
+      </span>
     </a>
 
     <nav class="ml-auto hidden items-center gap-6 lg:flex" aria-label="Navegación principal">

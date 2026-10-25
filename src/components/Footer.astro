@@ -1,12 +1,14 @@
 ---
 import { ruta } from '../lib/formato';
 import { envios, pagos, presentacion, tienda } from '../config';
+import Marca from './Marca.astro';
 const anio = new Date().getFullYear();
 ---
 <footer class="mt-24 border-t border-borde bg-carbon">
   <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:px-8">
     <div class="md:col-span-1">
-      <p class="titulo-serif text-2xl text-crema">Elisa <span class="text-champan">Perfumes</span></p>
+      <Marca tamano={52} variante="sello" id="pie" />
+      <p class="titulo-serif mt-4 text-2xl text-crema">Elisa <span class="text-champan">Perfumes</span></p>
       <p class="mt-3 text-sm leading-relaxed text-apagado">{tienda.claim}</p>
       <p class="mt-4 text-sm text-apagado">{tienda.ciudad}</p>
       <p class="text-sm text-apagado">{tienda.horario}</p>

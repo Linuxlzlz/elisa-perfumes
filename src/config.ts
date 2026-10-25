@@ -9,9 +9,9 @@ export const tienda = {
   descripcion:
     'Perfumería en Chile: 86 fragancias inspiradas en las grandes casas internacionales, en 30 ml y 100 ml. Alta fijación, precio justo y despacho a todo el país. Pedidos por WhatsApp.',
 
-  // ⚠️ CAMBIAR: número de WhatsApp en formato internacional, SIN "+", sin espacios.
-  // Chile = 56 + 9 + 8 dígitos.  Ejemplo: 56912345678
-  whatsapp: '56900000000',
+  // Número de WhatsApp en formato internacional, SIN "+", sin espacios.
+  // +56 9 2694 7785
+  whatsapp: '56926947785',
 
   // Mensaje del botón flotante (cuando el carrito está vacío)
   whatsappSaludo: 'Hola Elisa 👋 quiero hacer una consulta sobre perfumes.',

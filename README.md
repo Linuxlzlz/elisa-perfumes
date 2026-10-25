@@ -50,14 +50,12 @@ La web queda en `https://linuxlzlz.github.io/elisa-perfumes/`
 
 Todo lo editable sin tocar código está en **`src/config.ts`**.
 
-Lo primero y más importante:
+El número de WhatsApp ya está puesto (`+56 9 2694 7785`). Si alguna vez cambia, va en
+formato internacional, sin `+` ni espacios:
 
 ```ts
-// ⚠️ CAMBIAR antes de publicar
-whatsapp: '56900000000',   // formato internacional, SIN "+" ni espacios
+whatsapp: '56926947785',
 ```
-
-Chile = `56` + `9` + 8 dígitos. Ejemplo: `+56 9 1234 5678` se escribe `56912345678`.
 
 En ese mismo archivo ajustas nombre de la tienda, horario, Instagram, costos de envío,
 umbral de envío gratis, comunas y formas de pago.
@@ -152,7 +150,40 @@ convierten bastante más**. Para usarlas:
 Recomendación: mismo fondo, mismo ángulo, formato cuadrado, WebP de ~800 px. GitHub
 Pages no optimiza imágenes: llegan al cliente tal como las subas.
 
-## 4. Panel de administración de stock
+## 4. La marca
+
+El logotipo es una **E de serif didona** —el mismo alto contraste de la Cormorant
+Garamond del sitio— con una gota de esencia cayendo del brazo central. El anillo la
+convierte en sello de perfumería y resuelve el recorte circular de las redes.
+
+Los archivos están en `public/marca/`:
+
+| Archivo | Para qué |
+|---|---|
+| `avatar.png` | Foto de perfil de WhatsApp Business e Instagram (1024×1024, con fondo) |
+| `sello-oro.svg` | Etiquetas, bolsas, tarjetas, stickers. Vectorial: no pixela |
+| `sello-tinta.svg` | Imprenta a un color, grabado, sello de goma |
+| `monograma-oro.svg` | Sin anillo. Cabecera del sitio y usos bajo 20 px |
+| `../og.png` | Lo que se ve al pegar el enlace del sitio en WhatsApp (1200×630) |
+| `../favicon.svg` | Ícono de la pestaña del navegador |
+
+Reglas rápidas: deja alrededor al menos un tercio del alto del sello; sobre fondo
+dorado usa la versión en tinta negra; bajo 20 px usa el monograma, porque el anillo
+se empasta. No lo rotes, no lo estires ni le agregues sombras.
+
+El componente `src/components/Marca.astro` dibuja la marca dentro del sitio y acepta
+`variante` (`sello` | `monograma`) y `tono` (`oro` | `solido` | `tinta`).
+
+Si cambias el dibujo, regenera los PNG:
+
+```bash
+npm i -D playwright && npx playwright install chromium
+node scripts/generar-imagenes.mjs
+```
+
+---
+
+## 5. Panel de administración de stock
 
 Abre `https://linuxlzlz.github.io/elisa-perfumes/admin`
 
@@ -194,7 +225,7 @@ no hace falta que el visitante limpie caché.
 
 ---
 
-## 5. Dominio propio
+## 6. Dominio propio
 
 Un `.cl` propio cuesta poco y da bastante más credibilidad que una URL de `github.io`.
 
@@ -210,7 +241,7 @@ Un `.cl` propio cuesta poco y da bastante más credibilidad que una URL de `gith
 
 ---
 
-## 6. Desarrollo local
+## 7. Desarrollo local
 
 ```bash
 npm install
@@ -221,7 +252,7 @@ npm run preview   # sirve dist/ como lo hará GitHub Pages
 
 ---
 
-## 7. Limitaciones conocidas
+## 8. Limitaciones conocidas
 
 Son consecuencia de usar hosting estático. Conviene tenerlas presentes:
 
@@ -243,7 +274,7 @@ manteniendo este mismo frontend.
 
 ---
 
-## 8. Estructura
+## 9. Estructura
 
 ```
 src/
@@ -254,7 +285,7 @@ src/
 │   ├── whatsapp.ts        ← armado del mensaje de pedido
 │   ├── stock.ts           ← lectura de stock.json en vivo
 │   └── catalogo.ts        ← consultas sobre el catálogo
-├── components/            ← header, carrito, tarjetas, frasco SVG…
+├── components/            ← header, carrito, tarjetas, Marca.astro, frasco SVG…
 └── pages/
     ├── index.astro        ← portada
     ├── catalogo.astro     ← catálogo con filtros
@@ -265,12 +296,16 @@ src/
 
 public/
 ├── stock.json             ← lo escribe /admin
+├── og.png                 ← imagen al compartir el enlace
+├── favicon.svg
+├── marca/                 ← logotipo en todas sus versiones
 └── img/productos/         ← tus fotos acá
 
 scripts/
 ├── datos-mujer.mjs        ← Nº 01-39   (edita acá)
 ├── datos-hombre.mjs       ← Nº 51-97   (edita acá)
-└── generar-catalogo.mjs   ← npm run generar
+├── generar-catalogo.mjs   ← npm run generar
+└── generar-imagenes.mjs   ← rasteriza og.png y avatar.png
 ```
 
 ---
