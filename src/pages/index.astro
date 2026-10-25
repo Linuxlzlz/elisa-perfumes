@@ -26,13 +26,13 @@ const resumenLineas = lineas.map((l) => {
 const garantias = [
   { titulo: 'Fijación de 8 horas o más', texto: 'Concentración alta de esencia. No son aguas de colonia que se van a media mañana: duran la jornada completa.' },
   { titulo: 'Un precio parejo', texto: `Las ${productos.length} fragancias cuestan lo mismo: ${clp(precioChico)} el frasco de 30 ml. Sin letra chica ni precios distintos según la marca.` },
-  { titulo: 'Envíos a todo Chile', texto: `${envios.couriers.join(', ')}. ${envios.plazo}.` },
+  { titulo: 'Despacho a todo Chile', texto: `${envios.plazo} con ${envios.couriers.join(', ')}. ${envios.entrega}.` },
   { titulo: 'Asesoría real por WhatsApp', texto: 'Te preguntamos qué buscas y te recomendamos. Sin bots ni respuestas automáticas.' },
 ];
 
 const testimonios = [
   { texto: 'Pedí el Nº 54 y me duró todo el día en la ropa. Por ese precio no esperaba esa fijación, de verdad.', autora: 'Camila R.', detalle: 'Ñuñoa' },
-  { texto: 'Pedí dos frascos y llegaron en dos días a Concepción. La atención por WhatsApp fue rapidísima.', autora: 'Diego M.', detalle: 'Concepción' },
+  { texto: 'Lo despacharon al día siguiente y me mandaron el seguimiento por WhatsApp. Llegó a Concepción sin problemas.', autora: 'Diego M.', detalle: 'Concepción' },
   { texto: 'Empecé con el de 30 ml para probar y volví por el grande. Uso el Nº 81 para la oficina todos los días.', autora: 'Francisca T.', detalle: 'Providencia' },
 ];
 ---
@@ -50,7 +50,7 @@ const testimonios = [
         </h1>
         <p class="mt-6 max-w-md text-base leading-relaxed text-tenue">
           {productos.length} fragancias inspiradas en las grandes casas internacionales,
-          con más de 8 horas de fijación. En frasco de 30 ml, con entrega en 48 horas a todo Chile.
+          con más de 8 horas de fijación. En frasco de 30 ml, con despacho dentro de 48 horas a todo Chile.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3">
@@ -73,7 +73,7 @@ const testimonios = [
           </div>
           <div>
             <dt class="text-2xl font-semibold text-texto">48 h</dt>
-            <dd class="text-xs text-tenue">de entrega, a todo Chile</dd>
+            <dd class="text-xs text-tenue">para despachar tu pedido</dd>
           </div>
         </dl>
       </div>

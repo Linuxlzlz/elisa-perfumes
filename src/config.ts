@@ -7,7 +7,7 @@ export const tienda = {
   nombre: 'Elisa Perfumes',
   claim: 'Perfumes inspirados en las mejores marcas, con 8+ horas de fijación',
   descripcion:
-    'Perfumería en Chile: 86 fragancias inspiradas en las grandes casas internacionales, en frasco de 30 ml. Alta fijación, precio justo y entrega en 48 horas a todo el país. Pedidos por WhatsApp.',
+    'Perfumería en Chile: 86 fragancias inspiradas en las grandes casas internacionales, en frasco de 30 ml. Alta fijación, precio justo y despacho dentro de 48 horas a todo el país. Pedidos por WhatsApp.',
 
   // Número de WhatsApp en formato internacional, SIN "+", sin espacios.
   // +56 9 2694 7785
@@ -42,7 +42,9 @@ export const envios = {
   despachoRegiones: 4990,
   umbralEnvioGratis: 60000, // sobre este monto, envío gratis
   couriers: ['Starken', 'Chilexpress', 'Bluexpress'],
-  plazo: 'Entrega en 48 horas hábiles a todo Chile',
+  // Lo que sí controlamos: despachar. La entrega depende del courier.
+  plazo: 'Despachamos dentro de 48 horas hábiles',
+  entrega: 'El tiempo de entrega lo define el courier y se coordina contigo por WhatsApp',
 } as const;
 
 export const pagos = [

@@ -4,24 +4,26 @@ import { clp, ruta } from '../lib/formato';
 import { envios, pagos, tienda } from '../config';
 
 const pasos = [
-  { n: '01', t: 'Armas tu carrito', d: 'Agregas las fragancias y los tamaños que quieras en el sitio.' },
-  { n: '02', t: 'Envías el pedido', d: 'Al presionar “Enviar por WhatsApp” se abre el chat con tu pedido ya escrito, con código de seguimiento.' },
+  { n: '01', t: 'Armas tu carrito', d: 'Agregas las fragancias que quieras desde el catálogo.' },
+  { n: '02', t: 'Envías el pedido', d: 'Al presionar “Enviar por WhatsApp” se abre el chat con tu pedido ya escrito y su código.' },
   { n: '03', t: 'Confirmamos', d: 'Validamos stock y total final, y te enviamos los datos de pago.' },
-  { n: '04', t: 'Despachamos', d: `Una vez confirmado el pago, despachamos. ${envios.plazo}, sin importar la región.` },
+  { n: '04', t: 'Despachamos', d: `Con el pago confirmado, ${envios.plazo.toLowerCase()}. Te pasamos el número de seguimiento por el mismo chat.` },
+  { n: '05', t: 'Coordinamos la entrega', d: `${envios.entrega}. Según el courier y tu comuna, puede ser a domicilio o en sucursal.` },
 ];
 
 const preguntas = [
-  { p: '¿Los perfumes son originales?', r: 'Las líneas Originales y Nicho llegan sellados de fábrica, con caja y celofán. La línea Alternativas es de elaboración propia: no son originales ni se venden como tales, y así está indicado en cada ficha.' },
-  { p: '¿Qué es un decant?', r: 'Una porción del perfume original trasvasijada a un atomizador de vidrio de 5 o 10 ml. Sirve para probar la fragancia en tu piel varios días antes de comprometerte con el frasco completo.' },
-  { p: '¿Puedo pagar contra entrega?', r: 'Solo en retiro presencial. Para despachos pedimos el pago por transferencia o link antes de enviar, porque el courier se paga al despachar.' },
+  { p: '¿Cuánto demora en llegar?', r: 'Nosotros despachamos dentro de 48 horas hábiles desde que se confirma el pago. El tiempo que tarda en llegar después depende del courier y de tu comuna, así que eso lo coordinamos contigo por WhatsApp y te pasamos el seguimiento.' },
+  { p: '¿Son perfumes originales?', r: 'No, y no los vendemos como tales. Son de elaboración propia, inspirados en el perfil olfativo de fragancias conocidas. En cada ficha decimos exactamente en cuál se inspira cada número.' },
+  { p: '¿Cuánto dura el perfume en la piel?', r: 'Más de 8 horas. Son concentración alta de esencia, no agua de colonia. La duración varía según tu tipo de piel: en piel hidratada rinde bastante más.' },
+  { p: '¿Puedo pagar contra entrega?', r: 'Solo en retiro presencial. Para despachos pedimos el pago antes, por transferencia o link, porque el courier se paga al momento de despachar.' },
   { p: '¿Hacen cambios o devoluciones?', r: 'Sí. Si el producto llega dañado o no corresponde a lo pedido, lo reponemos o devolvemos el dinero. Por tratarse de productos de uso personal, no aceptamos devoluciones de frascos ya abiertos salvo falla.' },
-  { p: '¿Tienen algo que no esté en el catálogo?', r: 'Trabajamos pedidos por encargo. Escríbenos por WhatsApp con el nombre de la fragancia y te confirmamos disponibilidad y precio.' },
+  { p: '¿Tienen algo que no esté en el catálogo?', r: 'Escríbenos por WhatsApp con el nombre de la fragancia y te confirmamos si podemos conseguirla, a qué precio y en cuánto tiempo.' },
   { p: '¿Emiten boleta?', r: 'Sí, emitimos boleta electrónica por cada venta. Si necesitas factura, indícalo al confirmar el pedido.' },
 ];
 ---
 <Base
   titulo="Envíos, pagos y preguntas frecuentes"
-  descripcion="Cómo comprar en Elisa Perfumes: pedidos por WhatsApp, formas de pago, costos y plazos de envío a todo Chile, cambios y devoluciones."
+  descripcion="Cómo comprar en Elisa Perfumes: pedidos por WhatsApp, formas de pago, costos de envío, despacho dentro de 48 horas a todo Chile, cambios y devoluciones."
 >
   <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
     <header>
@@ -54,7 +56,7 @@ const preguntas = [
             <tr>
               <th scope="col" class="px-4 py-3 font-medium text-acento">Modalidad</th>
               <th scope="col" class="px-4 py-3 font-medium text-acento">Costo</th>
-              <th scope="col" class="px-4 py-3 font-medium text-acento">Plazo</th>
+              <th scope="col" class="px-4 py-3 font-medium text-acento">Lo despachamos en</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-borde bg-superficie">
@@ -76,14 +78,22 @@ const preguntas = [
             <tr class="bg-oro/5">
               <td class="px-4 py-3 text-texto">Compras sobre {clp(envios.umbralEnvioGratis)}</td>
               <td class="px-4 py-3 font-semibold text-exito">Envío gratis</td>
-              <td class="px-4 py-3 text-tenue">Según destino</td>
+              <td class="px-4 py-3 text-tenue">48 horas hábiles</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="mt-3 text-xs text-tenue">
-        Despachamos con {envios.couriers.join(', ')}. {envios.retiroTexto}.
-      </p>
+      <div class="mt-4 rounded-xl border border-acento/25 bg-acento/5 px-4 py-3.5">
+        <p class="text-sm leading-relaxed text-texto">
+          <strong class="font-semibold">Las 48 horas son de despacho, no de entrega.</strong>{' '}
+          Ese es el plazo en que tu pedido sale de nuestras manos hacia el courier.
+          Cuánto tarda en llegar después lo define la empresa de transporte y tu comuna,
+          así que lo coordinamos contigo por WhatsApp y te pasamos el seguimiento.
+        </p>
+        <p class="mt-2 text-xs text-tenue">
+          Trabajamos con {envios.couriers.join(', ')}. {envios.retiroTexto}.
+        </p>
+      </div>
     </section>
 
     <!-- Pagos -->
