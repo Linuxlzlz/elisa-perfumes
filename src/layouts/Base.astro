@@ -22,7 +22,7 @@ const {
   sinIndexar = false,
 } = Astro.props;
 
-const tituloCompleto = titulo ? `${titulo} · ${tienda.nombre}` : `${tienda.nombre} — ${tienda.claim}`;
+const tituloCompleto = titulo ? `${titulo} | ${tienda.nombre}` : `${tienda.nombre}. ${tienda.claim}`;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.com').href;
 // Imagen que se ve al pegar el enlace en WhatsApp, Instagram o Facebook.
 const imagenSocial = new URL(ruta('og.png'), Astro.site ?? 'https://example.com').href;
@@ -46,7 +46,7 @@ const imagenSocial = new URL(ruta('og.png'), Astro.site ?? 'https://example.com'
     <meta property="og:image" content={imagenSocial} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={`${tienda.nombre} — ${tienda.claim}`} />
+    <meta property="og:image:alt" content={`${tienda.nombre}. ${tienda.claim}`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={imagenSocial} />
     <meta name="theme-color" content="#0b0a09" />

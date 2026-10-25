@@ -1,4 +1,4 @@
-// Línea Mujer — NRO. 01 a 39.
+// Línea Mujer. NRO. 01 a 39.
 // Columnas: [nº, referencia, casa, familia, acordes, salida, corazón, fondo,
 //            ocasiones, estaciones, proyección, duración, descripción]
 // Las listas van separadas por "|".

@@ -17,7 +17,7 @@ const { producto: p, class: clase = '', grande = false, conNumero = false } = As
 
 const archivo = p.img ?? `img/productos/${p.linea}.webp`;
 const etiqueta = nombre(p);
-const alt = `${etiqueta} — frasco de 100 ml y estuche de la línea ${p.linea}`;
+const alt = `${etiqueta}, frasco de 30 ml con su estuche`;
 ---
 <div class={`relative h-full w-full ${clase}`}>
   <img

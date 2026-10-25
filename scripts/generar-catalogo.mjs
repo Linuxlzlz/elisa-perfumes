@@ -15,11 +15,11 @@ import { hombre } from './datos-hombre.mjs';
 const aquí = dirname(fileURLToPath(import.meta.url));
 const destino = resolve(aquí, '..', 'src', 'data', 'catalogo.json');
 
-// Precios de lista. Para cambiarlos puntualmente usa el panel /admin;
-// para cambiarlos todos, edita acá y regenera.
+// Formatos a la venta y su precio de lista. Hoy sólo se vende el de 30 ml;
+// para reponer el de 100 ml basta con agregar su línea acá y regenerar.
+// Para cambiar el precio de un producto puntual, usa el panel /admin.
 const PRECIOS = [
   { tamano: '30ml', precio: 15000 },
-  { tamano: '100ml', precio: 45000 },
 ];
 
 // Los que se muestran en "Los más pedidos" de la portada.

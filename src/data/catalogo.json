@@ -49,11 +49,6 @@
           "sku": "1-erba-pura-sospiro-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "1-erba-pura-sospiro-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -104,11 +99,6 @@
           "sku": "2-bright-crystal-versace-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "2-bright-crystal-versace-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -159,11 +149,6 @@
           "sku": "3-la-bomba-carolina-herrera-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "3-la-bomba-carolina-herrera-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -215,11 +200,6 @@
           "sku": "4-aventus-for-her-creed-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "4-aventus-for-her-creed-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -270,11 +250,6 @@
           "sku": "5-miss-dior-dior-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "5-miss-dior-dior-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -327,11 +302,6 @@
           "sku": "6-la-vie-est-belle-lancome-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "6-la-vie-est-belle-lancome-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -381,11 +351,6 @@
           "sku": "7-my-way-giorgio-armani-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "7-my-way-giorgio-armani-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -434,11 +399,6 @@
           "sku": "8-fame-paco-rabanne-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "8-fame-paco-rabanne-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -489,11 +449,6 @@
           "sku": "9-bombshell-victoria-s-secret-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "9-bombshell-victoria-s-secret-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -544,11 +499,6 @@
           "sku": "10-acqua-di-gioia-giorgio-armani-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "10-acqua-di-gioia-giorgio-armani-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -601,11 +551,6 @@
           "sku": "11-212-sexy-carolina-herrera-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "11-212-sexy-carolina-herrera-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -661,11 +606,6 @@
           "sku": "12-good-girl-carolina-herrera-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "12-good-girl-carolina-herrera-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -719,11 +659,6 @@
           "sku": "13-light-blue-dolce-gabbana-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "13-light-blue-dolce-gabbana-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -775,11 +710,6 @@
           "sku": "14-la-nuit-tresor-lancome-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "14-la-nuit-tresor-lancome-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -829,11 +759,6 @@
           "sku": "15-santal-33-le-labo-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "15-santal-33-le-labo-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -883,11 +808,6 @@
           "sku": "16-212-vip-carolina-herrera-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "16-212-vip-carolina-herrera-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -935,11 +855,6 @@
           "sku": "17-bloom-gucci-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "17-bloom-gucci-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -992,11 +907,6 @@
           "sku": "18-la-vie-est-belle-l-elixir-lancome-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "18-la-vie-est-belle-l-elixir-lancome-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1049,11 +959,6 @@
           "sku": "19-cloud-ariana-grande-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "19-cloud-ariana-grande-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1106,11 +1011,6 @@
           "sku": "20-lady-million-gold-paco-rabanne-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "20-lady-million-gold-paco-rabanne-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1163,11 +1063,6 @@
           "sku": "21-si-passione-intense-giorgio-armani-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "21-si-passione-intense-giorgio-armani-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1219,11 +1114,6 @@
           "sku": "22-libre-intense-yves-saint-laurent-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "22-libre-intense-yves-saint-laurent-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1273,11 +1163,6 @@
           "sku": "23-212-heroes-for-her-carolina-herrera-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "23-212-heroes-for-her-carolina-herrera-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1329,11 +1214,6 @@
           "sku": "24-eros-pour-femme-versace-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "24-eros-pour-femme-versace-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1384,11 +1264,6 @@
           "sku": "25-idole-lancome-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "25-idole-lancome-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1444,11 +1319,6 @@
           "sku": "26-delina-parfums-de-marly-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "26-delina-parfums-de-marly-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1496,11 +1366,6 @@
           "sku": "27-born-in-roma-donna-valentino-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "27-born-in-roma-donna-valentino-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1552,11 +1417,6 @@
           "sku": "28-can-can-paris-hilton-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "28-can-can-paris-hilton-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1609,11 +1469,6 @@
           "sku": "29-coco-mademoiselle-chanel-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "29-coco-mademoiselle-chanel-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -1664,11 +1519,6 @@
           "sku": "30-coconut-passion-victoria-s-secret-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "30-coconut-passion-victoria-s-secret-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1717,11 +1567,6 @@
           "sku": "31-olympea-paco-rabanne-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "31-olympea-paco-rabanne-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -1773,11 +1618,6 @@
           "sku": "32-fantasy-britney-spears-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "32-fantasy-britney-spears-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1828,11 +1668,6 @@
           "sku": "33-good-girl-blush-carolina-herrera-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "33-good-girl-blush-carolina-herrera-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1885,11 +1720,6 @@
           "sku": "34-black-opium-yves-saint-laurent-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "34-black-opium-yves-saint-laurent-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -1940,11 +1770,6 @@
           "sku": "35-poison-girl-dior-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "35-poison-girl-dior-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -1997,11 +1822,6 @@
           "sku": "36-ralph-ralph-lauren-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "36-ralph-ralph-lauren-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2051,11 +1871,6 @@
           "sku": "37-the-scent-hugo-boss-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "37-the-scent-hugo-boss-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2106,11 +1921,6 @@
           "sku": "38-private-show-britney-spears-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "38-private-show-britney-spears-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2160,11 +1970,6 @@
           "sku": "39-yes-i-am-cacharel-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "39-yes-i-am-cacharel-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2218,11 +2023,6 @@
           "sku": "51-naxos-xerjoff-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "51-naxos-xerjoff-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2274,11 +2074,6 @@
           "sku": "52-erba-pura-xerjoff-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "52-erba-pura-xerjoff-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2333,11 +2128,6 @@
           "sku": "53-layton-parfums-de-marly-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "53-layton-parfums-de-marly-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -2391,11 +2181,6 @@
           "sku": "54-aventus-creed-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "54-aventus-creed-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -2449,11 +2234,6 @@
           "sku": "55-costa-azzurra-tom-ford-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "55-costa-azzurra-tom-ford-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2505,11 +2285,6 @@
           "sku": "56-the-collection-magnetic-hugo-boss-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "56-the-collection-magnetic-hugo-boss-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2561,11 +2336,6 @@
           "sku": "57-noble-hugo-boss-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "57-noble-hugo-boss-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2619,11 +2389,6 @@
           "sku": "58-sauvage-elixir-dior-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "58-sauvage-elixir-dior-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -2677,11 +2442,6 @@
           "sku": "59-polo-blue-ralph-lauren-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "59-polo-blue-ralph-lauren-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2736,11 +2496,6 @@
           "sku": "60-acqua-di-gio-giorgio-armani-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "60-acqua-di-gio-giorgio-armani-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2791,11 +2546,6 @@
           "sku": "61-phantom-paco-rabanne-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "61-phantom-paco-rabanne-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2847,11 +2597,6 @@
           "sku": "62-invictus-paco-rabanne-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "62-invictus-paco-rabanne-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2902,11 +2647,6 @@
           "sku": "63-bad-boy-carolina-herrera-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "63-bad-boy-carolina-herrera-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -2958,11 +2698,6 @@
           "sku": "64-light-blue-dolce-gabbana-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "64-light-blue-dolce-gabbana-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3014,11 +2749,6 @@
           "sku": "65-l-homme-yves-saint-laurent-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "65-l-homme-yves-saint-laurent-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3074,11 +2804,6 @@
           "sku": "66-boss-bottled-hugo-boss-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "66-boss-bottled-hugo-boss-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3131,11 +2856,6 @@
           "sku": "67-1-million-paco-rabanne-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "67-1-million-paco-rabanne-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -3192,11 +2912,6 @@
           "sku": "68-fahrenheit-dior-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "68-fahrenheit-dior-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3247,11 +2962,6 @@
           "sku": "69-tobacco-vanille-tom-ford-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "69-tobacco-vanille-tom-ford-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3304,11 +3014,6 @@
           "sku": "70-acqua-di-gio-blue-edition-giorgio-armani-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "70-acqua-di-gio-blue-edition-giorgio-armani-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3360,11 +3065,6 @@
           "sku": "71-dior-homme-dior-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "71-dior-homme-dior-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3418,11 +3118,6 @@
           "sku": "72-eros-versace-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "72-eros-versace-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -3476,11 +3171,6 @@
           "sku": "73-1-million-elixir-paco-rabanne-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "73-1-million-elixir-paco-rabanne-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3534,11 +3224,6 @@
           "sku": "74-dylan-blue-versace-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "74-dylan-blue-versace-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3589,11 +3274,6 @@
           "sku": "75-guess-yves-saint-laurent-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "75-guess-yves-saint-laurent-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3646,11 +3326,6 @@
           "sku": "76-renaissance-xerjoff-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "76-renaissance-xerjoff-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3704,11 +3379,6 @@
           "sku": "77-stronger-with-you-giorgio-armani-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "77-stronger-with-you-giorgio-armani-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3761,11 +3431,6 @@
           "sku": "78-irish-leather-memo-paris-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "78-irish-leather-memo-paris-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3818,11 +3483,6 @@
           "sku": "79-invictus-victory-elixir-paco-rabanne-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "79-invictus-victory-elixir-paco-rabanne-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3875,11 +3535,6 @@
           "sku": "80-million-gold-paco-rabanne-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "80-million-gold-paco-rabanne-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -3931,11 +3586,6 @@
           "sku": "81-bleu-de-chanel-chanel-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "81-bleu-de-chanel-chanel-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -3989,11 +3639,6 @@
           "sku": "82-alexandria-xerjoff-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "82-alexandria-xerjoff-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4045,11 +3690,6 @@
           "sku": "83-xao-xerjoff-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "83-xao-xerjoff-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4099,11 +3739,6 @@
           "sku": "84-ombre-leather-tom-ford-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "84-ombre-leather-tom-ford-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4156,11 +3791,6 @@
           "sku": "85-althair-parfums-de-marly-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "85-althair-parfums-de-marly-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4213,11 +3843,6 @@
           "sku": "86-new-york-bond-no-9-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "86-new-york-bond-no-9-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4268,11 +3893,6 @@
           "sku": "87-l-immensite-louis-vuitton-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "87-l-immensite-louis-vuitton-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4323,11 +3943,6 @@
           "sku": "88-imagination-louis-vuitton-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "88-imagination-louis-vuitton-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4377,11 +3992,6 @@
           "sku": "89-born-in-roma-uomo-valentino-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "89-born-in-roma-uomo-valentino-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4431,11 +4041,6 @@
           "sku": "90-torino-22-xerjoff-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "90-torino-22-xerjoff-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4485,11 +4090,6 @@
           "sku": "91-myslf-yves-saint-laurent-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "91-myslf-yves-saint-laurent-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4541,11 +4141,6 @@
           "sku": "92-212-men-carolina-herrera-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "92-212-men-carolina-herrera-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4597,11 +4192,6 @@
           "sku": "93-212-heroes-forever-young-carolina-herrera-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "93-212-heroes-forever-young-carolina-herrera-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4653,11 +4243,6 @@
           "sku": "94-armani-code-giorgio-armani-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "94-armani-code-giorgio-armani-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4709,11 +4294,6 @@
           "sku": "95-code-parfum-giorgio-armani-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "95-code-parfum-giorgio-armani-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     },
@@ -4767,11 +4347,6 @@
           "sku": "96-le-male-jean-paul-gaultier-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "96-le-male-jean-paul-gaultier-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ],
       "destacado": true
@@ -4825,11 +4400,6 @@
           "sku": "97-y-yves-saint-laurent-30ml",
           "tamano": "30ml",
           "precio": 15000
-        },
-        {
-          "sku": "97-y-yves-saint-laurent-100ml",
-          "tamano": "100ml",
-          "precio": 45000
         }
       ]
     }

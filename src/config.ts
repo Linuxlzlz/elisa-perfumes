@@ -1,5 +1,5 @@
 // ╔══════════════════════════════════════════════════════════════════╗
-// ║  CONFIGURACIÓN DE LA TIENDA — edita SOLO este archivo            ║
+// ║  CONFIGURACIÓN DE LA TIENDA. Edita SOLO este archivo.            ║
 // ║  Todo lo que cambia sin tocar código está acá.                   ║
 // ╚══════════════════════════════════════════════════════════════════╝
 
@@ -7,7 +7,7 @@ export const tienda = {
   nombre: 'Elisa Perfumes',
   claim: 'Perfumes inspirados en las mejores marcas, con 8+ horas de fijación',
   descripcion:
-    'Perfumería en Chile: 86 fragancias inspiradas en las grandes casas internacionales, en 30 ml y 100 ml. Alta fijación, precio justo y despacho a todo el país. Pedidos por WhatsApp.',
+    'Perfumería en Chile: 86 fragancias inspiradas en las grandes casas internacionales, en frasco de 30 ml. Alta fijación, precio justo y entrega en 48 horas a todo el país. Pedidos por WhatsApp.',
 
   // Número de WhatsApp en formato internacional, SIN "+", sin espacios.
   // +56 9 2694 7785

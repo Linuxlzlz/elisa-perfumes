@@ -1,4 +1,4 @@
-// Línea Hombre — NRO. 51 a 97. Mismo formato que datos-mujer.mjs.
+// Línea Hombre. NRO. 51 a 97. Mismo formato que datos-mujer.mjs.
 export const hombre = [
 [51,'Naxos','Xerjoff','Oriental gourmand','Miel|Tabaco|Vainilla',
  'Bergamota|Limón|Lavanda','Miel|Tabaco|Jazmín|Azahar','Haba tonka|Vainilla|Canela|Cistus',

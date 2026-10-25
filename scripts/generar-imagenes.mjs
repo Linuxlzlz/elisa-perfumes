@@ -2,8 +2,8 @@
 /**
  * Rasteriza las imágenes de marca que no pueden ser SVG:
  *
- *   public/og.png             1200×630  — se ve al pegar el enlace en WhatsApp/Instagram
- *   public/marca/avatar.png   1024×1024 — foto de perfil de WhatsApp Business e Instagram
+ *   public/og.png             1200×630 : se ve al pegar el enlace en WhatsApp/Instagram
+ *   public/marca/avatar.png   1024×1024: foto de perfil de WhatsApp Business e Instagram
  *
  * Requiere Playwright:  npx playwright install chromium
  * Las imágenes ya están versionadas: solo hay que correr esto si cambia la marca.

@@ -50,11 +50,11 @@ const enlace = ruta(`perfume/${p.slug}`);
       ))}
     </ul>
 
-    <div class="mt-auto grid grid-cols-2 gap-2 pt-2">
+    <div class="mt-auto grid gap-2 pt-2" style={`grid-template-columns: repeat(${p.variantes.length}, minmax(0, 1fr))`}>
       {p.variantes.map((v) => (
         <button
           type="button"
-          class="rounded-lg border border-borde bg-panel px-2 py-2 text-center transition hover:border-oro hover:bg-oro/10 disabled:cursor-not-allowed disabled:opacity-45"
+          class="flex items-center justify-center gap-2 rounded-lg border border-acento/30 bg-acento/5 px-3 py-2.5 text-center transition hover:border-acento hover:bg-acento hover:text-fondo disabled:cursor-not-allowed disabled:opacity-45"
           data-agregar
           data-sku={v.sku}
           data-slug={p.slug}
@@ -63,8 +63,8 @@ const enlace = ruta(`perfume/${p.slug}`);
           data-tamano={v.tamano}
           data-precio={v.precio}
         >
-          <span class="block text-[11px] text-tenue">{v.tamano}</span>
-          <span class="block text-sm font-semibold text-texto">{clp(v.precio)}</span>
+          <span class="text-sm font-semibold">{clp(v.precio)}</span>
+          <span class="text-[11px] opacity-70">{v.tamano}</span>
         </button>
       ))}
     </div>

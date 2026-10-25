@@ -12,7 +12,7 @@ datos y sin costos de hosting.
 
 | | |
 |---|---|
-| **Catálogo** | 86 fragancias en dos líneas (Mujer / Hombre), con página estática por perfume, pirámide olfativa, medidores de proyección y duración, y datos estructurados |
+| **Catálogo** | 86 fragancias en dos líneas (Mujer y Hombre), con página estática por perfume, pirámide olfativa, medidores de proyección y duración, y datos estructurados |
 | **Filtros** | Por línea, familia olfativa, ocasión, intensidad y casa de referencia; búsqueda por número, marca o nota |
 | **Carrito** | Persiste en el navegador, sobrevive recargas y se sincroniza entre pestañas |
 | **Pedidos** | Genera el mensaje completo y abre WhatsApp. Incluye botón de respaldo "copiar pedido" |
@@ -64,7 +64,11 @@ umbral de envío gratis, comunas y formas de pago.
 
 ## 3. El catálogo
 
-86 fragancias en dos líneas, todas al mismo precio: **30 ml $15.000 · 100 ml $45.000**.
+86 fragancias en dos líneas, todas al mismo precio: **$15.000 el frasco de 30 ml**.
+
+Hoy sólo se vende ese formato. Para reponer el de 100 ml basta con agregar su línea en
+`PRECIOS`, dentro de `scripts/generar-catalogo.mjs`, y correr `npm run generar`: la ficha
+vuelve a mostrar el selector de tamaño sola.
 
 | Línea | Números | Cantidad |
 |---|---|---|
@@ -96,8 +100,8 @@ estructurados. Los productos quedan identificados solo por su número.
 
 Los datos viven en dos archivos, **no** en el JSON:
 
-- `scripts/datos-mujer.mjs` — Nº 01 a 39
-- `scripts/datos-hombre.mjs` — Nº 51 a 97
+- `scripts/datos-mujer.mjs`: Nº 01 a 39
+- `scripts/datos-hombre.mjs`: Nº 51 a 97
 
 Cada fila tiene 13 columnas, en este orden:
 
@@ -128,7 +132,6 @@ de `scripts/generar-catalogo.mjs`:
 ```js
 const PRECIOS = [
   { tamano: '30ml', precio: 15000 },
-  { tamano: '100ml', precio: 45000 },
 ];
 const DESTACADOS = new Set([54, 12, 6, 34, 29, 81, 58, 72, 96, 53, 31, 67]);
 ```
@@ -141,8 +144,8 @@ const DESTACADOS = new Set([54, 12, 6, 34, 29, 81, 58, 72, 96, 53, 31, 67]);
 Todas las fragancias vienen en el mismo frasco: uno por línea. Por eso hay **una foto
 por línea**, no una por producto:
 
-- `public/img/productos/mujer.webp` — estuche burdeos, 100 y 30 ml
-- `public/img/productos/hombre.webp` — estuche negro y frasco
+- `public/img/productos/mujer.webp`: estuche burdeos
+- `public/img/productos/hombre.webp`: estuche negro y frasco
 
 Como las fotos son idénticas dentro de cada línea, **el número va superpuesto** sobre la
 imagen en el catálogo: es lo único que distingue una ficha de otra de un vistazo.
@@ -157,8 +160,8 @@ ruta y esa foto reemplaza a la de su línea.
 
 ## 4. La marca
 
-El logotipo es una **E de serif didona** —el mismo alto contraste de la Cormorant
-Garamond del sitio— con una gota de esencia cayendo del brazo central. El anillo la
+El logotipo es una **E de serif didona**, con el mismo alto contraste de la Cormorant
+Garamond del sitio, y una gota de esencia cayendo del brazo central. El anillo la
 convierte en sello de perfumería y resuelve el recorte circular de las redes.
 
 ### La paleta
@@ -229,7 +232,7 @@ pegas una vez y queda guardado solo en tu navegador.
 2. Elige **Fine-grained token**
 3. *Repository access* → **Only select repositories** → `elisa-perfumes`
 4. *Permissions* → *Repository permissions* → **Contents: Read and write**
-   (nada más — ese es el único permiso necesario)
+   (nada más: ese es el único permiso necesario)
 5. Fija una expiración (90 días es razonable) y genera
 6. Pégalo en `/admin` y presiona Conectar
 

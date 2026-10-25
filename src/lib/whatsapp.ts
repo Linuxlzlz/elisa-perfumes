@@ -44,53 +44,53 @@ export function construirMensaje(
   codigo: string,
   comunasSantiago: readonly string[],
 ): string {
-  const linea = '━━━━━━━━━━━━━━━';
   const subtotal = items.reduce((a, i) => a + i.precio * i.cantidad, 0);
   const envio = costoEnvio(subtotal, datos, comunasSantiago);
 
   const partes: string[] = [];
-  partes.push(`🛒 *PEDIDO #${codigo}*`);
-  partes.push(`_${tienda.nombre}_`);
-  partes.push(linea);
+  partes.push(`*Pedido ${codigo}*`);
+  partes.push(tienda.nombre);
+  partes.push('');
 
   for (const i of items) {
-    partes.push(`*${i.cantidad}×* ${i.nombre} · ${i.casa}`);
-    const importe =
+    const referencia = i.casa ? ` (${i.casa})` : '';
+    partes.push(`${i.cantidad} x ${i.nombre}${referencia}`);
+    partes.push(
       i.cantidad > 1
-        ? `${clp(i.precio)} c/u = ${clp(i.precio * i.cantidad)}`
-        : clp(i.precio);
-    partes.push(`      ${i.tamano} — ${importe}`);
+        ? `${i.tamano}, ${clp(i.precio)} c/u: ${clp(i.precio * i.cantidad)}`
+        : `${i.tamano}, ${clp(i.precio)}`,
+    );
+    partes.push('');
   }
 
-  partes.push(linea);
   partes.push(`Subtotal: ${clp(subtotal)}`);
 
   if (datos.entrega === 'retiro') {
-    partes.push('Envío: Retiro en persona');
-    partes.push(`*TOTAL: ${clp(subtotal)}*`);
+    partes.push('Entrega: retiro en persona');
+    partes.push(`*Total: ${clp(subtotal)}*`);
   } else if (envio === null) {
-    partes.push('Envío: Por confirmar');
-    partes.push(`*TOTAL: ${clp(subtotal)} + envío*`);
+    partes.push('Envío: por confirmar');
+    partes.push(`*Total: ${clp(subtotal)} más el envío*`);
   } else if (envio === 0) {
-    partes.push('Envío: ¡Gratis! 🎉');
-    partes.push(`*TOTAL: ${clp(subtotal)}*`);
+    partes.push('Envío: gratis');
+    partes.push(`*Total: ${clp(subtotal)}*`);
   } else {
     partes.push(`Envío: ${clp(envio)}`);
-    partes.push(`*TOTAL: ${clp(subtotal + envio)}*`);
+    partes.push(`*Total: ${clp(subtotal + envio)}*`);
   }
 
   partes.push('');
-  if (datos.nombre) partes.push(`👤 ${datos.nombre}`);
+  if (datos.nombre) partes.push(`Nombre: ${datos.nombre}`);
   partes.push(
     datos.entrega === 'retiro'
-      ? `📍 Retiro — ${envios.retiroTexto}`
-      : `📍 Despacho — ${datos.comuna || 'comuna por confirmar'}`,
+      ? `Retiro: ${envios.retiroTexto}`
+      : `Despacho a: ${datos.comuna || 'comuna por confirmar'}`,
   );
-  if (datos.pago) partes.push(`💳 ${datos.pago}`);
-  if (datos.nota?.trim()) partes.push(`📝 ${datos.nota.trim()}`);
+  if (datos.pago) partes.push(`Pago: ${datos.pago}`);
+  if (datos.nota?.trim()) partes.push(`Nota: ${datos.nota.trim()}`);
 
-  partes.push(linea);
-  partes.push('_Pedido generado desde la web_');
+  partes.push('');
+  partes.push('Pedido hecho desde la web.');
 
   return partes.join('\n');
 }

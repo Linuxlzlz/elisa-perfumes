@@ -14,7 +14,7 @@ export type Referencia = {
 };
 
 export type Producto = {
-  /** Ej: "54-aventus-creed" — incluye la referencia para posicionamiento. */
+  /** Ej: "54-aventus-creed": incluye la referencia para posicionamiento. */
   slug: string;
   /** El número de catálogo. Es el nombre real del producto: "Nº 54". */
   numero: number;

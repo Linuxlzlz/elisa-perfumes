@@ -11,13 +11,13 @@ const lineas = Object.entries(etiquetasLinea).map(([clave, v]) => ({ clave, ...v
 ---
 <Base
   titulo="Catálogo completo"
-  descripcion={`Las ${productos.length} fragancias de Elisa Perfumes en 30 y 100 ml. Filtra por línea, familia olfativa, ocasión, intensidad y casa de referencia.`}
+  descripcion={`Las ${productos.length} fragancias de Elisa Perfumes en frasco de 30 ml. Filtra por línea, familia olfativa, ocasión, intensidad y casa de referencia.`}
 >
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <header>
       <h1 class="titulo-serif text-4xl text-texto sm:text-5xl">Catálogo</h1>
       <p class="mt-3 max-w-2xl text-sm leading-relaxed text-tenue">
-        {productos.length} fragancias, todas disponibles en 30 y 100 ml al mismo precio.
+        {productos.length} fragancias, todas en frasco de 30 ml y al mismo precio.
         Cada una se identifica por su número{presentacion.mostrarReferencia ? ' y te indicamos en qué se inspira' : ''}.
       </p>
     </header>
@@ -61,9 +61,9 @@ const lineas = Object.entries(etiquetasLinea).map(([clave, v]) => ({ clave, ...v
           <label for="f-intensidad" class="mb-1.5 block text-xs text-tenue">Intensidad</label>
           <select id="f-intensidad" class="w-full rounded-lg border border-borde bg-panel px-3 py-2.5 text-sm text-texto focus:border-oro focus:outline-none">
             <option value="">Cualquiera</option>
-            <option value="3">Discreta — para oficina</option>
-            <option value="4">Equilibrada — se nota sin invadir</option>
-            <option value="5">Alta — deja estela</option>
+            <option value="3">Discreta, para la oficina</option>
+            <option value="4">Equilibrada, se nota sin invadir</option>
+            <option value="5">Alta, deja estela</option>
           </select>
         </div>
 

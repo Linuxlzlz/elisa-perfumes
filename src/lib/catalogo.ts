@@ -28,10 +28,10 @@ export function nombre(p: Producto): string {
 }
 
 export function referenciaTexto(p: Producto): string {
-  return `${p.referencia.nombre} · ${p.referencia.casa}`;
+  return `${p.referencia.nombre} de ${p.referencia.casa}`;
 }
 
-/** "Inspirado en Aventus de Creed" — o cadena vacía si está desactivado. */
+/** "Inspirado en Aventus de Creed": o cadena vacía si está desactivado. */
 export function inspiradoEn(p: Producto): string {
   if (!presentacion.mostrarReferencia) return '';
   return `Inspirado en ${p.referencia.nombre} de ${p.referencia.casa}`;
@@ -40,7 +40,7 @@ export function inspiradoEn(p: Producto): string {
 /** Título para <title> y resultados de búsqueda. */
 export function tituloLargo(p: Producto): string {
   const base = nombre(p);
-  return presentacion.mostrarReferencia ? `${base} — ${referenciaTexto(p)}` : base;
+  return presentacion.mostrarReferencia ? `${base}, ${referenciaTexto(p)}` : base;
 }
 
 export function relacionados(p: Producto, limite = 4): Producto[] {

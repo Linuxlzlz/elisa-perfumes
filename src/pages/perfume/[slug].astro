@@ -75,11 +75,6 @@ const consultaWsp = encodeURIComponent(
         <div class="relative aspect-square overflow-hidden rounded-3xl border border-borde bg-superficie">
           <FotoProducto producto={p} grande />
         </div>
-        {!p.img && (
-          <p class="mt-2 text-center text-[11px] text-tenue">
-            Ilustración de referencia — reemplazar por la foto real del producto.
-          </p>
-        )}
       </div>
 
       <!-- ░░ Información y compra ░░ -->
@@ -109,8 +104,8 @@ const consultaWsp = encodeURIComponent(
           </p>
         )}
 
-        <!-- Selector de tamaño -->
-        <div class="mt-7">
+        <!-- Selector de tamaño: sólo aparece si hay más de un formato -->
+        <div class="mt-7" style={p.variantes.length < 2 ? 'display:none' : undefined}>
           <p class="versalita mb-2.5 text-tenue">Elige el tamaño</p>
           <div class="grid grid-cols-2 gap-3" role="radiogroup" aria-label="Tamaño">
             {p.variantes.map((v, i) => (
@@ -212,8 +207,8 @@ const consultaWsp = encodeURIComponent(
             ))}
           </ul>
           <p class="mt-5 border-t border-borde pt-4 text-xs leading-relaxed text-tenue">
-            Consejo: aplica sobre la piel hidratada en muñecas y cuello. No frotes —
-            rompe las moléculas y acorta la duración.
+            Consejo: aplica sobre la piel hidratada en muñecas y cuello. No frotes,
+            porque rompe las moléculas y acorta la duración.
           </p>
         </div>
       </div>

@@ -25,14 +25,14 @@ const resumenLineas = lineas.map((l) => {
 
 const garantias = [
   { titulo: 'Fijación de 8 horas o más', texto: 'Concentración alta de esencia. No son aguas de colonia que se van a media mañana: duran la jornada completa.' },
-  { titulo: 'Dos tamaños, un precio claro', texto: `30 ml a ${clp(precioChico)} y 100 ml a ${clp(precioGrande)}. Mismo valor para las ${productos.length} fragancias, sin letra chica.` },
+  { titulo: 'Un precio parejo', texto: `Las ${productos.length} fragancias cuestan lo mismo: ${clp(precioChico)} el frasco de 30 ml. Sin letra chica ni precios distintos según la marca.` },
   { titulo: 'Envíos a todo Chile', texto: `${envios.couriers.join(', ')}. ${envios.plazo}.` },
   { titulo: 'Asesoría real por WhatsApp', texto: 'Te preguntamos qué buscas y te recomendamos. Sin bots ni respuestas automáticas.' },
 ];
 
 const testimonios = [
   { texto: 'Pedí el Nº 54 y me duró todo el día en la ropa. Por ese precio no esperaba esa fijación, de verdad.', autora: 'Camila R.', detalle: 'Ñuñoa' },
-  { texto: 'Compré dos de 100 ml y llegaron en tres días a Concepción. La atención por WhatsApp fue rapidísima.', autora: 'Diego M.', detalle: 'Concepción' },
+  { texto: 'Pedí dos frascos y llegaron en dos días a Concepción. La atención por WhatsApp fue rapidísima.', autora: 'Diego M.', detalle: 'Concepción' },
   { texto: 'Empecé con el de 30 ml para probar y volví por el grande. Uso el Nº 81 para la oficina todos los días.', autora: 'Francisca T.', detalle: 'Providencia' },
 ];
 ---
@@ -50,7 +50,7 @@ const testimonios = [
         </h1>
         <p class="mt-6 max-w-md text-base leading-relaxed text-tenue">
           {productos.length} fragancias inspiradas en las grandes casas internacionales,
-          con más de 8 horas de fijación. En 30 y 100 ml, con despacho a todo Chile.
+          con más de 8 horas de fijación. En frasco de 30 ml, con entrega en 48 horas a todo Chile.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3">
@@ -216,7 +216,7 @@ const testimonios = [
       ))}
     </div>
     <p class="aparece mt-6 text-center text-[11px] text-tenue">
-      Testimonios de ejemplo — reemplázalos por reseñas reales de tus clientes.
+      Testimonios de ejemplo: reemplázalos por reseñas reales de tus clientes.
     </p>
   </section>
 </Base>
