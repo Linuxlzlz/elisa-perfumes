@@ -1,5 +1,5 @@
 ---
-import { comunasSantiago, envios, pagos } from '../config';
+import { envios, pagos } from '../config';
 import { ruta } from '../lib/formato';
 ---
 <!-- Fondo oscuro -->
@@ -65,23 +65,28 @@ import { ruta } from '../lib/formato';
             Retiro
           </label>
         </div>
-        <p data-texto-retiro class="mt-2 hidden text-xs text-tenue">{envios.retiroTexto}</p>
       </fieldset>
 
-      <div data-campo-comuna>
-        <label for="c-comuna" class="mb-1.5 block text-xs text-tenue">Comuna *</label>
+      <div data-campo-destino>
+        <label for="c-destino" class="mb-1.5 block text-xs text-tenue">¿A qué comuna lo enviamos? *</label>
+        <input
+          id="c-destino" name="destino" type="text" autocomplete="address-level2"
+          placeholder="Ej: Curicó, Región del Maule"
+          class="w-full rounded-lg border border-borde bg-panel px-3 py-2.5 text-sm text-texto placeholder:text-tenue/60 focus:border-oro focus:outline-none"
+        />
+        <p class="mt-1.5 text-xs text-tenue">Despachamos a todo Chile desde {envios.origen}.</p>
+      </div>
+
+      <div data-campo-retiro class="hidden">
+        <label for="c-punto" class="mb-1.5 block text-xs text-tenue">¿Dónde lo retiras? *</label>
         <select
-          id="c-comuna" name="comuna"
+          id="c-punto" name="puntoRetiro"
           class="w-full rounded-lg border border-borde bg-panel px-3 py-2.5 text-sm text-texto focus:border-oro focus:outline-none"
         >
-          <option value="">Selecciona tu comuna…</option>
-          <optgroup label="Región Metropolitana">
-            {comunasSantiago.map((c) => <option value={c}>{c}</option>)}
-          </optgroup>
-          <optgroup label="Otras regiones">
-            <option value="Otra región">Otra región (coordinamos por WhatsApp)</option>
-          </optgroup>
+          <option value="">Elige el punto de retiro…</option>
+          {envios.puntosRetiro.map((p) => <option value={p}>{p}</option>)}
         </select>
+        <p class="mt-1.5 text-xs text-tenue">Coordinamos día y hora por WhatsApp.</p>
       </div>
 
       <div>
@@ -163,7 +168,7 @@ import { ruta } from '../lib/formato';
   import { clp } from '../lib/formato';
   import { codigoPedido, construirMensaje, costoEnvio, enlaceWhatsApp } from '../lib/whatsapp';
   import { cargarStock, estadoDe, precioDe } from '../lib/stock';
-  import { comunasSantiago, envios } from '../config';
+  import { envios } from '../config';
   import type { MapaStock } from '../lib/tipos';
 
   const q = <T extends Element>(sel: string) => document.querySelector<T>(sel);
@@ -180,8 +185,8 @@ import { ruta } from '../lib/formato';
   const elAvisoEnvio = q<HTMLElement>('[data-aviso-envio]')!;
   const elError = q<HTMLElement>('[data-error-form]')!;
   const wsp = q<HTMLAnchorElement>('[data-wsp-boton]')!;
-  const campoComuna = q<HTMLElement>('[data-campo-comuna]')!;
-  const textoRetiro = q<HTMLElement>('[data-texto-retiro]')!;
+  const campoDestino = q<HTMLElement>('[data-campo-destino]')!;
+  const campoRetiro = q<HTMLElement>('[data-campo-retiro]')!;
   const aviso = q<HTMLElement>('[data-aviso]')!;
 
   let codigo = codigoPedido();
@@ -228,14 +233,15 @@ import { ruta } from '../lib/formato';
     return {
       nombre: String(d.get('nombre') ?? ''),
       entrega: (String(d.get('entrega') ?? 'despacho') as 'retiro' | 'despacho'),
-      comuna: String(d.get('comuna') ?? ''),
+      destino: String(d.get('destino') ?? ''),
+      puntoRetiro: String(d.get('puntoRetiro') ?? ''),
       pago: String(d.get('pago') ?? ''),
       nota: String(d.get('nota') ?? ''),
     };
   }
 
   function mensajeActual() {
-    return construirMensaje(leer(), leerForm(), codigo, comunasSantiago);
+    return construirMensaje(leer(), leerForm(), codigo);
   }
 
   /* ── Pintado de la lista ───────────────────────────────────── */
@@ -263,15 +269,14 @@ import { ruta } from '../lib/formato';
     const items = leer();
     const sub = total(items);
     const datos = leerForm();
-    const envio = costoEnvio(sub, datos, comunasSantiago);
+    const envio = costoEnvio(sub, datos);
 
     elSubtotal.textContent = clp(sub);
     elEnvio.textContent =
       datos.entrega === 'retiro' ? 'Retiro en persona'
-      : envio === null ? 'Por confirmar'
       : envio === 0 ? 'Gratis'
       : clp(envio);
-    elTotal.textContent = clp(sub + (envio ?? 0));
+    elTotal.textContent = clp(sub + envio);
 
     const falta = envios.umbralEnvioGratis - sub;
     if (datos.entrega === 'despacho' && falta > 0 && sub > 0) {
@@ -315,8 +320,8 @@ import { ruta } from '../lib/formato';
   form.addEventListener('input', actualizarTotales);
   form.addEventListener('change', () => {
     const esRetiro = leerForm().entrega === 'retiro';
-    campoComuna.classList.toggle('hidden', esRetiro);
-    textoRetiro.classList.toggle('hidden', !esRetiro);
+    campoDestino.classList.toggle('hidden', esRetiro);
+    campoRetiro.classList.toggle('hidden', !esRetiro);
     actualizarTotales();
   });
   form.addEventListener('submit', (e) => e.preventDefault());
@@ -335,10 +340,16 @@ import { ruta } from '../lib/formato';
       form.querySelector<HTMLInputElement>('[name="nombre"]')?.focus();
       return;
     }
-    if (datos.entrega === 'despacho' && !datos.comuna) {
+    if (datos.entrega === 'despacho' && !datos.destino.trim()) {
       e.preventDefault();
-      error('Selecciona tu comuna para calcular el envío.');
-      form.querySelector<HTMLSelectElement>('[name="comuna"]')?.focus();
+      error('Escribe la comuna o ciudad a la que lo enviamos.');
+      form.querySelector<HTMLInputElement>('[name="destino"]')?.focus();
+      return;
+    }
+    if (datos.entrega === 'retiro' && !datos.puntoRetiro) {
+      e.preventDefault();
+      error(`Elige dónde lo retiras: ${envios.puntosRetiro.join(' o ')}.`);
+      form.querySelector<HTMLSelectElement>('[name="puntoRetiro"]')?.focus();
       return;
     }
     // Se reconstruye el enlace justo antes de navegar, por si algo quedó sin sincronizar.

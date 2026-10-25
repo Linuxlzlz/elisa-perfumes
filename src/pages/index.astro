@@ -26,7 +26,7 @@ const resumenLineas = lineas.map((l) => {
 const garantias = [
   { titulo: 'Fijación de 8 horas o más', texto: 'Concentración alta de esencia. No son aguas de colonia que se van a media mañana: duran la jornada completa.' },
   { titulo: 'Un precio parejo', texto: `Las ${productos.length} fragancias cuestan lo mismo: ${clp(precioChico)} el frasco de 30 ml. Sin letra chica ni precios distintos según la marca.` },
-  { titulo: 'Despacho a todo Chile', texto: `${envios.plazo} con ${envios.couriers.join(', ')}. ${envios.entrega}.` },
+  { titulo: 'Despacho a todo Chile y retiro', texto: `${envios.plazo} desde ${envios.origen}. También puedes retirar sin costo en ${envios.puntosRetiro.join(' o ')}, coordinando por WhatsApp.` },
   { titulo: 'Asesoría real por WhatsApp', texto: 'Te preguntamos qué buscas y te recomendamos. Sin bots ni respuestas automáticas.' },
 ];
 

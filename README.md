@@ -57,8 +57,26 @@ formato internacional, sin `+` ni espacios:
 whatsapp: '56926947785',
 ```
 
-En ese mismo archivo ajustas nombre de la tienda, horario, Instagram, costos de envío,
-umbral de envío gratis, comunas y formas de pago.
+En ese mismo archivo ajustas nombre de la tienda, horario, Instagram, costo de envío,
+umbral de envío gratis, puntos de retiro y formas de pago.
+
+### Envíos y retiros
+
+Los pedidos salen de **Hualañé**. El despacho es a todo Chile con una sola tarifa: desde
+ahí no hay una zona "principal" que justifique dos precios, así que el modelo de
+Santiago contra regiones se eliminó.
+
+```ts
+origen: 'Hualañé',
+puntosRetiro: ['Hualañé', 'Curicó'],
+despachoNacional: 4990,    // confirmar con el courier
+umbralEnvioGratis: 60000,
+```
+
+El carrito pregunta la comuna de destino como texto libre (no una lista cerrada) cuando
+el pedido se despacha, y ofrece elegir entre los puntos de retiro cuando se retira.
+Agregar un tercer punto de retiro es sumarlo a `puntosRetiro`: el formulario, la tabla de
+envíos y los textos lo recogen solos.
 
 ---
 

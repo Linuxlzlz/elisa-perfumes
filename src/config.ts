@@ -16,9 +16,8 @@ export const tienda = {
   // Mensaje del botón flotante (cuando el carrito está vacío)
   whatsappSaludo: 'Hola Elisa 👋 quiero hacer una consulta sobre perfumes.',
 
-  email: 'contacto@elisaperfumes.cl',
-  instagram: 'perfumes.rdelatorre',
-  ciudad: 'Santiago, Chile',
+  instagram: 'elisa.perfumes.boutique',
+  ciudad: 'Hualañé, Región del Maule',
 
   // Horario de atención mostrado en el sitio
   horario: 'Lun a Sáb · 10:00 a 20:00 hrs',
@@ -35,13 +34,15 @@ export const presentacion = {
 } as const;
 
 export const envios = {
-  // Costos en pesos chilenos. null = "a convenir por WhatsApp"
+  // Los pedidos salen desde Hualañé. El despacho es a todo Chile con una sola
+  // tarifa: desde acá no existe una "zona principal" que justifique dos precios.
+  origen: 'Hualañé',
+  puntosRetiro: ['Hualañé', 'Curicó'],
   retiroGratis: true,
-  retiroTexto: 'Retiro coordinado en Santiago (Metro Quilín)',
-  despachoSantiago: 3500,
-  despachoRegiones: 4990,
+  retiroTexto: 'Retiro sin costo en Hualañé y Curicó, coordinado por WhatsApp',
+  despachoNacional: 4990,   // ⚠️ confirmar con el courier
   umbralEnvioGratis: 60000, // sobre este monto, envío gratis
-  couriers: ['Starken', 'Chilexpress', 'Bluexpress'],
+  couriers: ['Starken', 'Chilexpress'],
   // Lo que sí controlamos: despachar. La entrega depende del courier.
   plazo: 'Despachamos dentro de 48 horas hábiles',
   entrega: 'El tiempo de entrega lo define el courier y se coordina contigo por WhatsApp',
@@ -60,13 +61,3 @@ export const repo = {
   branch: 'main',
   rutaStock: 'public/stock.json',
 } as const;
-
-export const comunasSantiago = [
-  'Cerrillos', 'Cerro Navia', 'Conchalí', 'El Bosque', 'Estación Central',
-  'Huechuraba', 'Independencia', 'La Cisterna', 'La Florida', 'La Granja',
-  'La Pintana', 'La Reina', 'Las Condes', 'Lo Barnechea', 'Lo Espejo',
-  'Lo Prado', 'Macul', 'Maipú', 'Ñuñoa', 'Pedro Aguirre Cerda',
-  'Peñalolén', 'Providencia', 'Pudahuel', 'Quilicura', 'Quinta Normal',
-  'Recoleta', 'Renca', 'San Joaquín', 'San Miguel', 'San Ramón',
-  'Santiago Centro', 'Vitacura', 'Puente Alto', 'San Bernardo',
-] as const;

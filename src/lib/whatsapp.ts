@@ -5,7 +5,10 @@ import { clp } from './formato';
 export type DatosPedido = {
   nombre: string;
   entrega: 'retiro' | 'despacho';
-  comuna: string;
+  /** Comuna o ciudad de destino, cuando el pedido se despacha. */
+  destino: string;
+  /** Punto de retiro elegido, cuando el pedido se retira. */
+  puntoRetiro: string;
   pago: string;
   nota?: string;
 };
@@ -21,20 +24,19 @@ export function codigoPedido(): string {
 }
 
 /**
- * Costo de envío. Devuelve null cuando hay que acordarlo por WhatsApp.
- * Reglas: retiro = 0 · sobre el umbral = 0 · Santiago vs. regiones.
+ * Costo del envío.
+ *
+ * Los pedidos salen desde Hualañé y el despacho es a todo Chile con una sola
+ * tarifa, así que no hay zonas: o se retira sin costo, o se paga la tarifa
+ * nacional, o el monto supera el umbral y el envío va gratis.
  */
 export function costoEnvio(
   subtotal: number,
-  datos: Pick<DatosPedido, 'entrega' | 'comuna'>,
-  comunasSantiago: readonly string[],
-): number | null {
+  datos: Pick<DatosPedido, 'entrega'>,
+): number {
   if (datos.entrega === 'retiro') return 0;
   if (subtotal >= envios.umbralEnvioGratis) return 0;
-  if (!datos.comuna) return null;
-  return comunasSantiago.includes(datos.comuna)
-    ? envios.despachoSantiago
-    : envios.despachoRegiones;
+  return envios.despachoNacional;
 }
 
 /** Arma el texto del pedido con el formato de negritas de WhatsApp. */
@@ -42,10 +44,9 @@ export function construirMensaje(
   items: ItemCarrito[],
   datos: DatosPedido,
   codigo: string,
-  comunasSantiago: readonly string[],
 ): string {
   const subtotal = items.reduce((a, i) => a + i.precio * i.cantidad, 0);
-  const envio = costoEnvio(subtotal, datos, comunasSantiago);
+  const envio = costoEnvio(subtotal, datos);
 
   const partes: string[] = [];
   partes.push(`*Pedido ${codigo}*`);
@@ -68,9 +69,6 @@ export function construirMensaje(
   if (datos.entrega === 'retiro') {
     partes.push('Entrega: retiro en persona');
     partes.push(`*Total: ${clp(subtotal)}*`);
-  } else if (envio === null) {
-    partes.push('Envío: por confirmar');
-    partes.push(`*Total: ${clp(subtotal)} más el envío*`);
   } else if (envio === 0) {
     partes.push('Envío: gratis');
     partes.push(`*Total: ${clp(subtotal)}*`);
@@ -83,8 +81,8 @@ export function construirMensaje(
   if (datos.nombre) partes.push(`Nombre: ${datos.nombre}`);
   partes.push(
     datos.entrega === 'retiro'
-      ? `Retiro: ${envios.retiroTexto}`
-      : `Despacho a: ${datos.comuna || 'comuna por confirmar'}`,
+      ? `Retiro en: ${datos.puntoRetiro || 'punto por confirmar'}`
+      : `Despacho a: ${datos.destino || 'comuna por confirmar'}`,
   );
   if (datos.pago) partes.push(`Pago: ${datos.pago}`);
   if (datos.nota?.trim()) partes.push(`Nota: ${datos.nota.trim()}`);
@@ -95,7 +93,7 @@ export function construirMensaje(
   return partes.join('\n');
 }
 
-/** Enlace wa.me listo para abrir. Se usa encodeURIComponent para los saltos de línea. */
+/** Enlace wa.me listo para abrir. Se usa encodeURIComponent por los saltos de línea. */
 export function enlaceWhatsApp(mensaje: string, numero = tienda.whatsapp): string {
   return `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 }

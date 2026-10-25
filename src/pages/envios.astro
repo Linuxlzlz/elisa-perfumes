@@ -8,14 +8,14 @@ const pasos = [
   { n: '02', t: 'Envías el pedido', d: 'Al presionar “Enviar por WhatsApp” se abre el chat con tu pedido ya escrito y su código.' },
   { n: '03', t: 'Confirmamos', d: 'Validamos stock y total final, y te enviamos los datos de pago.' },
   { n: '04', t: 'Despachamos', d: `Con el pago confirmado, ${envios.plazo.toLowerCase()}. Te pasamos el número de seguimiento por el mismo chat.` },
-  { n: '05', t: 'Coordinamos la entrega', d: `${envios.entrega}. Según el courier y tu comuna, puede ser a domicilio o en sucursal.` },
+  { n: '05', t: 'Coordinamos la entrega', d: `${envios.entrega}. Si prefieres retirar, lo dejamos listo en ${envios.puntosRetiro.join(' o ')}.` },
 ];
 
 const preguntas = [
-  { p: '¿Cuánto demora en llegar?', r: 'Nosotros despachamos dentro de 48 horas hábiles desde que se confirma el pago. El tiempo que tarda en llegar después depende del courier y de tu comuna, así que eso lo coordinamos contigo por WhatsApp y te pasamos el seguimiento.' },
+  { p: '¿Cuánto demora en llegar?', r: `Despachamos desde ${envios.origen} dentro de 48 horas hábiles desde que se confirma el pago. El tiempo que tarda en llegar después depende del courier y de tu comuna, así que eso lo coordinamos contigo por WhatsApp y te pasamos el seguimiento.` },
   { p: '¿Son perfumes originales?', r: 'No, y no los vendemos como tales. Son de elaboración propia, inspirados en el perfil olfativo de fragancias conocidas. En cada ficha decimos exactamente en cuál se inspira cada número.' },
   { p: '¿Cuánto dura el perfume en la piel?', r: 'Más de 8 horas. Son concentración alta de esencia, no agua de colonia. La duración varía según tu tipo de piel: en piel hidratada rinde bastante más.' },
-  { p: '¿Puedo pagar contra entrega?', r: 'Solo en retiro presencial. Para despachos pedimos el pago antes, por transferencia o link, porque el courier se paga al momento de despachar.' },
+  { p: '¿Puedo pagar al retirar?', r: `Sí, si retiras en ${envios.puntosRetiro.join(' o ')} puedes pagar en efectivo al momento. Para despachos pedimos el pago antes, por transferencia o link, porque el courier se paga al momento de despachar.` },
   { p: '¿Hacen cambios o devoluciones?', r: 'Sí. Si el producto llega dañado o no corresponde a lo pedido, lo reponemos o devolvemos el dinero. Por tratarse de productos de uso personal, no aceptamos devoluciones de frascos ya abiertos salvo falla.' },
   { p: '¿Tienen algo que no esté en el catálogo?', r: 'Escríbenos por WhatsApp con el nombre de la fragancia y te confirmamos si podemos conseguirla, a qué precio y en cuánto tiempo.' },
   { p: '¿Emiten boleta?', r: 'Sí, emitimos boleta electrónica por cada venta. Si necesitas factura, indícalo al confirmar el pedido.' },
@@ -23,7 +23,7 @@ const preguntas = [
 ---
 <Base
   titulo="Envíos, pagos y preguntas frecuentes"
-  descripcion="Cómo comprar en Elisa Perfumes: pedidos por WhatsApp, formas de pago, costos de envío, despacho dentro de 48 horas a todo Chile, cambios y devoluciones."
+  descripcion="Cómo comprar en Elisa Perfumes: pedidos por WhatsApp, retiro en Hualañé y Curicó, despacho a todo Chile dentro de 48 horas, formas de pago y devoluciones."
 >
   <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
     <header>
@@ -60,19 +60,16 @@ const preguntas = [
             </tr>
           </thead>
           <tbody class="divide-y divide-borde bg-superficie">
+            {envios.puntosRetiro.map((punto) => (
+              <tr>
+                <td class="px-4 py-3 text-texto">Retiro en {punto}</td>
+                <td class="px-4 py-3 text-exito">Gratis</td>
+                <td class="px-4 py-3 text-tenue">A coordinar por WhatsApp</td>
+              </tr>
+            ))}
             <tr>
-              <td class="px-4 py-3 text-texto">Retiro en persona</td>
-              <td class="px-4 py-3 text-exito">Gratis</td>
-              <td class="px-4 py-3 text-tenue">A coordinar</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-texto">Despacho Región Metropolitana</td>
-              <td class="px-4 py-3 text-texto">{clp(envios.despachoSantiago)}</td>
-              <td class="px-4 py-3 text-tenue">48 horas hábiles</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-texto">Despacho regiones</td>
-              <td class="px-4 py-3 text-texto">{clp(envios.despachoRegiones)}</td>
+              <td class="px-4 py-3 text-texto">Despacho a todo Chile</td>
+              <td class="px-4 py-3 text-texto">{clp(envios.despachoNacional)}</td>
               <td class="px-4 py-3 text-tenue">48 horas hábiles</td>
             </tr>
             <tr class="bg-oro/5">
@@ -91,7 +88,8 @@ const preguntas = [
           así que lo coordinamos contigo por WhatsApp y te pasamos el seguimiento.
         </p>
         <p class="mt-2 text-xs text-tenue">
-          Trabajamos con {envios.couriers.join(', ')}. {envios.retiroTexto}.
+          Los pedidos salen desde {envios.origen} con {envios.couriers.join(' y ')}.
+          {' '}{envios.retiroTexto}.
         </p>
       </div>
     </section>
