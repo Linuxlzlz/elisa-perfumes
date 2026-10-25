@@ -5,22 +5,22 @@ import { ruta } from '../lib/formato';
 <!-- Fondo oscuro -->
 <div
   data-carrito-fondo
-  class="fixed inset-0 z-50 hidden bg-noche/75 backdrop-blur-sm transition-opacity"
+  class="fixed inset-0 z-50 hidden bg-fondo/75 backdrop-blur-sm transition-opacity"
   aria-hidden="true"
 ></div>
 
 <!-- Panel lateral -->
 <aside
   data-carrito-panel
-  class="fixed inset-y-0 right-0 z-50 flex w-full max-w-md translate-x-full flex-col border-l border-borde bg-carbon shadow-2xl transition-transform duration-300 ease-out"
+  class="fixed inset-y-0 right-0 z-50 flex w-full max-w-md translate-x-full flex-col border-l border-borde bg-superficie shadow-2xl transition-transform duration-300 ease-out"
   role="dialog"
   aria-modal="true"
   aria-labelledby="titulo-carrito"
   aria-hidden="true"
 >
   <div class="flex items-center justify-between border-b border-borde px-5 py-4">
-    <h2 id="titulo-carrito" class="titulo-serif text-2xl text-crema">Tu pedido</h2>
-    <button type="button" data-cerrar-carrito class="rounded-full p-2 text-apagado transition hover:bg-humo hover:text-crema" aria-label="Cerrar carrito">
+    <h2 id="titulo-carrito" class="titulo-serif text-2xl text-texto">Tu pedido</h2>
+    <button type="button" data-cerrar-carrito class="rounded-full p-2 text-tenue transition hover:bg-panel hover:text-texto" aria-label="Cerrar carrito">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <path d="M18 6 6 18M6 6l12 12" />
       </svg>
@@ -33,8 +33,8 @@ import { ruta } from '../lib/formato';
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" class="text-borde" aria-hidden="true">
         <path d="M6 7h12l-1 12H7L6 7Z" /><path d="M9 7a3 3 0 0 1 6 0" />
       </svg>
-      <p class="text-sm text-apagado">Todavía no agregaste nada.</p>
-      <a href={ruta('catalogo')} class="rounded-full bg-oro px-5 py-2.5 text-sm font-semibold text-noche transition hover:bg-champan">Ver el catálogo</a>
+      <p class="text-sm text-tenue">Todavía no agregaste nada.</p>
+      <a href={ruta('catalogo')} class="rounded-full bg-acento px-5 py-2.5 text-sm font-semibold text-fondo transition hover:bg-[#9c2b45]">Ver el catálogo</a>
     </div>
 
     <!-- Lista de productos -->
@@ -42,37 +42,37 @@ import { ruta } from '../lib/formato';
 
     <!-- Datos de entrega -->
     <form data-carrito-form class="hidden space-y-4 border-t border-borde px-5 py-5">
-      <p class="versalita text-champan">Datos para el pedido</p>
+      <p class="versalita text-acento">Datos para el pedido</p>
 
       <div>
-        <label for="c-nombre" class="mb-1.5 block text-xs text-apagado">Nombre y apellido *</label>
+        <label for="c-nombre" class="mb-1.5 block text-xs text-tenue">Nombre y apellido *</label>
         <input
           id="c-nombre" name="nombre" type="text" required autocomplete="name"
           placeholder="Ej: Camila Rojas"
-          class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
+          class="w-full rounded-lg border border-borde bg-panel px-3 py-2.5 text-sm text-texto placeholder:text-tenue/60 focus:border-oro focus:outline-none"
         />
       </div>
 
       <fieldset>
-        <legend class="mb-1.5 text-xs text-apagado">¿Cómo lo recibes? *</legend>
+        <legend class="mb-1.5 text-xs text-tenue">¿Cómo lo recibes? *</legend>
         <div class="grid grid-cols-2 gap-2">
-          <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm has-[:checked]:border-oro has-[:checked]:text-champan">
+          <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-borde bg-panel px-3 py-2.5 text-sm has-[:checked]:border-oro has-[:checked]:text-acento">
             <input type="radio" name="entrega" value="despacho" checked class="accent-oro" />
             Despacho
           </label>
-          <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm has-[:checked]:border-oro has-[:checked]:text-champan">
+          <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-borde bg-panel px-3 py-2.5 text-sm has-[:checked]:border-oro has-[:checked]:text-acento">
             <input type="radio" name="entrega" value="retiro" class="accent-oro" />
             Retiro
           </label>
         </div>
-        <p data-texto-retiro class="mt-2 hidden text-xs text-apagado">{envios.retiroTexto}</p>
+        <p data-texto-retiro class="mt-2 hidden text-xs text-tenue">{envios.retiroTexto}</p>
       </fieldset>
 
       <div data-campo-comuna>
-        <label for="c-comuna" class="mb-1.5 block text-xs text-apagado">Comuna *</label>
+        <label for="c-comuna" class="mb-1.5 block text-xs text-tenue">Comuna *</label>
         <select
           id="c-comuna" name="comuna"
-          class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none"
+          class="w-full rounded-lg border border-borde bg-panel px-3 py-2.5 text-sm text-texto focus:border-oro focus:outline-none"
         >
           <option value="">Selecciona tu comuna…</option>
           <optgroup label="Región Metropolitana">
@@ -85,36 +85,36 @@ import { ruta } from '../lib/formato';
       </div>
 
       <div>
-        <label for="c-pago" class="mb-1.5 block text-xs text-apagado">Forma de pago</label>
+        <label for="c-pago" class="mb-1.5 block text-xs text-tenue">Forma de pago</label>
         <select
           id="c-pago" name="pago"
-          class="w-full rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema focus:border-oro focus:outline-none"
+          class="w-full rounded-lg border border-borde bg-panel px-3 py-2.5 text-sm text-texto focus:border-oro focus:outline-none"
         >
           {pagos.map((p) => <option value={p}>{p}</option>)}
         </select>
       </div>
 
       <div>
-        <label for="c-nota" class="mb-1.5 block text-xs text-apagado">Comentario (opcional)</label>
+        <label for="c-nota" class="mb-1.5 block text-xs text-tenue">Comentario (opcional)</label>
         <textarea
           id="c-nota" name="nota" rows="2"
           placeholder="Ej: es un regalo, incluir bolsa"
-          class="w-full resize-none rounded-lg border border-borde bg-humo px-3 py-2.5 text-sm text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
+          class="w-full resize-none rounded-lg border border-borde bg-panel px-3 py-2.5 text-sm text-texto placeholder:text-tenue/60 focus:border-oro focus:outline-none"
         ></textarea>
       </div>
     </form>
   </div>
 
   <!-- Resumen y acciones -->
-  <div data-carrito-pie class="hidden border-t border-borde bg-humo px-5 py-4">
+  <div data-carrito-pie class="hidden border-t border-borde bg-panel px-5 py-4">
     <dl class="space-y-1.5 text-sm">
-      <div class="flex justify-between text-apagado">
+      <div class="flex justify-between text-tenue">
         <dt>Subtotal</dt><dd data-subtotal>$0</dd>
       </div>
-      <div class="flex justify-between text-apagado">
+      <div class="flex justify-between text-tenue">
         <dt>Envío</dt><dd data-envio>—</dd>
       </div>
-      <div class="flex justify-between border-t border-borde pt-2 text-base font-semibold text-crema">
+      <div class="flex justify-between border-t border-borde pt-2 text-base font-semibold text-texto">
         <dt>Total</dt><dd data-total>$0</dd>
       </div>
     </dl>
@@ -136,15 +136,15 @@ import { ruta } from '../lib/formato';
     </a>
 
     <div class="mt-2 flex gap-2">
-      <button type="button" data-copiar-pedido class="flex-1 rounded-full border border-borde px-4 py-2.5 text-xs text-apagado transition hover:border-oro/50 hover:text-champan">
+      <button type="button" data-copiar-pedido class="flex-1 rounded-full border border-borde px-4 py-2.5 text-xs text-tenue transition hover:border-oro/50 hover:text-acento">
         Copiar pedido
       </button>
-      <button type="button" data-vaciar-carrito class="rounded-full border border-borde px-4 py-2.5 text-xs text-apagado transition hover:border-alerta hover:text-alerta">
+      <button type="button" data-vaciar-carrito class="rounded-full border border-borde px-4 py-2.5 text-xs text-tenue transition hover:border-alerta hover:text-alerta">
         Vaciar
       </button>
     </div>
 
-    <p class="mt-3 text-center text-[11px] leading-relaxed text-apagado">
+    <p class="mt-3 text-center text-[11px] leading-relaxed text-tenue">
       Al enviar se abre WhatsApp con el pedido escrito. Confirmamos stock y total final por el chat.
     </p>
   </div>
@@ -153,7 +153,7 @@ import { ruta } from '../lib/formato';
 <!-- Aviso flotante al agregar -->
 <div
   data-aviso
-  class="pointer-events-none fixed bottom-24 left-1/2 z-[60] -translate-x-1/2 translate-y-3 rounded-full bg-oro px-5 py-2.5 text-sm font-semibold text-noche opacity-0 shadow-xl transition-all duration-300 md:bottom-8"
+  class="pointer-events-none fixed bottom-24 left-1/2 z-[60] -translate-x-1/2 translate-y-3 rounded-full bg-acento px-5 py-2.5 text-sm font-semibold text-fondo opacity-0 shadow-xl transition-all duration-300 md:bottom-8"
   role="status"
   aria-live="polite"
 ></div>
@@ -243,19 +243,19 @@ import { ruta } from '../lib/formato';
     return `
       <li class="flex gap-3 px-5 py-4">
         <div class="min-w-0 flex-1">
-          <p class="text-[11px] uppercase tracking-wider text-apagado">${i.casa}</p>
-          <p class="truncate text-sm font-medium text-crema">${i.nombre}</p>
-          <p class="mt-0.5 text-xs text-apagado">${i.tamano} · ${clp(i.precio)}</p>
+          <p class="text-[11px] uppercase tracking-wider text-tenue">${i.casa}</p>
+          <p class="truncate text-sm font-medium text-texto">${i.nombre}</p>
+          <p class="mt-0.5 text-xs text-tenue">${i.tamano} · ${clp(i.precio)}</p>
           <div class="mt-2 flex items-center gap-2">
             <div class="flex items-center rounded-full border border-borde">
-              <button type="button" data-delta="-1" data-sku="${i.sku}" class="px-2.5 py-1 text-apagado hover:text-crema" aria-label="Quitar uno">−</button>
-              <span class="min-w-7 text-center text-sm text-crema">${i.cantidad}</span>
-              <button type="button" data-delta="1" data-sku="${i.sku}" class="px-2.5 py-1 text-apagado hover:text-crema" aria-label="Agregar uno">+</button>
+              <button type="button" data-delta="-1" data-sku="${i.sku}" class="px-2.5 py-1 text-tenue hover:text-texto" aria-label="Quitar uno">−</button>
+              <span class="min-w-7 text-center text-sm text-texto">${i.cantidad}</span>
+              <button type="button" data-delta="1" data-sku="${i.sku}" class="px-2.5 py-1 text-tenue hover:text-texto" aria-label="Agregar uno">+</button>
             </div>
-            <button type="button" data-quitar="${i.sku}" class="text-xs text-apagado underline-offset-2 hover:text-alerta hover:underline">Quitar</button>
+            <button type="button" data-quitar="${i.sku}" class="text-xs text-tenue underline-offset-2 hover:text-alerta hover:underline">Quitar</button>
           </div>
         </div>
-        <p class="shrink-0 text-sm font-semibold text-crema">${clp(i.precio * i.cantidad)}</p>
+        <p class="shrink-0 text-sm font-semibold text-texto">${clp(i.precio * i.cantidad)}</p>
       </li>`;
   }
 

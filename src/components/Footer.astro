@@ -4,30 +4,30 @@ import { envios, pagos, presentacion, tienda } from '../config';
 import Marca from './Marca.astro';
 const anio = new Date().getFullYear();
 ---
-<footer class="mt-24 border-t border-borde bg-carbon">
+<footer class="mt-24 border-t border-borde bg-superficie">
   <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:px-8">
     <div class="md:col-span-1">
-      <Marca tamano={52} variante="sello" id="pie" />
-      <p class="titulo-serif mt-4 text-2xl text-crema">Elisa <span class="text-champan">Perfumes</span></p>
-      <p class="mt-3 text-sm leading-relaxed text-apagado">{tienda.claim}</p>
-      <p class="mt-4 text-sm text-apagado">{tienda.ciudad}</p>
-      <p class="text-sm text-apagado">{tienda.horario}</p>
+      <Marca tamano={52} variante="sello" tono="tinta" id="pie" class="text-acento" />
+      <p class="titulo-serif mt-4 text-2xl text-texto">Elisa <span class="text-acento">Perfumes</span></p>
+      <p class="mt-3 text-sm leading-relaxed text-tenue">{tienda.claim}</p>
+      <p class="mt-4 text-sm text-tenue">{tienda.ciudad}</p>
+      <p class="text-sm text-tenue">{tienda.horario}</p>
     </div>
 
     <div>
-      <h3 class="versalita text-champan">Catálogo</h3>
+      <h3 class="versalita text-acento">Catálogo</h3>
       <ul class="mt-4 space-y-2 text-sm">
-        <li><a href={ruta('catalogo')} class="text-apagado hover:text-crema">Ver todo</a></li>
-        <li><a href={ruta('catalogo?linea=mujer')} class="text-apagado hover:text-crema">{presentacion.etiquetas.mujer}</a></li>
-        <li><a href={ruta('catalogo?linea=hombre')} class="text-apagado hover:text-crema">{presentacion.etiquetas.hombre}</a></li>
-        <li><a href={ruta('quiz')} class="text-apagado hover:text-crema">Encuentra tu perfume</a></li>
+        <li><a href={ruta('catalogo')} class="text-tenue hover:text-texto">Ver todo</a></li>
+        <li><a href={ruta('catalogo?linea=mujer')} class="text-tenue hover:text-texto">{presentacion.etiquetas.mujer}</a></li>
+        <li><a href={ruta('catalogo?linea=hombre')} class="text-tenue hover:text-texto">{presentacion.etiquetas.hombre}</a></li>
+        <li><a href={ruta('quiz')} class="text-tenue hover:text-texto">Encuentra tu perfume</a></li>
       </ul>
     </div>
 
     <div>
-      <h3 class="versalita text-champan">Compra</h3>
-      <ul class="mt-4 space-y-2 text-sm text-apagado">
-        <li><a href={ruta('envios')} class="hover:text-crema">Envíos y plazos</a></li>
+      <h3 class="versalita text-acento">Compra</h3>
+      <ul class="mt-4 space-y-2 text-sm text-tenue">
+        <li><a href={ruta('envios')} class="hover:text-texto">Envíos y plazos</a></li>
         <li>{envios.plazo}</li>
         <li>Envío gratis sobre $60.000</li>
         <li class="pt-2 text-xs">{pagos.join(' · ')}</li>
@@ -35,25 +35,25 @@ const anio = new Date().getFullYear();
     </div>
 
     <div>
-      <h3 class="versalita text-champan">Contacto</h3>
+      <h3 class="versalita text-acento">Contacto</h3>
       <ul class="mt-4 space-y-2 text-sm">
         <li>
-          <a href={`https://wa.me/${tienda.whatsapp}`} target="_blank" rel="noopener" class="text-apagado hover:text-crema">
+          <a href={`https://wa.me/${tienda.whatsapp}`} target="_blank" rel="noopener" class="text-tenue hover:text-texto">
             WhatsApp +{tienda.whatsapp}
           </a>
         </li>
         <li>
-          <a href={`https://instagram.com/${tienda.instagram}`} target="_blank" rel="noopener" class="text-apagado hover:text-crema">
+          <a href={`https://instagram.com/${tienda.instagram}`} target="_blank" rel="noopener" class="text-tenue hover:text-texto">
             @{tienda.instagram}
           </a>
         </li>
-        <li><a href={`mailto:${tienda.email}`} class="text-apagado hover:text-crema">{tienda.email}</a></li>
+        <li><a href={`mailto:${tienda.email}`} class="text-tenue hover:text-texto">{tienda.email}</a></li>
       </ul>
     </div>
   </div>
 
   <div class="border-t border-borde px-4 py-6 sm:px-6 lg:px-8">
-    <div class="mx-auto flex max-w-7xl flex-col gap-2 text-xs text-apagado md:flex-row md:items-center md:justify-between">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 text-xs text-tenue md:flex-row md:items-center md:justify-between">
       <p>© {anio} {tienda.nombre}. Todos los derechos reservados.</p>
       <p>
         Todos nuestros perfumes son de elaboración propia e inspirados en fragancias de

@@ -27,9 +27,11 @@ try {
 
 // Se le quita el tamaño SOLO a la etiqueta <svg> raíz, para que lo fije el CSS.
 // Ojo: un reemplazo global comería también el width/height de los <rect> de la letra.
-const sello = readFileSync(resolve(raíz, 'public/marca/sello-oro.svg'), 'utf8')
+// Se parte de la versión en tinta y se recolorea por CSS (currentColor) según el fondo.
+const sello = readFileSync(resolve(raíz, 'public/marca/sello-tinta.svg'), 'utf8')
   .replace(/<svg([^>]*)>/, (_, atributos) =>
-    '<svg' + atributos.replace(/\s(width|height)="[^"]*"/g, '') + '>');
+    '<svg' + atributos.replace(/\s(width|height)="[^"]*"/g, '') + '>')
+  .replace(/#0b0a09/g, 'currentColor');
 
 const tipografías = `<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@400;500&display=swap" rel="stylesheet">`;
@@ -37,19 +39,19 @@ const tipografías = `<link rel="preconnect" href="https://fonts.googleapis.com"
 const og = `<!doctype html><meta charset="utf-8">${tipografías}
 <style>
  *{margin:0;box-sizing:border-box}
- body{width:1200px;height:630px;background:#0b0a09;color:#f5f1ea;font-family:Inter,sans-serif;
+ body{width:1200px;height:630px;background:#f7f2e9;color:#231913;font-family:Inter,sans-serif;
       display:flex;flex-direction:column;justify-content:center;align-items:center;
       text-align:center;position:relative;overflow:hidden}
  .halo{position:absolute;width:900px;height:900px;border-radius:50%;
-       background:radial-gradient(circle,rgba(201,162,39,.20),transparent 62%)}
- .c{position:relative}
+       background:radial-gradient(circle,rgba(125,31,53,.09),transparent 62%)}
+ .c{position:relative;color:#7d1f35}
  svg{width:118px;height:118px}
- h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:92px;line-height:1;margin-top:26px;letter-spacing:-.01em}
- .sub{font-size:16px;letter-spacing:.42em;color:#e3c77b;margin-top:12px}
- .claim{font-size:23px;color:#a89f92;margin-top:30px;max-width:740px;line-height:1.5}
- .pie{display:flex;gap:30px;margin-top:38px;font-size:15px;color:#a89f92;
-      border-top:1px solid #2e2823;padding-top:22px}
- .pie b{color:#f5f1ea;font-weight:500}
+ h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:92px;line-height:1;margin-top:26px;letter-spacing:-.01em;color:#231913}
+ .sub{font-size:16px;letter-spacing:.42em;color:#7d1f35;margin-top:12px}
+ .claim{font-size:23px;color:#6b5d50;margin-top:30px;max-width:740px;line-height:1.5}
+ .pie{display:flex;gap:30px;margin-top:38px;font-size:15px;color:#6b5d50;
+      border-top:1px solid #e4d9c6;padding-top:22px}
+ .pie b{color:#231913;font-weight:500}
 </style>
 <div class="halo"></div>
 <div class="c">${sello}<h1>Elisa</h1><div class="sub">PERFUMES</div>
@@ -58,9 +60,9 @@ const og = `<!doctype html><meta charset="utf-8">${tipografías}
 </div>`;
 
 const avatar = `<!doctype html><meta charset="utf-8">
-<style>*{margin:0}body{width:1024px;height:1024px;background:#0b0a09;display:grid;place-items:center}
+<style>*{margin:0}body{width:1024px;height:1024px;background:#7d1f35;display:grid;place-items:center;color:#f7f2e9}
  .halo{position:absolute;width:900px;height:900px;border-radius:50%;
-       background:radial-gradient(circle,rgba(201,162,39,.16),transparent 60%)}
+       background:radial-gradient(circle,rgba(255,255,255,.10),transparent 60%)}
  svg{width:660px;height:660px;position:relative}</style>
 <div class="halo"></div>${sello}`;
 

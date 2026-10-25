@@ -138,23 +138,51 @@ const DESTACADOS = new Set([54, 12, 6, 34, 29, 81, 58, 72, 96, 53, 31, 67]);
 
 ### Fotos de producto
 
-Mientras un producto no tenga el campo `img`, el sitio dibuja un frasco SVG cuyo color
-sale de su familia olfativa. Se ve bien y es consistente, pero **las fotos reales
-convierten bastante más**. Para usarlas:
+Todas las fragancias vienen en el mismo frasco: uno por línea. Por eso hay **una foto
+por línea**, no una por producto:
 
-1. Guarda las imágenes en `public/img/productos/`
-2. En el archivo de datos, el producto necesita el campo `img`. Como el generador no lo
-   contempla por omisión, añádelo al objeto que construye en `generar-catalogo.mjs`, o
-   edita el JSON una vez generado.
+- `public/img/productos/mujer.webp` — estuche burdeos, 100 y 30 ml
+- `public/img/productos/hombre.webp` — estuche negro y frasco
 
-Recomendación: mismo fondo, mismo ángulo, formato cuadrado, WebP de ~800 px. GitHub
-Pages no optimiza imágenes: llegan al cliente tal como las subas.
+Como las fotos son idénticas dentro de cada línea, **el número va superpuesto** sobre la
+imagen en el catálogo: es lo único que distingue una ficha de otra de un vistazo.
+
+Si algún día fotografías un producto por separado, dale al producto un campo `img` con la
+ruta y esa foto reemplaza a la de su línea.
+
+> Las fotos actuales salieron de los PDFs del proveedor y muestran la marca
+> **R De La Torre** impresa en el estuche. Es lo que efectivamente le llega al cliente,
+> pero también le dice quién es tu proveedor. Si eso te incomoda, la solución es
+> fotografiar tú los frascos: mismo fondo claro, formato cuadrado, WebP de ~800 px.
 
 ## 4. La marca
 
 El logotipo es una **E de serif didona** —el mismo alto contraste de la Cormorant
 Garamond del sitio— con una gota de esencia cayendo del brazo central. El anillo la
 convierte en sello de perfumería y resuelve el recorte circular de las redes.
+
+### La paleta
+
+El sitio usa una paleta clara: marfil de fondo, **burdeos** como acento principal (el
+color real del estuche) y oro para la decoración. La razón es concreta: las fotos del
+proveedor tienen fondo blanco, así que sobre fondo claro se integran y sobre fondo
+oscuro se recortan como rectángulos brillantes.
+
+Los colores viven en `src/styles/global.css` y sus nombres son **semánticos, no
+descriptivos** (`fondo`, `superficie`, `acento`, `texto`, `tenue`), justamente para que
+cambiar la paleta no obligue a tocar ninguna plantilla:
+
+```css
+--color-fondo: #f7f2e9;       /* marfil */
+--color-superficie: #ffffff;  /* tarjetas */
+--color-acento: #7d1f35;      /* burdeos: botones, enlaces, énfasis */
+--color-oro: #8a6a1f;         /* decoración: medidores, insignias */
+--color-texto: #231913;
+--color-tenue: #6b5d50;
+```
+
+Regla de uso: **burdeos para lo que se toca** (botones, contadores, avisos) y **oro para
+lo que solo se mira** (medidores, barra del quiz, insignia de "Más pedido").
 
 Los archivos están en `public/marca/`:
 

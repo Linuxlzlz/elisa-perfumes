@@ -1,29 +1,40 @@
 @import "tailwindcss";
 
+/* ──────────────────────────────────────────────────────────────
+   Paleta clara. Las fotos del proveedor vienen sobre fondo blanco,
+   así que un fondo claro las integra en vez de recortarlas.
+   Los nombres son semánticos a propósito: describen la FUNCIÓN,
+   no el color, para que cambiar la paleta no obligue a tocar
+   ninguna plantilla.
+   ────────────────────────────────────────────────────────────── */
 @theme {
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 
-  --color-noche: #0b0a09;
-  --color-carbon: #141210;
-  --color-humo: #1e1a17;
-  --color-borde: #2e2823;
-  --color-oro: #c9a227;
-  --color-champan: #e3c77b;
-  --color-crema: #f5f1ea;
-  --color-apagado: #a89f92;
-  --color-exito: #4f9d69;
-  --color-alerta: #c2703d;
+  --color-fondo: #f7f2e9;      /* marfil: el lienzo */
+  --color-superficie: #ffffff; /* tarjetas y cabecera */
+  --color-panel: #fbf7ef;      /* campos de formulario y zonas hundidas */
+  --color-borde: #e4d9c6;
+
+  --color-acento: #7d1f35;     /* burdeos: el color de la caja real */
+  --color-oro: #8a6a1f;        /* oro oscurecido para que sirva como texto */
+  --color-brillo: #c9a227;     /* oro claro: sólo relleno y decoración */
+
+  --color-texto: #231913;
+  --color-tenue: #6b5d50;
+
+  --color-exito: #2f6b46;
+  --color-alerta: #a53b1c;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--color-noche);
+  background-color: var(--color-fondo);
 }
 
 body {
-  background-color: var(--color-noche);
-  color: var(--color-crema);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
@@ -33,28 +44,27 @@ body {
   body { padding-bottom: 4.5rem; }
 }
 
-::selection { background: var(--color-oro); color: var(--color-noche); }
+::selection { background: var(--color-acento); color: #fff; }
 
-/* Scrollbar discreta */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--color-noche); }
+::-webkit-scrollbar-track { background: var(--color-fondo); }
 ::-webkit-scrollbar-thumb { background: var(--color-borde); border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #453c33; }
+::-webkit-scrollbar-thumb:hover { background: #cfc0a6; }
 
 /* Utilidades propias */
 .filete {
-  background-image: linear-gradient(90deg, transparent, var(--color-oro), transparent);
+  background-image: linear-gradient(90deg, transparent, var(--color-acento), transparent);
   height: 1px;
 }
 
 .vidrio {
-  background-color: rgb(20 18 16 / 0.72);
+  background-color: rgb(255 255 255 / 0.82);
   backdrop-filter: blur(14px) saturate(140%);
 }
 
 .titulo-serif {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.015em;
 }
 
@@ -62,10 +72,9 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.22em;
   font-size: 0.6875rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* Animación de entrada al hacer scroll */
 .aparece {
   opacity: 0;
   transform: translateY(18px);

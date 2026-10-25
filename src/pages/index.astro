@@ -43,37 +43,37 @@ const testimonios = [
 
     <div class="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24 lg:px-8">
       <div>
-        <p class="versalita text-champan">{tienda.ciudad} · Pedidos por WhatsApp</p>
-        <h1 class="titulo-serif mt-4 text-5xl leading-[1.05] text-crema sm:text-6xl lg:text-7xl">
+        <p class="versalita text-acento">{tienda.ciudad} · Pedidos por WhatsApp</p>
+        <h1 class="titulo-serif mt-4 text-5xl leading-[1.05] text-texto sm:text-6xl lg:text-7xl">
           El perfume que<br />
-          <span class="text-champan italic">te recuerdan</span>
+          <span class="text-acento italic">te recuerdan</span>
         </h1>
-        <p class="mt-6 max-w-md text-base leading-relaxed text-apagado">
+        <p class="mt-6 max-w-md text-base leading-relaxed text-tenue">
           {productos.length} fragancias inspiradas en las grandes casas internacionales,
           con más de 8 horas de fijación. En 30 y 100 ml, con despacho a todo Chile.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href={ruta('catalogo')} class="rounded-full bg-oro px-7 py-3.5 text-sm font-semibold text-noche transition hover:bg-champan">
+          <a href={ruta('catalogo')} class="rounded-full bg-acento px-7 py-3.5 text-sm font-semibold text-fondo transition hover:bg-[#9c2b45]">
             Ver las {productos.length} fragancias
           </a>
-          <a href={ruta('quiz')} class="rounded-full border border-oro/50 px-7 py-3.5 text-sm font-semibold text-champan transition hover:bg-oro hover:text-noche">
+          <a href={ruta('quiz')} class="rounded-full border border-oro/50 px-7 py-3.5 text-sm font-semibold text-acento transition hover:bg-oro hover:text-fondo">
             Encuentra tu perfume
           </a>
         </div>
 
         <dl class="mt-10 grid max-w-md grid-cols-3 gap-4 border-t border-borde pt-6">
           <div>
-            <dt class="text-2xl font-semibold text-crema">{productos.length}</dt>
-            <dd class="text-xs text-apagado">fragancias</dd>
+            <dt class="text-2xl font-semibold text-texto">{productos.length}</dt>
+            <dd class="text-xs text-tenue">fragancias</dd>
           </div>
           <div>
-            <dt class="text-2xl font-semibold text-crema">{clp(precioChico)}</dt>
-            <dd class="text-xs text-apagado">el frasco de 30 ml</dd>
+            <dt class="text-2xl font-semibold text-texto">{clp(precioChico)}</dt>
+            <dd class="text-xs text-tenue">el frasco de 30 ml</dd>
           </div>
           <div>
-            <dt class="text-2xl font-semibold text-crema">8+ h</dt>
-            <dd class="text-xs text-apagado">de fijación</dd>
+            <dt class="text-2xl font-semibold text-texto">48 h</dt>
+            <dd class="text-xs text-tenue">de entrega, a todo Chile</dd>
           </div>
         </dl>
       </div>
@@ -84,9 +84,9 @@ const testimonios = [
           <a href={ruta(`perfume/${estrella.slug}`)} class="relative block">
             <FotoProducto producto={estrella} grande />
             <div class="mt-4 text-center">
-              <p class="titulo-serif text-3xl text-crema">{nombre(estrella)}</p>
-              <p class="mt-1 text-sm text-champan">{inspiradoEn(estrella)}</p>
-              <p class="mt-2 text-sm text-apagado">desde {clp(Math.min(...estrella.variantes.map((v) => v.precio)))}</p>
+              <p class="titulo-serif text-3xl text-texto">{nombre(estrella)}</p>
+              <p class="mt-1 text-sm text-acento">{inspiradoEn(estrella)}</p>
+              <p class="mt-2 text-sm text-tenue">desde {clp(Math.min(...estrella.variantes.map((v) => v.precio)))}</p>
             </div>
           </a>
         </div>
@@ -97,8 +97,8 @@ const testimonios = [
   <!-- ░░ Las dos líneas ░░ -->
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
     <div class="aparece">
-      <h2 class="titulo-serif text-3xl text-crema sm:text-4xl">Dos líneas, un mismo precio</h2>
-      <p class="mt-2 max-w-xl text-sm text-apagado">
+      <h2 class="titulo-serif text-3xl text-texto sm:text-4xl">Dos líneas, un mismo precio</h2>
+      <p class="mt-2 max-w-xl text-sm text-tenue">
         Cada fragancia se identifica por su número. Te decimos en qué se inspira para que
         sepas exactamente qué vas a oler.
       </p>
@@ -108,26 +108,26 @@ const testimonios = [
       {resumenLineas.map((l) => (
         <a
           href={ruta(`catalogo?linea=${l.clave}`)}
-          class="aparece group flex flex-col rounded-3xl border border-borde bg-carbon p-7 transition-all hover:border-oro/45 hover:bg-humo"
+          class="aparece group flex flex-col rounded-3xl border border-borde bg-superficie p-7 transition-all hover:border-oro/45 hover:bg-panel"
         >
           <div class="flex items-baseline justify-between gap-3">
-            <h3 class="titulo-serif text-3xl text-crema group-hover:text-champan">{l.titulo}</h3>
-            <span class="text-sm text-champan">{l.cantidad} fragancias</span>
+            <h3 class="titulo-serif text-3xl text-texto group-hover:text-acento">{l.titulo}</h3>
+            <span class="text-sm text-acento">{l.cantidad} fragancias</span>
           </div>
-          <p class="mt-2 text-sm leading-relaxed text-apagado">{l.bajada}</p>
+          <p class="mt-2 text-sm leading-relaxed text-tenue">{l.bajada}</p>
 
           <div class="mt-6 grid grid-cols-3 gap-3">
             {l.muestras.map((m) => (
-              <div class="rounded-xl border border-borde bg-noche/50 p-2">
+              <div class="rounded-xl border border-borde bg-fondo/50 p-2">
                 <div class="h-24 w-full transition-transform duration-500 group-hover:scale-105">
                   <FotoProducto producto={m} />
                 </div>
-                <p class="mt-1 text-center text-[11px] text-apagado">{nombre(m)}</p>
+                <p class="mt-1 text-center text-[11px] text-tenue">{nombre(m)}</p>
               </div>
             ))}
           </div>
 
-          <p class="mt-6 border-t border-borde pt-4 text-sm text-champan">
+          <p class="mt-6 border-t border-borde pt-4 text-sm text-acento">
             Explorar la línea →
           </p>
         </a>
@@ -136,14 +136,14 @@ const testimonios = [
   </section>
 
   <!-- ░░ Más pedidos ░░ -->
-  <section class="border-y border-borde bg-carbon/40 py-16">
+  <section class="border-y border-borde bg-superficie/40 py-16">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="aparece flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 class="titulo-serif text-3xl text-crema sm:text-4xl">Los más pedidos</h2>
-          <p class="mt-2 text-sm text-apagado">Lo que más sale por WhatsApp este mes.</p>
+          <h2 class="titulo-serif text-3xl text-texto sm:text-4xl">Los más pedidos</h2>
+          <p class="mt-2 text-sm text-tenue">Lo que más sale por WhatsApp este mes.</p>
         </div>
-        <a href={ruta('catalogo')} class="text-sm text-champan underline-offset-4 hover:underline">Ver el catálogo completo →</a>
+        <a href={ruta('catalogo')} class="text-sm text-acento underline-offset-4 hover:underline">Ver el catálogo completo →</a>
       </div>
 
       <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -156,18 +156,18 @@ const testimonios = [
 
   <!-- ░░ Quiz ░░ -->
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="aparece relative overflow-hidden rounded-3xl border border-oro/25 bg-gradient-to-br from-humo via-carbon to-noche p-8 sm:p-12">
+    <div class="aparece relative overflow-hidden rounded-3xl border border-oro/25 bg-gradient-to-br from-panel via-superficie to-fondo p-8 sm:p-12">
       <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-oro/10 blur-3xl"></div>
       <div class="relative max-w-2xl">
-        <p class="versalita text-champan">Son {productos.length}, y elegir cuesta</p>
-        <h2 class="titulo-serif mt-3 text-3xl text-crema sm:text-4xl">
+        <p class="versalita text-acento">Son {productos.length}, y elegir cuesta</p>
+        <h2 class="titulo-serif mt-3 text-3xl text-texto sm:text-4xl">
           Responde cuatro preguntas y te decimos cuál es el tuyo
         </h2>
-        <p class="mt-4 text-sm leading-relaxed text-apagado">
+        <p class="mt-4 text-sm leading-relaxed text-tenue">
           Línea, ocasión, familia olfativa e intensidad. En menos de un minuto te mostramos
           tres números del catálogo que calzan con lo que buscas.
         </p>
-        <a href={ruta('quiz')} class="mt-7 inline-block rounded-full bg-oro px-7 py-3.5 text-sm font-semibold text-noche transition hover:bg-champan">
+        <a href={ruta('quiz')} class="mt-7 inline-block rounded-full bg-acento px-7 py-3.5 text-sm font-semibold text-fondo transition hover:bg-[#9c2b45]">
           Empezar el test
         </a>
       </div>
@@ -175,21 +175,21 @@ const testimonios = [
   </section>
 
   <!-- ░░ Garantías ░░ -->
-  <section class="border-y border-borde bg-carbon/40 py-16">
+  <section class="border-y border-borde bg-superficie/40 py-16">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="aparece titulo-serif text-3xl text-crema sm:text-4xl">Por qué comprarnos</h2>
+      <h2 class="aparece titulo-serif text-3xl text-texto sm:text-4xl">Por qué comprarnos</h2>
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {garantias.map((g, i) => (
           <div class="aparece border-t border-oro/35 pt-5">
             <span class="versalita text-oro">{String(i + 1).padStart(2, '0')}</span>
-            <h3 class="mt-2 text-base font-semibold text-crema">{g.titulo}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-apagado">{g.texto}</p>
+            <h3 class="mt-2 text-base font-semibold text-texto">{g.titulo}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-tenue">{g.texto}</p>
           </div>
         ))}
       </div>
 
-      <div class="aparece mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-borde pt-6 text-xs text-apagado">
-        <span class="versalita text-champan">Formas de pago</span>
+      <div class="aparece mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-borde pt-6 text-xs text-tenue">
+        <span class="versalita text-acento">Formas de pago</span>
         {pagos.map((p) => <span>{p}</span>)}
       </div>
     </div>
@@ -197,10 +197,10 @@ const testimonios = [
 
   <!-- ░░ Testimonios ░░ -->
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <h2 class="aparece titulo-serif text-3xl text-crema sm:text-4xl">Lo que dicen nuestros clientes</h2>
+    <h2 class="aparece titulo-serif text-3xl text-texto sm:text-4xl">Lo que dicen nuestros clientes</h2>
     <div class="mt-10 grid gap-5 md:grid-cols-3">
       {testimonios.map((t) => (
-        <figure class="aparece flex flex-col rounded-2xl border border-borde bg-carbon p-6">
+        <figure class="aparece flex flex-col rounded-2xl border border-borde bg-superficie p-6">
           <div class="flex gap-0.5 text-oro" aria-label="5 de 5 estrellas">
             {Array.from({ length: 5 }).map(() => (
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -208,14 +208,14 @@ const testimonios = [
               </svg>
             ))}
           </div>
-          <blockquote class="mt-4 flex-1 text-sm leading-relaxed text-crema/90">“{t.texto}”</blockquote>
-          <figcaption class="mt-5 border-t border-borde pt-4 text-xs text-apagado">
-            <span class="text-crema">{t.autora}</span> · {t.detalle}
+          <blockquote class="mt-4 flex-1 text-sm leading-relaxed text-texto/90">“{t.texto}”</blockquote>
+          <figcaption class="mt-5 border-t border-borde pt-4 text-xs text-tenue">
+            <span class="text-texto">{t.autora}</span> · {t.detalle}
           </figcaption>
         </figure>
       ))}
     </div>
-    <p class="aparece mt-6 text-center text-[11px] text-apagado">
+    <p class="aparece mt-6 text-center text-[11px] text-tenue">
       Testimonios de ejemplo — reemplázalos por reseñas reales de tus clientes.
     </p>
   </section>

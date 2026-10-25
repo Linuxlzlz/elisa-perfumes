@@ -55,8 +55,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "2-bright-crystal-versace",
@@ -111,8 +110,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "3-la-bomba-carolina-herrera",
@@ -167,8 +165,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "4-aventus-for-her-creed",
@@ -224,8 +221,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "5-miss-dior-dior",
@@ -280,8 +276,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "6-la-vie-est-belle-lancome",
@@ -339,7 +334,6 @@
           "precio": 45000
         }
       ],
-      "forma": "ornada",
       "destacado": true
     },
     {
@@ -393,8 +387,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "8-fame-paco-rabanne",
@@ -447,8 +440,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "9-bombshell-victoria-s-secret",
@@ -503,8 +495,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "10-acqua-di-gioia-giorgio-armani",
@@ -559,8 +550,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "11-212-sexy-carolina-herrera",
@@ -617,8 +607,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "12-good-girl-carolina-herrera",
@@ -679,7 +668,6 @@
           "precio": 45000
         }
       ],
-      "forma": "ornada",
       "destacado": true
     },
     {
@@ -737,8 +725,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "14-la-nuit-tresor-lancome",
@@ -794,8 +781,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "15-santal-33-le-labo",
@@ -849,8 +835,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "16-212-vip-carolina-herrera",
@@ -904,8 +889,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "17-bloom-gucci",
@@ -957,8 +941,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "18-la-vie-est-belle-l-elixir-lancome",
@@ -1015,8 +998,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "19-cloud-ariana-grande",
@@ -1073,8 +1055,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "20-lady-million-gold-paco-rabanne",
@@ -1131,8 +1112,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "21-si-passione-intense-giorgio-armani",
@@ -1189,8 +1169,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "22-libre-intense-yves-saint-laurent",
@@ -1246,8 +1225,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "23-212-heroes-for-her-carolina-herrera",
@@ -1301,8 +1279,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "24-eros-pour-femme-versace",
@@ -1358,8 +1335,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "25-idole-lancome",
@@ -1414,8 +1390,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "26-delina-parfums-de-marly",
@@ -1475,8 +1450,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "27-born-in-roma-donna-valentino",
@@ -1528,8 +1502,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "28-can-can-paris-hilton",
@@ -1585,8 +1558,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "29-coco-mademoiselle-chanel",
@@ -1644,7 +1616,6 @@
           "precio": 45000
         }
       ],
-      "forma": "ornada",
       "destacado": true
     },
     {
@@ -1699,8 +1670,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "31-olympea-paco-rabanne",
@@ -1754,7 +1724,6 @@
           "precio": 45000
         }
       ],
-      "forma": "ornada",
       "destacado": true
     },
     {
@@ -1810,8 +1779,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "33-good-girl-blush-carolina-herrera",
@@ -1866,8 +1834,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "34-black-opium-yves-saint-laurent",
@@ -1925,7 +1892,6 @@
           "precio": 45000
         }
       ],
-      "forma": "ornada",
       "destacado": true
     },
     {
@@ -1980,8 +1946,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "36-ralph-ralph-lauren",
@@ -2038,8 +2003,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "37-the-scent-hugo-boss",
@@ -2093,8 +2057,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "38-private-show-britney-spears",
@@ -2149,8 +2112,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "39-yes-i-am-cacharel",
@@ -2204,8 +2166,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "51-naxos-xerjoff",
@@ -2263,8 +2224,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "52-erba-pura-xerjoff",
@@ -2320,8 +2280,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "53-layton-parfums-de-marly",
@@ -2381,7 +2340,6 @@
           "precio": 45000
         }
       ],
-      "forma": "redonda",
       "destacado": true
     },
     {
@@ -2440,7 +2398,6 @@
           "precio": 45000
         }
       ],
-      "forma": "rect",
       "destacado": true
     },
     {
@@ -2498,8 +2455,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "56-the-collection-magnetic-hugo-boss",
@@ -2555,8 +2511,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "57-noble-hugo-boss",
@@ -2612,8 +2567,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "58-sauvage-elixir-dior",
@@ -2672,7 +2626,6 @@
           "precio": 45000
         }
       ],
-      "forma": "rect",
       "destacado": true
     },
     {
@@ -2730,8 +2683,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "60-acqua-di-gio-giorgio-armani",
@@ -2790,8 +2742,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "61-phantom-paco-rabanne",
@@ -2846,8 +2797,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "62-invictus-paco-rabanne",
@@ -2903,8 +2853,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "63-bad-boy-carolina-herrera",
@@ -2959,8 +2908,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "64-light-blue-dolce-gabbana",
@@ -3016,8 +2964,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "65-l-homme-yves-saint-laurent",
@@ -3073,8 +3020,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "66-boss-bottled-hugo-boss",
@@ -3134,8 +3080,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "67-1-million-paco-rabanne",
@@ -3193,7 +3138,6 @@
           "precio": 45000
         }
       ],
-      "forma": "rect",
       "destacado": true
     },
     {
@@ -3254,8 +3198,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "69-tobacco-vanille-tom-ford",
@@ -3310,8 +3253,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "70-acqua-di-gio-blue-edition-giorgio-armani",
@@ -3368,8 +3310,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "71-dior-homme-dior",
@@ -3425,8 +3366,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "72-eros-versace",
@@ -3485,7 +3425,6 @@
           "precio": 45000
         }
       ],
-      "forma": "rect",
       "destacado": true
     },
     {
@@ -3543,8 +3482,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "74-dylan-blue-versace",
@@ -3602,8 +3540,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "75-guess-yves-saint-laurent",
@@ -3658,8 +3595,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "76-renaissance-xerjoff",
@@ -3716,8 +3652,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "77-stronger-with-you-giorgio-armani",
@@ -3775,8 +3710,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "78-irish-leather-memo-paris",
@@ -3833,8 +3767,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "79-invictus-victory-elixir-paco-rabanne",
@@ -3891,8 +3824,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "80-million-gold-paco-rabanne",
@@ -3949,8 +3881,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "81-bleu-de-chanel-chanel",
@@ -4007,7 +3938,6 @@
           "precio": 45000
         }
       ],
-      "forma": "alta",
       "destacado": true
     },
     {
@@ -4065,8 +3995,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "83-xao-xerjoff",
@@ -4122,8 +4051,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "84-ombre-leather-tom-ford",
@@ -4177,8 +4105,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "85-althair-parfums-de-marly",
@@ -4235,8 +4162,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "86-new-york-bond-no-9",
@@ -4293,8 +4219,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "87-l-immensite-louis-vuitton",
@@ -4349,8 +4274,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "88-imagination-louis-vuitton",
@@ -4405,8 +4329,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "alta"
+      ]
     },
     {
       "slug": "89-born-in-roma-uomo-valentino",
@@ -4460,8 +4383,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "90-torino-22-xerjoff",
@@ -4515,8 +4437,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "91-myslf-yves-saint-laurent",
@@ -4570,8 +4491,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "redonda"
+      ]
     },
     {
       "slug": "92-212-men-carolina-herrera",
@@ -4627,8 +4547,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "93-212-heroes-forever-young-carolina-herrera",
@@ -4684,8 +4603,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     },
     {
       "slug": "94-armani-code-giorgio-armani",
@@ -4741,8 +4659,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "95-code-parfum-giorgio-armani",
@@ -4798,8 +4715,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "ornada"
+      ]
     },
     {
       "slug": "96-le-male-jean-paul-gaultier",
@@ -4858,7 +4774,6 @@
           "precio": 45000
         }
       ],
-      "forma": "ornada",
       "destacado": true
     },
     {
@@ -4916,8 +4831,7 @@
           "tamano": "100ml",
           "precio": 45000
         }
-      ],
-      "forma": "rect"
+      ]
     }
   ]
 }

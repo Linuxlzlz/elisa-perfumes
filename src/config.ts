@@ -42,7 +42,7 @@ export const envios = {
   despachoRegiones: 4990,
   umbralEnvioGratis: 60000, // sobre este monto, envío gratis
   couriers: ['Starken', 'Chilexpress', 'Bluexpress'],
-  plazo: '24 a 48 hrs hábiles en Santiago · 2 a 4 días en regiones',
+  plazo: 'Entrega en 48 horas hábiles a todo Chile',
 } as const;
 
 export const pagos = [

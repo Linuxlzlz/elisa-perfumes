@@ -1,5 +1,4 @@
 export type Linea = 'mujer' | 'hombre';
-export type Forma = 'rect' | 'redonda' | 'alta' | 'ornada';
 
 export type Variante = {
   /** Identificador único. Formato: `${slug}-${tamano}` */
@@ -34,7 +33,6 @@ export type Producto = {
   duracion: 1 | 2 | 3 | 4 | 5;
   descripcion: string;
   variantes: Variante[];
-  forma: Forma;
   /** Ruta a la foto real. Si falta, se dibuja un frasco SVG. */
   img?: string;
   destacado?: boolean;

@@ -25,38 +25,38 @@ const urlToken = `https://github.com/settings/personal-access-tokens/new`;
 <Base titulo="Administración de stock" sinIndexar>
   <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
     <header>
-      <p class="versalita text-champan">Panel privado</p>
-      <h1 class="titulo-serif mt-2 text-4xl text-crema">Administración de stock</h1>
-      <p class="mt-3 max-w-3xl text-sm leading-relaxed text-apagado">
+      <p class="versalita text-acento">Panel privado</p>
+      <h1 class="titulo-serif mt-2 text-4xl text-texto">Administración de stock</h1>
+      <p class="mt-3 max-w-3xl text-sm leading-relaxed text-tenue">
         Marca qué está disponible y ajusta precios sin tocar código. Los cambios se guardan como
-        un commit en <code class="text-crema/80">{repo.rutaStock}</code> y el sitio se reconstruye solo.
+        un commit en <code class="text-texto/80">{repo.rutaStock}</code> y el sitio se reconstruye solo.
       </p>
     </header>
 
     <!-- ░░ Cómo funciona ░░ -->
     <details class="mt-8 rounded-2xl border border-oro/30 bg-oro/5 p-5">
-      <summary class="cursor-pointer text-sm font-semibold text-champan">
+      <summary class="cursor-pointer text-sm font-semibold text-acento">
         Léeme primero: cómo funciona y qué limitaciones tiene
       </summary>
-      <div class="mt-4 space-y-3 text-sm leading-relaxed text-apagado">
+      <div class="mt-4 space-y-3 text-sm leading-relaxed text-tenue">
         <p>
           Este sitio es estático y no tiene servidor ni base de datos, así que no existe un
-          “login” real. En su lugar, el panel usa un <strong class="text-crema">token de GitHub</strong>
+          “login” real. En su lugar, el panel usa un <strong class="text-texto">token de GitHub</strong>
           que tú pegas una vez y queda guardado solo en este navegador.
         </p>
         <ul class="list-disc space-y-1.5 pl-5">
           <li>Sin el token, esta página no puede modificar nada: es solo un formulario inerte.</li>
           <li>El token se guarda en el <code>localStorage</code> de este dispositivo. No viaja a ningún servidor nuestro: solo a <code>api.github.com</code>.</li>
           <li>
-            Crea un token <strong class="text-crema">fine-grained</strong> en
-            <a href={urlToken} target="_blank" rel="noopener" class="text-champan underline underline-offset-2">GitHub → Settings → Personal access tokens</a>,
-            con acceso <em>solo</em> al repositorio <code class="text-crema/80">{repo.owner}/{repo.name}</code>
-            y el permiso <code class="text-crema/80">Contents: Read and write</code>. Nada más.
+            Crea un token <strong class="text-texto">fine-grained</strong> en
+            <a href={urlToken} target="_blank" rel="noopener" class="text-acento underline underline-offset-2">GitHub → Settings → Personal access tokens</a>,
+            con acceso <em>solo</em> al repositorio <code class="text-texto/80">{repo.owner}/{repo.name}</code>
+            y el permiso <code class="text-texto/80">Contents: Read and write</code>. Nada más.
           </li>
           <li>No uses un token clásico con todos los permisos: si se filtra, da acceso a toda tu cuenta.</li>
           <li>
-            Tras guardar, GitHub Pages tarda <strong class="text-crema">1 a 2 minutos</strong> en publicar.
-            Puedes seguir el avance en <a href={urlAcciones} target="_blank" rel="noopener" class="text-champan underline underline-offset-2">Actions</a>.
+            Tras guardar, GitHub Pages tarda <strong class="text-texto">1 a 2 minutos</strong> en publicar.
+            Puedes seguir el avance en <a href={urlAcciones} target="_blank" rel="noopener" class="text-acento underline underline-offset-2">Actions</a>.
           </li>
           <li>No uses este panel en un computador compartido, y revoca el token si lo pierdes.</li>
         </ul>
@@ -64,22 +64,22 @@ const urlToken = `https://github.com/settings/personal-access-tokens/new`;
     </details>
 
     <!-- ░░ Conexión ░░ -->
-    <section class="mt-6 rounded-2xl border border-borde bg-carbon p-5" aria-label="Conexión con GitHub">
+    <section class="mt-6 rounded-2xl border border-borde bg-superficie p-5" aria-label="Conexión con GitHub">
       <div data-sin-conectar>
-        <label for="a-token" class="mb-1.5 block text-xs text-apagado">
+        <label for="a-token" class="mb-1.5 block text-xs text-tenue">
           Token de acceso (fine-grained, solo este repositorio)
         </label>
         <div class="flex flex-wrap gap-2">
           <input
             id="a-token" type="password" autocomplete="off" spellcheck="false"
             placeholder="github_pat_…"
-            class="min-w-0 flex-1 rounded-lg border border-borde bg-humo px-3 py-2.5 font-mono text-sm text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
+            class="min-w-0 flex-1 rounded-lg border border-borde bg-panel px-3 py-2.5 font-mono text-sm text-texto placeholder:text-tenue/60 focus:border-oro focus:outline-none"
           />
-          <button type="button" data-conectar class="rounded-lg bg-oro px-5 py-2.5 text-sm font-semibold text-noche transition hover:bg-champan">
+          <button type="button" data-conectar class="rounded-lg bg-acento px-5 py-2.5 text-sm font-semibold text-fondo transition hover:bg-[#9c2b45]">
             Conectar
           </button>
         </div>
-        <label class="mt-3 flex items-center gap-2 text-xs text-apagado">
+        <label class="mt-3 flex items-center gap-2 text-xs text-tenue">
           <input type="checkbox" data-recordar checked class="accent-oro" />
           Recordar el token en este navegador
         </label>
@@ -89,19 +89,19 @@ const urlToken = `https://github.com/settings/personal-access-tokens/new`;
         <div class="flex flex-wrap items-center justify-between gap-3">
           <div class="flex items-center gap-2 text-sm">
             <span class="h-2 w-2 rounded-full bg-exito"></span>
-            <span class="text-crema">Conectado como <strong data-usuario class="text-champan">…</strong></span>
-            <span class="text-apagado">· {repo.owner}/{repo.name}</span>
+            <span class="text-texto">Conectado como <strong data-usuario class="text-acento">…</strong></span>
+            <span class="text-tenue">· {repo.owner}/{repo.name}</span>
           </div>
           <div class="flex gap-2">
-            <button type="button" data-recargar class="rounded-lg border border-borde px-4 py-2 text-xs text-apagado transition hover:border-oro/50 hover:text-champan">
+            <button type="button" data-recargar class="rounded-lg border border-borde px-4 py-2 text-xs text-tenue transition hover:border-oro/50 hover:text-acento">
               Recargar
             </button>
-            <button type="button" data-desconectar class="rounded-lg border border-borde px-4 py-2 text-xs text-apagado transition hover:border-alerta hover:text-alerta">
+            <button type="button" data-desconectar class="rounded-lg border border-borde px-4 py-2 text-xs text-tenue transition hover:border-alerta hover:text-alerta">
               Desconectar
             </button>
           </div>
         </div>
-        <p data-ultima class="mt-2 text-xs text-apagado"></p>
+        <p data-ultima class="mt-2 text-xs text-tenue"></p>
       </div>
 
       <p data-mensaje class="mt-3 hidden rounded-lg px-3 py-2 text-xs" role="status"></p>
@@ -109,28 +109,28 @@ const urlToken = `https://github.com/settings/personal-access-tokens/new`;
 
     <!-- ░░ Tabla ░░ -->
     <section data-panel class="mt-6 hidden" aria-label="Inventario">
-      <div class="flex flex-wrap items-center gap-3 rounded-t-2xl border border-b-0 border-borde bg-humo px-4 py-3">
+      <div class="flex flex-wrap items-center gap-3 rounded-t-2xl border border-b-0 border-borde bg-panel px-4 py-3">
         <input
           type="search" data-filtro placeholder="Filtrar por número, marca o tamaño…"
-          class="min-w-0 flex-1 rounded-lg border border-borde bg-carbon px-3 py-2 text-sm text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
+          class="min-w-0 flex-1 rounded-lg border border-borde bg-superficie px-3 py-2 text-sm text-texto placeholder:text-tenue/60 focus:border-oro focus:outline-none"
         />
-        <button type="button" data-todo-disponible class="rounded-lg border border-borde px-3 py-2 text-xs text-apagado transition hover:border-exito hover:text-exito">
+        <button type="button" data-todo-disponible class="rounded-lg border border-borde px-3 py-2 text-xs text-tenue transition hover:border-exito hover:text-exito">
           Marcar todo disponible
         </button>
-        <span class="text-xs text-apagado"><span data-visibles>{filas.length}</span> / {filas.length} SKUs</span>
+        <span class="text-xs text-tenue"><span data-visibles>{filas.length}</span> / {filas.length} SKUs</span>
       </div>
 
       <div class="overflow-x-auto border-x border-borde">
         <table class="w-full min-w-[720px] text-sm">
-          <thead class="bg-carbon text-left">
+          <thead class="bg-superficie text-left">
             <tr class="border-b border-borde">
-              <th scope="col" class="px-4 py-3 font-medium text-champan">Producto</th>
-              <th scope="col" class="px-4 py-3 font-medium text-champan">Tamaño</th>
-              <th scope="col" class="px-4 py-3 font-medium text-champan">Estado</th>
-              <th scope="col" class="px-4 py-3 font-medium text-champan">Precio</th>
+              <th scope="col" class="px-4 py-3 font-medium text-acento">Producto</th>
+              <th scope="col" class="px-4 py-3 font-medium text-acento">Tamaño</th>
+              <th scope="col" class="px-4 py-3 font-medium text-acento">Estado</th>
+              <th scope="col" class="px-4 py-3 font-medium text-acento">Precio</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-borde bg-carbon/60">
+          <tbody class="divide-y divide-borde bg-superficie/60">
             {filas.map((f) => (
               <tr
                 data-fila
@@ -138,14 +138,14 @@ const urlToken = `https://github.com/settings/personal-access-tokens/new`;
                 data-busqueda={`${f.titulo} ${f.referencia} ${f.tamano} ${f.linea}`.toLowerCase()}
               >
                 <td class="px-4 py-3">
-                  <p class="font-medium text-crema">{f.titulo}</p>
-                  <p class="text-xs text-apagado">{f.referencia || f.linea}</p>
+                  <p class="font-medium text-texto">{f.titulo}</p>
+                  <p class="text-xs text-tenue">{f.referencia || f.linea}</p>
                 </td>
-                <td class="px-4 py-3 text-apagado">{f.tamano}</td>
+                <td class="px-4 py-3 text-tenue">{f.tamano}</td>
                 <td class="px-4 py-3">
                   <select
                     data-estado data-sku={f.sku}
-                    class="rounded-lg border border-borde bg-humo px-2.5 py-1.5 text-xs text-crema focus:border-oro focus:outline-none"
+                    class="rounded-lg border border-borde bg-panel px-2.5 py-1.5 text-xs text-texto focus:border-oro focus:outline-none"
                   >
                     <option value="disponible">Disponible</option>
                     <option value="agotado">Agotado</option>
@@ -157,9 +157,9 @@ const urlToken = `https://github.com/settings/personal-access-tokens/new`;
                     type="number" min="0" step="10"
                     data-precio data-sku={f.sku} data-catalogo={f.precioCatalogo}
                     placeholder={String(f.precioCatalogo)}
-                    class="w-28 rounded-lg border border-borde bg-humo px-2.5 py-1.5 text-xs text-crema placeholder:text-apagado/60 focus:border-oro focus:outline-none"
+                    class="w-28 rounded-lg border border-borde bg-panel px-2.5 py-1.5 text-xs text-texto placeholder:text-tenue/60 focus:border-oro focus:outline-none"
                   />
-                  <span class="ml-1.5 text-[11px] text-apagado">cat. {clp(f.precioCatalogo)}</span>
+                  <span class="ml-1.5 text-[11px] text-tenue">cat. {clp(f.precioCatalogo)}</span>
                 </td>
               </tr>
             ))}
@@ -169,14 +169,14 @@ const urlToken = `https://github.com/settings/personal-access-tokens/new`;
 
       <!-- Barra de guardado -->
       <div class="sticky bottom-0 flex flex-wrap items-center justify-between gap-3 rounded-b-2xl border border-t-0 border-borde vidrio px-4 py-3">
-        <p class="text-xs text-apagado">
-          <span data-cambios class="font-semibold text-champan">0</span> cambios sin guardar
+        <p class="text-xs text-tenue">
+          <span data-cambios class="font-semibold text-acento">0</span> cambios sin guardar
         </p>
         <div class="flex gap-2">
-          <button type="button" data-descartar class="rounded-lg border border-borde px-4 py-2.5 text-xs text-apagado transition hover:border-alerta hover:text-alerta">
+          <button type="button" data-descartar class="rounded-lg border border-borde px-4 py-2.5 text-xs text-tenue transition hover:border-alerta hover:text-alerta">
             Descartar
           </button>
-          <button type="button" data-guardar disabled class="rounded-lg bg-oro px-6 py-2.5 text-sm font-semibold text-noche transition hover:bg-champan disabled:cursor-not-allowed disabled:bg-borde disabled:text-apagado">
+          <button type="button" data-guardar disabled class="rounded-lg bg-acento px-6 py-2.5 text-sm font-semibold text-fondo transition hover:bg-[#9c2b45] disabled:cursor-not-allowed disabled:bg-borde disabled:text-tenue">
             Guardar y publicar
           </button>
         </div>
@@ -220,7 +220,7 @@ const urlToken = `https://github.com/settings/personal-access-tokens/new`;
     /* ── Mensajes ──────────────────────────────────────────── */
     function mensaje(texto, tipo = 'info') {
       const estilos = {
-        info: 'bg-humo text-apagado',
+        info: 'bg-panel text-tenue',
         exito: 'bg-exito/15 text-exito',
         error: 'bg-alerta/15 text-alerta',
       };

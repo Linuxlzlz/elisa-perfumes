@@ -14,16 +14,16 @@ const enlaces = [
 <header class="sticky top-0 z-40 border-b border-borde/70 vidrio">
   <div class="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6 lg:px-8">
     <a href={ruta('/')} class="flex shrink-0 items-center gap-2.5" aria-label="Elisa Perfumes, ir al inicio">
-      <Marca tamano={34} variante="monograma" id="cab" />
+      <Marca tamano={34} variante="monograma" tono="tinta" id="cab" class="text-acento" />
       <span class="leading-none">
-        <span class="titulo-serif block text-2xl text-crema">Elisa</span>
-        <span class="versalita block text-champan">Perfumes</span>
+        <span class="titulo-serif block text-2xl text-texto">Elisa</span>
+        <span class="versalita block text-acento">Perfumes</span>
       </span>
     </a>
 
     <nav class="ml-auto hidden items-center gap-6 lg:flex" aria-label="Navegación principal">
       {enlaces.map((e) => (
-        <a href={e.href} class="text-sm text-apagado transition-colors hover:text-champan">{e.texto}</a>
+        <a href={e.href} class="text-sm text-tenue transition-colors hover:text-acento">{e.texto}</a>
       ))}
     </nav>
 
@@ -31,26 +31,26 @@ const enlaces = [
       <a
         href={`https://wa.me/${tienda.whatsapp}?text=${encodeURIComponent(tienda.whatsappSaludo)}`}
         target="_blank" rel="noopener"
-        class="hidden rounded-full border border-borde px-3 py-2 text-xs text-apagado transition hover:border-oro/50 hover:text-champan sm:block"
+        class="hidden rounded-full border border-borde px-3 py-2 text-xs text-tenue transition hover:border-oro/50 hover:text-acento sm:block"
       >WhatsApp</a>
 
       <button
         type="button"
         data-abrir-carrito
-        class="relative rounded-full border border-oro/45 px-4 py-2 text-sm font-medium text-champan transition hover:bg-oro hover:text-noche"
+        class="relative rounded-full border border-acento/45 px-4 py-2 text-sm font-medium text-acento transition hover:bg-acento hover:text-fondo"
         aria-label="Abrir carrito"
       >
         Carrito
         <span
           data-contador-carrito
-          class="absolute -right-1.5 -top-1.5 hidden min-w-5 rounded-full bg-oro px-1.5 text-center text-[11px] font-bold leading-5 text-noche"
+          class="absolute -right-1.5 -top-1.5 hidden min-w-5 rounded-full bg-acento px-1.5 text-center text-[11px] font-bold leading-5 text-fondo"
         >0</span>
       </button>
 
       <button
         type="button"
         data-abrir-menu
-        class="rounded-full border border-borde p-2 text-crema lg:hidden"
+        class="rounded-full border border-borde p-2 text-texto lg:hidden"
         aria-label="Abrir menú"
         aria-expanded="false"
       >
@@ -61,11 +61,11 @@ const enlaces = [
     </div>
   </div>
 
-  <nav data-menu-movil class="hidden border-t border-borde bg-carbon px-4 py-3 lg:hidden" aria-label="Navegación móvil">
+  <nav data-menu-movil class="hidden border-t border-borde bg-superficie px-4 py-3 lg:hidden" aria-label="Navegación móvil">
     <ul class="space-y-1">
       {enlaces.map((e) => (
         <li>
-          <a href={e.href} class="block rounded-lg px-3 py-2.5 text-sm text-crema/90 transition hover:bg-humo hover:text-champan">{e.texto}</a>
+          <a href={e.href} class="block rounded-lg px-3 py-2.5 text-sm text-texto/90 transition hover:bg-panel hover:text-acento">{e.texto}</a>
         </li>
       ))}
     </ul>

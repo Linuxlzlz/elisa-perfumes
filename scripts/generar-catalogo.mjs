@@ -31,15 +31,6 @@ const slugificar = (t) =>
 
 const lista = (v) => String(v ?? '').split('|').map((x) => x.trim()).filter(Boolean);
 
-/** La silueta del frasco se elige por familia olfativa, para dar variedad visual. */
-function formaDe(familia, acordes) {
-  const t = (familia + ' ' + acordes).toLowerCase();
-  if (/gourmand|oriental|oud|tabaco/.test(t)) return 'ornada';
-  if (/acuátic|acuatic|marin|cítric|citric|fresc/.test(t)) return 'alta';
-  if (/floral/.test(t)) return 'redonda';
-  return 'rect';
-}
-
 function construir(fila, linea) {
   const [numero, refNombre, refCasa, familia, acordes,
          salida, corazon, fondo, ocasiones, estaciones,
@@ -63,7 +54,6 @@ function construir(fila, linea) {
     duracion,
     descripcion,
     variantes: PRECIOS.map((v) => ({ sku: `${slug}-${v.tamano}`, ...v })),
-    forma: formaDe(familia, acordes),
     ...(DESTACADOS.has(numero) ? { destacado: true } : {}),
   };
 }

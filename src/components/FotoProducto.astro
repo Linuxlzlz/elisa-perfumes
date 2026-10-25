@@ -1,120 +1,37 @@
 ---
 import type { Producto } from '../lib/tipos';
-import { ruta } from '../lib/formato';
 import { nombre } from '../lib/catalogo';
+import { ruta } from '../lib/formato';
 
-type Props = { producto: Producto; class?: string; grande?: boolean };
-const { producto, class: clase = '', grande = false } = Astro.props;
+/**
+ * Foto del producto.
+ *
+ * Todas las fragancias vienen en el mismo frasco: uno por línea. Por eso la
+ * foto se elige por `linea`, y sólo se usa una imagen propia cuando el producto
+ * trae `img` (por ejemplo, si más adelante se fotografía uno por separado).
+ * Como las fotos son idénticas, el número va superpuesto: es lo que distingue
+ * una ficha de otra al recorrer el catálogo.
+ */
+type Props = { producto: Producto; class?: string; grande?: boolean; conNumero?: boolean };
+const { producto: p, class: clase = '', grande = false, conNumero = false } = Astro.props;
 
-// Tinte del líquido según la familia olfativa, con respaldo por categoría.
-const porFamilia: [RegExp, string, string][] = [
-  [/acu|marin|cítric|citric|fresc/i, '#7fb2c4', '#cfe6ee'],
-  [/gourmand|vainilla|tabaco|especia|canela/i, '#8a4f22', '#d99a5b'],
-  [/oud|ahumad|amaderad|chipre/i, '#6b4423', '#c08a4e'],
-  [/floral|rosa|iris/i, '#b06a7a', '#e8b9c2'],
-  [/ambar|ambarad|oriental/i, '#9a6a1e', '#e3c77b'],
-  [/fougère|fougere|aromátic|aromatic/i, '#5f7a4e', '#b3cc9e'],
-];
-const porLinea: Record<string, [string, string]> = {
-  mujer: ['#8f5668', '#dca9b8'],
-  hombre: ['#6b4423', '#c08a4e'],
-};
-
-const encontrado = porFamilia.find(([re]) => re.test(producto.familia + ' ' + producto.acordes.join(' ')));
-const [oscuro, claro] = encontrado
-  ? [encontrado[1], encontrado[2]]
-  : porLinea[producto.linea] ?? ['#9a6a1e', '#e3c77b'];
-
-const id = producto.slug.replace(/[^a-z0-9]/gi, '');
-const etiqueta = nombre(producto);
-const alt = `${etiqueta} — ${producto.familia}`;
-
-// Geometría del cuerpo según la forma del frasco
-const cuerpos: Record<string, string> = {
-  rect: 'M78 150 H222 a10 10 0 0 1 10 10 V352 a14 14 0 0 1 -14 14 H82 a14 14 0 0 1 -14 -14 V160 a10 10 0 0 1 10 -10 Z',
-  redonda: 'M150 146 C216 146 236 196 236 258 C236 322 204 366 150 366 C96 366 64 322 64 258 C64 196 84 146 150 146 Z',
-  alta: 'M108 142 H192 a8 8 0 0 1 8 8 V356 a10 10 0 0 1 -10 10 H110 a10 10 0 0 1 -10 -10 V150 a8 8 0 0 1 8 -8 Z',
-  ornada: 'M150 142 C206 142 230 186 226 236 C222 290 240 318 222 346 a16 16 0 0 1 -14 20 H92 a16 16 0 0 1 -14 -20 C60 318 78 290 74 236 C70 186 94 142 150 142 Z',
-};
-const cuerpo = cuerpos[producto.forma] ?? cuerpos.rect;
-// Altura del líquido: ~62% del cuerpo
-const nivel = 212;
+const archivo = p.img ?? `img/productos/${p.linea}.webp`;
+const etiqueta = nombre(p);
+const alt = `${etiqueta} — frasco de 100 ml y estuche de la línea ${p.linea}`;
 ---
-
-{producto.img ? (
+<div class={`relative h-full w-full ${clase}`}>
   <img
-    src={ruta(producto.img)}
+    src={ruta(archivo)}
     alt={alt}
-    width={grande ? 900 : 600}
-    height={grande ? 900 : 600}
+    width={grande ? 800 : 400}
+    height={grande ? 800 : 400}
     loading={grande ? 'eager' : 'lazy'}
     decoding="async"
-    class={`h-full w-full object-cover ${clase}`}
+    class="h-full w-full object-cover"
   />
-) : (
-  <svg
-    viewBox="0 0 300 420"
-    role="img"
-    aria-label={alt}
-    class={`h-full w-full ${clase}`}
-    preserveAspectRatio="xMidYMid meet"
-  >
-    <defs>
-      <linearGradient id={`vidrio-${id}`} x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.20" />
-        <stop offset="42%" stop-color="#ffffff" stop-opacity="0.04" />
-        <stop offset="100%" stop-color="#000000" stop-opacity="0.26" />
-      </linearGradient>
-      <linearGradient id={`liquido-${id}`} x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color={claro} stop-opacity="0.92" />
-        <stop offset="100%" stop-color={oscuro} stop-opacity="0.98" />
-      </linearGradient>
-      <linearGradient id={`tapa-${id}`} x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="#4a423a" />
-        <stop offset="28%" stop-color="#cbb58a" />
-        <stop offset="52%" stop-color="#f0e2c2" />
-        <stop offset="78%" stop-color="#b9a173" />
-        <stop offset="100%" stop-color="#3d362f" />
-      </linearGradient>
-      <radialGradient id={`halo-${id}`} cx="50%" cy="46%" r="52%">
-        <stop offset="0%" stop-color={claro} stop-opacity="0.26" />
-        <stop offset="100%" stop-color={claro} stop-opacity="0" />
-      </radialGradient>
-      <clipPath id={`corte-${id}`}><path d={cuerpo} /></clipPath>
-    </defs>
-
-    <circle cx="150" cy="212" r="150" fill={`url(#halo-${id})`} />
-
-    {/* Cuello y tapa */}
-    <rect x="130" y="112" width="40" height="42" rx="5" fill="#2b2620" />
-    <rect x="130" y="112" width="40" height="42" rx="5" fill={`url(#vidrio-${id})`} />
-    <rect x="118" y="66" width="64" height="52" rx="8" fill={`url(#tapa-${id})`} />
-    <rect x="118" y="66" width="64" height="52" rx="8" fill="none" stroke="#000" stroke-opacity="0.26" />
-    <rect x="124" y="104" width="52" height="7" rx="3.5" fill="#1a1613" fill-opacity="0.55" />
-
-    {/* Cuerpo del frasco */}
-    <path d={cuerpo} fill="#0f0d0c" />
-    <g clip-path={`url(#corte-${id})`}>
-      <rect x="0" y={nivel} width="300" height="420" fill={`url(#liquido-${id})`} />
-      <ellipse cx="150" cy={nivel} rx="96" ry="9" fill={claro} fill-opacity="0.5" />
-    </g>
-    <path d={cuerpo} fill={`url(#vidrio-${id})`} />
-    <path d={cuerpo} fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="1.4" />
-
-    {/* Brillos del vidrio */}
-    <rect x="96" y="176" width="13" height="150" rx="6.5" fill="#fff" fill-opacity="0.13" />
-    <rect x="200" y="196" width="7" height="104" rx="3.5" fill="#fff" fill-opacity="0.08" />
-
-    {/* Etiqueta con la casa de perfume */}
-    <text
-      x="150" y="300" text-anchor="middle"
-      font-family="Cormorant Garamond, Georgia, serif"
-      font-size="19" letter-spacing="3.4"
-      fill="#f5f1ea" fill-opacity="0.82"
-    >{etiqueta.toUpperCase()}</text>
-    <rect x="112" y="312" width="76" height="1" fill="#f5f1ea" fill-opacity="0.34" />
-
-    {/* Sombra de apoyo */}
-    <ellipse cx="150" cy="386" rx="86" ry="11" fill="#000" fill-opacity="0.42" />
-  </svg>
-)}
+  {conNumero && (
+    <span class="absolute left-2.5 top-2.5 rounded-lg bg-fondo/75 px-2.5 py-1 font-[family-name:var(--font-display)] text-xl leading-none text-acento backdrop-blur-sm">
+      {etiqueta}
+    </span>
+  )}
+</div>
